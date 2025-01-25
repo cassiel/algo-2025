@@ -2,42 +2,23 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 796.0, 929.0 ],
-		"bglocked" : 0,
+		"rect" : [ 710.0, 191.0, 796.0, 929.0 ],
 		"openinpresentation" : 1,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
 		"gridsnaponopen" : 2,
 		"objectsnaponopen" : 0,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-39",
@@ -161,42 +142,16 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 139.0, 152.0, 640.0, 480.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
 						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "dB * secs",
@@ -292,6 +247,8 @@
 											"parameter_longname" : "master",
 											"parameter_mmax" : 6.0,
 											"parameter_mmin" : -70.0,
+											"parameter_modmode" : 0,
+											"parameter_osc_name" : "<default>",
 											"parameter_shortname" : "master",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
@@ -356,6 +313,7 @@
 
 							}
  ],
+						"originid" : "pat-168",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -581,6 +539,8 @@
 							"parameter_invisible" : 2,
 							"parameter_longname" : "live.tab",
 							"parameter_mmax" : 3,
+							"parameter_modmode" : 0,
+							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
 							"parameter_unitstyle" : 9
@@ -618,42 +578,21 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 1011.0, 520.0, 507.0, 431.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "InputMono",
@@ -729,6 +668,7 @@
 
 							}
  ],
+						"originid" : "pat-170",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -757,14 +697,11 @@
 					"patching_rect" : [ 645.0, 605.0, 30.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
-						"description" : "",
-						"digest" : "",
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "Anonymous Pro",
 						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-						"style" : "cassiel",
-						"tags" : ""
+						"style" : "cassiel"
 					}
 ,
 					"text" : "p"
@@ -858,6 +795,8 @@
 							"parameter_longname" : "player.level",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 0,
+							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "player.level",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4
@@ -879,42 +818,22 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
 						"rect" : [ 1124.0, 451.0, 518.0, 592.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
 						"default_fontname" : "InputMono",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
 						"objectsnaponopen" : 0,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
 						"style" : "c.comment",
 						"subpatcher_template" : "cassiel",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "InputMono",
@@ -1122,6 +1041,37 @@
 									"patching_rect" : [ 30.0, 245.0, 390.0, 175.0 ],
 									"pitchcorrection" : 0,
 									"quality" : "basic",
+									"saved_attribute_attributes" : 									{
+										"candicane2" : 										{
+											"expression" : ""
+										}
+,
+										"candicane3" : 										{
+											"expression" : ""
+										}
+,
+										"candicane4" : 										{
+											"expression" : ""
+										}
+,
+										"candicane5" : 										{
+											"expression" : ""
+										}
+,
+										"candicane6" : 										{
+											"expression" : ""
+										}
+,
+										"candicane7" : 										{
+											"expression" : ""
+										}
+,
+										"candicane8" : 										{
+											"expression" : ""
+										}
+
+									}
+,
 									"timestretch" : [ 0 ]
 								}
 
@@ -1269,6 +1219,7 @@
 
 							}
  ],
+						"originid" : "pat-172",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -1310,14 +1261,11 @@
 					"presentation_rect" : [ 645.0, 65.0, 70.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
-						"description" : "",
-						"digest" : "",
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "InputMono",
 						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-						"style" : "c.comment",
-						"tags" : ""
+						"style" : "c.comment"
 					}
 ,
 					"style" : "cassiel.subpatcher-1",
@@ -1333,7 +1281,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 555.0, 170.0, 24.0, 24.0 ]
+					"patching_rect" : [ 555.0, 170.0, 24.0, 24.0 ],
+					"svg" : ""
 				}
 
 			}
@@ -1383,6 +1332,8 @@
 							"parameter_longname" : "in.level",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 0,
+							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "in.level",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4
@@ -1442,7 +1393,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 15.0, 15.0, 35.199999999999989, 35.199999999999989 ]
+					"patching_rect" : [ 15.0, 15.0, 35.199999999999989, 35.199999999999989 ],
+					"svg" : ""
 				}
 
 			}
@@ -1480,52 +1432,32 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 327.0, 325.0, 1078.0, 663.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
+						"rect" : [ 780.0, 593.0, 1078.0, 663.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontname" : "Input Mono",
 									"id" : "obj-6",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 630.0, 210.0, 108.0, 23.0 ],
+									"patching_rect" : [ 630.0, 210.0, 115.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "kg22.VST Axon"
+									"text" : "ag25.VST3 Axon"
 								}
 
 							}
@@ -1539,42 +1471,21 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
-											"revision" : 0,
+											"major" : 9,
+											"minor" : 0,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 745.0, 287.0, 802.0, 536.0 ],
-										"bglocked" : 0,
-										"openinpresentation" : 0,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
+										"rect" : [ 585.0, 528.0, 802.0, 536.0 ],
 										"default_fontname" : "InputMono",
 										"gridonopen" : 2,
 										"gridsize" : [ 15.0, 5.0 ],
 										"gridsnaponopen" : 2,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
 										"style" : "cassiel",
 										"subpatcher_template" : "cassiel",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-1",
@@ -1584,7 +1495,7 @@
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 615.0, 240.0, 85.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Ramps"
+													"text" : "ag25.Ramps"
 												}
 
 											}
@@ -1611,7 +1522,7 @@
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 525.0, 240.0, 85.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Ramps"
+													"text" : "ag25.Ramps"
 												}
 
 											}
@@ -1624,7 +1535,7 @@
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 435.0, 240.0, 85.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Ramps"
+													"text" : "ag25.Ramps"
 												}
 
 											}
@@ -1637,7 +1548,7 @@
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 345.0, 240.0, 85.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Ramps"
+													"text" : "ag25.Ramps"
 												}
 
 											}
@@ -1650,7 +1561,7 @@
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 255.0, 240.0, 85.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Ramps"
+													"text" : "ag25.Ramps"
 												}
 
 											}
@@ -1676,7 +1587,7 @@
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 165.0, 240.0, 85.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Ramps"
+													"text" : "ag25.Ramps"
 												}
 
 											}
@@ -1879,6 +1790,7 @@
 
 											}
  ],
+										"originid" : "pat-186",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -1936,12 +1848,9 @@
 ,
 									"patching_rect" : [ 720.0, 390.0, 108.0, 23.0 ],
 									"saved_object_attributes" : 									{
-										"description" : "",
-										"digest" : "",
 										"fontname" : "InputMono",
 										"globalpatchername" : "",
-										"style" : "cassiel",
-										"tags" : ""
+										"style" : "cassiel"
 									}
 ,
 									"style" : "cassiel.subpatcher",
@@ -1976,53 +1885,57 @@
 							}
 , 							{
 								"box" : 								{
+									"fontname" : "Input Mono",
 									"id" : "obj-67",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 165.0, 210.0, 115.0, 23.0 ],
+									"patching_rect" : [ 165.0, 210.0, 123.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "kg22.VST Basic"
+									"text" : "ag25.VST3 Basic"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontname" : "Input Mono",
 									"id" : "obj-66",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 360.0, 210.0, 161.0, 23.0 ],
+									"patching_rect" : [ 360.0, 210.0, 169.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "kg22.VST Filter_MINI"
+									"text" : "ag25.VST3 Filter_MINI"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontname" : "Input Mono",
 									"id" : "obj-65",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 495.0, 235.0, 154.0, 23.0 ],
+									"patching_rect" : [ 495.0, 235.0, 161.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "kg22.VST Replika_XT"
+									"text" : "ag25.VST3 Replika_XT"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontname" : "Input Mono",
 									"id" : "obj-64",
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 270.0, 235.0, 108.0, 23.0 ],
+									"patching_rect" : [ 270.0, 235.0, 115.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "kg22.VST Enso"
+									"text" : "ag25.VST3 Enso"
 								}
 
 							}
@@ -2036,42 +1949,21 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 8,
-											"minor" : 5,
-											"revision" : 0,
+											"major" : 9,
+											"minor" : 0,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 311.0, 289.0, 764.0, 375.0 ],
-										"bglocked" : 0,
-										"openinpresentation" : 0,
-										"default_fontsize" : 12.0,
-										"default_fontface" : 0,
+										"rect" : [ 723.0, 671.0, 764.0, 375.0 ],
 										"default_fontname" : "Anonymous Pro",
 										"gridonopen" : 2,
 										"gridsize" : [ 15.0, 5.0 ],
 										"gridsnaponopen" : 2,
-										"objectsnaponopen" : 1,
-										"statusbarvisible" : 2,
-										"toolbarvisible" : 1,
-										"lefttoolbarpinned" : 0,
-										"toptoolbarpinned" : 0,
-										"righttoolbarpinned" : 0,
-										"bottomtoolbarpinned" : 0,
-										"toolbars_unpinned_last_save" : 0,
-										"tallnewobj" : 0,
-										"boxanimatetime" : 200,
-										"enablehscroll" : 1,
-										"enablevscroll" : 1,
-										"devicewidth" : 0.0,
-										"description" : "",
-										"digest" : "",
-										"tags" : "",
 										"style" : "cassiel",
 										"subpatcher_template" : "cassiel",
-										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "InputMono",
@@ -2095,7 +1987,7 @@
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 555.0, 100.0, 77.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Peak"
+													"text" : "ag25.Peak"
 												}
 
 											}
@@ -2135,7 +2027,7 @@
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 465.0, 100.0, 77.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Peak"
+													"text" : "ag25.Peak"
 												}
 
 											}
@@ -2175,7 +2067,7 @@
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 375.0, 100.0, 77.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Peak"
+													"text" : "ag25.Peak"
 												}
 
 											}
@@ -2240,7 +2132,7 @@
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 285.0, 100.0, 77.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Peak"
+													"text" : "ag25.Peak"
 												}
 
 											}
@@ -2267,7 +2159,7 @@
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 195.0, 100.0, 77.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Peak"
+													"text" : "ag25.Peak"
 												}
 
 											}
@@ -2294,7 +2186,7 @@
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 105.0, 100.0, 77.0, 23.0 ],
 													"style" : "cassiel.abstraction",
-													"text" : "kg22.Peak"
+													"text" : "ag25.Peak"
 												}
 
 											}
@@ -2472,6 +2364,7 @@
 
 											}
  ],
+										"originid" : "pat-240",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -2520,14 +2413,11 @@
 									"patching_rect" : [ 585.0, 390.0, 62.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
-										"description" : "",
-										"digest" : "",
 										"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 										"fontname" : "Anonymous Pro",
 										"globalpatchername" : "",
 										"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-										"style" : "cassiel",
-										"tags" : ""
+										"style" : "cassiel"
 									}
 ,
 									"style" : "cassiel.subpatcher",
@@ -2602,7 +2492,7 @@
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "InputMono",
+									"fontname" : "Input Mono",
 									"id" : "obj-18",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -3043,6 +2933,7 @@
 
 							}
  ],
+						"originid" : "pat-174",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3168,14 +3059,11 @@
 					"presentation_rect" : [ 645.0, 40.0, 62.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
-						"description" : "",
-						"digest" : "",
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "Anonymous Pro",
 						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-						"style" : "cassiel",
-						"tags" : ""
+						"style" : "cassiel"
 					}
 ,
 					"style" : "cassiel.subpatcher-1",
@@ -3206,42 +3094,21 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 155.0, 148.0, 781.0, 787.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
+						"rect" : [ 1138.0, 158.0, 781.0, 787.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
-						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-28",
@@ -3250,7 +3117,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 630.0, 70.0, 24.0, 24.0 ]
+									"patching_rect" : [ 630.0, 70.0, 24.0, 24.0 ],
+									"svg" : ""
 								}
 
 							}
@@ -3785,7 +3653,8 @@
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 435.0, 340.0, 24.0, 24.0 ],
-									"style" : "c.comment"
+									"style" : "c.comment",
+									"svg" : ""
 								}
 
 							}
@@ -4299,6 +4168,7 @@
 
 							}
  ],
+						"originid" : "pat-254",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4360,14 +4230,11 @@
 					"presentation_rect" : [ 645.0, 15.0, 92.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
-						"description" : "",
-						"digest" : "",
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "Anonymous Pro",
 						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
-						"style" : "cassiel",
-						"tags" : ""
+						"style" : "cassiel"
 					}
 ,
 					"style" : "cassiel.subpatcher-1",
@@ -4418,11 +4285,12 @@
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 15.0, 310.0, 54.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
+						"legacy" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
@@ -4466,12 +4334,17 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
-					"text" : "node.script main.js"
+					"text" : "node.script main.js",
+					"textfile" : 					{
+						"filename" : "main.js",
+						"flags" : 0,
+						"embed" : 0,
+						"autowatch" : 1
+					}
+
 				}
 
 			}
@@ -4814,13 +4687,14 @@
 
 			}
  ],
+		"originid" : "pat-165",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
 			"obj-13::obj-64::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
-			"obj-13::obj-65::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
-			"obj-13::obj-66::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
-			"obj-13::obj-67::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
-			"obj-13::obj-6::obj-28" : [ "vst~[5]", "vst~[1]", 0 ],
+			"obj-13::obj-65::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-66::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
+			"obj-13::obj-67::obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
+			"obj-13::obj-6::obj-28" : [ "vst~[2]", "vst~[1]", 0 ],
 			"obj-17" : [ "player.level", "player.level", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
@@ -4832,23 +4706,58 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Axon.maxsnap",
-				"bootpath" : "~/Documents/Max 8/Snapshots",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Snapshots",
+				"name" : ".maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
+				"name" : "ag25.Break.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.Peak.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.Ramps.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.Strip-_.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.VST3.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "cassiel.krellmixer.js",
-				"bootpath" : "~/Documents/Max 8/Packages/cassiel.ui-candy-2006/jsui",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/cassiel.ui-candy-2006/jsui",
+				"bootpath" : "~/Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "cassiel.textbrick.js",
-				"bootpath" : "~/Documents/Max 8/Packages/cassiel.ui-candy-2006/jsui",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/cassiel.ui-candy-2006/jsui",
+				"bootpath" : "~/Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -4859,52 +4768,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "kg22.Break.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/khyal-live/khyal-2022/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "kg22.Peak.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/khyal-live/khyal-2022/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "kg22.Ramps.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/khyal-live/khyal-2022/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "kg22.Strip-_.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/khyal-live/khyal-2022/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "kg22.VST.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/khyal-live/khyal-2022/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "main.js",
-				"bootpath" : "~/GITHUB/cassiel/khyal-live/khyal-2022/main",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mermaid-test.wav",
-				"bootpath" : "~/odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"patcherrelativepath" : "../../../../../odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
@@ -4917,41 +4784,6 @@
 				"name" : "resize_n4m_monitor_patcher.js",
 				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "shama-2.wav",
-				"bootpath" : "~/odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"patcherrelativepath" : "../../../../../odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "shama-3.aif",
-				"bootpath" : "~/odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"patcherrelativepath" : "../../../../../odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"type" : "AIFF",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "shama-4.wav",
-				"bootpath" : "~/odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"patcherrelativepath" : "../../../../../odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "shama-5.wav",
-				"bootpath" : "~/odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"patcherrelativepath" : "../../../../../odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "shama-6.wav",
-				"bootpath" : "~/odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"patcherrelativepath" : "../../../../../odrive/google-drive-cassiel/SHARED OUT/Khyal Geometries/scratch recordings",
-				"type" : "WAVE",
 				"implicit" : 1
 			}
  ],

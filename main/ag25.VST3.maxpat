@@ -2,56 +2,22 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 485.0, 252.0, 927.0, 653.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
+		"rect" : [ 799.0, 669.0, 927.0, 653.0 ],
 		"default_fontname" : "Courier",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
 		"gridsnaponopen" : 2,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"fontname" : "InputMono",
-					"id" : "obj-33",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 360.0, 450.0, 50.0, 23.0 ]
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "toggle",
@@ -59,7 +25,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 495.0, 140.0, 24.0, 24.0 ]
+					"patching_rect" : [ 495.0, 140.0, 24.0, 24.0 ],
+					"svg" : ""
 				}
 
 			}
@@ -137,7 +104,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 615.0, 140.0, 24.0, 24.0 ]
+					"patching_rect" : [ 615.0, 140.0, 24.0, 24.0 ],
+					"svg" : ""
 				}
 
 			}
@@ -163,7 +131,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 390.0, 235.0, 100.0, 23.0 ],
 					"style" : "cassiel.abstraction",
-					"text" : "kg22.Strip-_"
+					"text" : "ag25.Strip-_"
 				}
 
 			}
@@ -189,7 +157,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 285.0, 280.0, 100.0, 23.0 ],
 					"style" : "cassiel.abstraction",
-					"text" : "kg22.Strip-_"
+					"text" : "ag25.Strip-_"
 				}
 
 			}
@@ -264,7 +232,7 @@
 				"box" : 				{
 					"comment" : "1/0: open/close VST window",
 					"id" : "obj-14",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -342,7 +310,7 @@
 				"box" : 				{
 					"comment" : "commands to VST",
 					"id" : "obj-3",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -373,7 +341,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 615.0, 320.0, 100.0, 23.0 ],
 					"style" : "cassiel.abstraction",
-					"text" : "kg22.Strip-_"
+					"text" : "ag25.Strip-_"
 				}
 
 			}
@@ -399,7 +367,7 @@
 					"outlettype" : [ "signal", "signal" ],
 					"patching_rect" : [ 45.0, 175.0, 85.0, 23.0 ],
 					"style" : "cassiel.abstraction",
-					"text" : "kg22.Break"
+					"text" : "ag25.Break"
 				}
 
 			}
@@ -429,12 +397,14 @@
 					"numoutlets" : 8,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "list", "int", "", "", "" ],
-					"patching_rect" : [ 45.0, 460.0, 98.0, 23.0 ],
-					"save" : [ "#N", "vst~", "loaduniqueid", 0, "prefer", "VST", ";" ],
+					"patching_rect" : [ 45.0, 460.0, 138.0, 23.0 ],
+					"save" : [ "#N", "vst~", "loaduniqueid", 0, "@prefer", "VST3", ";" ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
-							"parameter_longname" : "vst~[7]",
+							"parameter_longname" : "vst~[1]",
+							"parameter_modmode" : 0,
+							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "vst~[1]",
 							"parameter_type" : 3
 						}
@@ -444,7 +414,7 @@
 					"saved_object_attributes" : 					{
 						"parameter_enable" : 1,
 						"parameter_mappable" : 0,
-						"valuemode" : 2
+						"prefer" : "VST3"
 					}
 ,
 					"snapshot" : 					{
@@ -457,14 +427,7 @@
 						"subtype" : "Undefined",
 						"embed" : 1,
 						"snapshot" : 						{
-							"pluginname" : "Basic.vstinfo",
-							"plugindisplayname" : "Basic",
-							"pluginsavedname" : "C74_VST:/Basic",
-							"pluginsaveduniqueid" : 1095000673,
-							"version" : 1,
-							"isbank" : 0,
-							"isbase64" : 1,
-							"blob" : "272.CMlaKA....fQPMDZ....ADDQhEF...P.....v.SLfLUX2Q2auQGZfLUcxAmboMWY...............0vDCHSE1cz81azgFHSUmbvIWZyUF.x.SL....+zLyL4C...3OtdT.+zLyL4C.....T35I+.....PyLyjO.........9C.....T35I+Lb8n5C.....Ydjy9LR8V6C...3O...f+.........................3O.....PJb86CtdTzO...........RgqmO.....DtdT3SllIzO.....7Qgq6C.....MWYx9.........................................3O.....3NBm0C"
+
 						}
 ,
 						"snapshotlist" : 						{
@@ -473,28 +436,21 @@
 									"filetype" : "C74Snapshot",
 									"version" : 2,
 									"minorversion" : 0,
-									"name" : "Basic",
-									"origin" : "Basic.vstinfo",
-									"type" : "VST",
-									"subtype" : "Instrument",
+									"name" : "",
+									"origin" : "",
+									"type" : "AudioUnit",
+									"subtype" : "AudioEffect",
 									"embed" : 0,
 									"snapshot" : 									{
-										"pluginname" : "Basic.vstinfo",
-										"plugindisplayname" : "Basic",
-										"pluginsavedname" : "C74_VST:/Basic",
-										"pluginsaveduniqueid" : 1095000673,
-										"version" : 1,
-										"isbank" : 0,
-										"isbase64" : 1,
-										"blob" : "272.CMlaKA....fQPMDZ....ADDQhEF...P.....v.SLfLUX2Q2auQGZfLUcxAmboMWY...............0vDCHSE1cz81azgFHSUmbvIWZyUF.x.SL....+zLyL4C...3OtdT.+zLyL4C.....T35I+.....PyLyjO.........9C.....T35I+Lb8n5C.....Ydjy9LR8V6C...3O...f+.........................3O.....PJb86CtdTzO...........RgqmO.....DtdT3SllIzO.....7Qgq6C.....MWYx9.........................................3O.....3NBm0C"
+
 									}
 ,
 									"fileref" : 									{
-										"name" : "Basic",
-										"filename" : "Basic.maxsnap",
-										"filepath" : "~/Documents/Max 8/Snapshots",
+										"name" : "",
+										"filename" : ".maxsnap",
+										"filepath" : "~/Documents/Max 9/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "17852904b078aac29734e095b2dcb988"
+										"snapshotfileid" : "3827a06d9cc15132306218a2cfb55df4"
 									}
 
 								}
@@ -503,7 +459,7 @@
 
 					}
 ,
-					"text" : "vst~",
+					"text" : "vst~ @prefer VST3",
 					"varname" : "vst~[1]",
 					"viewvisibility" : 0
 				}
@@ -513,7 +469,7 @@
 				"box" : 				{
 					"comment" : "[mc 2] audio in",
 					"id" : "obj-59",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -526,7 +482,7 @@
 				"box" : 				{
 					"comment" : "param names out",
 					"id" : "obj-61",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -538,7 +494,7 @@
 				"box" : 				{
 					"comment" : "[mc 2] audio out",
 					"id" : "obj-62",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -739,13 +695,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
-					"source" : [ "obj-33", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-62", 0 ],
 					"source" : [ "obj-34", 0 ]
 				}
@@ -843,6 +792,44 @@
 
 			}
  ],
+		"originid" : "pat-288",
+		"parameters" : 		{
+			"obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
+		"dependency_cache" : [ 			{
+				"name" : ".maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.Break.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.Strip-_.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "c.comment",
 				"default" : 				{
