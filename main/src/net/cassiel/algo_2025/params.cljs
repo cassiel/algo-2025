@@ -2,9 +2,9 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [net.cassiel.algo-2025.core :as c]
             [net.cassiel.algo-2025.conformer :as cx]
-            [cljs-promises.async :as a :refer-macros [<?]]
             [clojure.spec.alpha :as s]
             [cljs.core.async :as async :refer [<! >!]]
+            [cljs.core.async.interop :refer [<p!]]
             [goog.string :as gstring]
             [goog.string.format]))
 
@@ -154,7 +154,7 @@
                                                 (nth pvec 2) "]")]))
                                     items)))]
     (go
-      (<? (.setDict c/max-api "X" json-obj))
+      (<p! (.setDict c/max-api "X" json-obj))
       (.outlet c/max-api "show"))))
 
 (defn xmit-program [dev i]

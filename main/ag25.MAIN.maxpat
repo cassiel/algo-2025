@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 572.0, 216.0, 810.0, 740.0 ],
+		"rect" : [ 79.0, 456.0, 810.0, 740.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,18 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 390.0, 25.0, 115.0, 23.0 ],
+					"text" : "loadmess set 0"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-39",
 					"maxclass" : "comment",
@@ -56,7 +68,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 255.0, 190.0, 200.0, 24.0 ],
+					"patching_rect" : [ 300.0, 75.0, 200.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 75.0, 40.0, 200.0, 24.0 ],
 					"tabs" : [ "STOP", "GO" ]
@@ -313,7 +325,7 @@
 
 							}
  ],
-						"originid" : "pat-487",
+						"originid" : "pat-892",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -668,7 +680,7 @@
 
 							}
  ],
-						"originid" : "pat-489",
+						"originid" : "pat-894",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -949,6 +961,7 @@
 						"gridsnaponopen" : 2,
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Input Mono",
@@ -1400,7 +1413,7 @@
 
 											}
  ],
-										"originid" : "pat-507",
+										"originid" : "pat-934",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2096,7 +2109,7 @@
 
 											}
  ],
-										"originid" : "pat-569",
+										"originid" : "pat-1000",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -2782,7 +2795,7 @@
 
 							}
  ],
-						"originid" : "pat-493",
+						"originid" : "pat-896",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -2958,6 +2971,7 @@
 						"gridsnaponopen" : 2,
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-28",
@@ -4017,7 +4031,7 @@
 
 							}
  ],
-						"originid" : "pat-583",
+						"originid" : "pat-1018",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4183,6 +4197,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4392,6 +4408,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-44", 0 ],
+					"order" : 1,
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"order" : 0,
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-4", 2 ],
 					"source" : [ "obj-33", 0 ]
 				}
@@ -4513,7 +4545,7 @@
 
 			}
  ],
-		"originid" : "pat-484",
+		"originid" : "pat-889",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
 			"obj-13::obj-64::obj-28" : [ "vst~[5]", "vst~[1]", 0 ],

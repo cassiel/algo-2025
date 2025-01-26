@@ -1,9 +1,7 @@
 (ns net.cassiel.algo-2025.core
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [cljs-promises.async :as a]
-            [cljs.core.async :as async :refer [<! >!]]))
+  (:require [cljs.core.async :as async :refer [<! >!]]))
 
-(a/extend-promises-as-pair-channels!)
 (def max-api (js/require "max-api"))
 
 (defn var-outlet
