@@ -10,14 +10,49 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 799.0, 669.0, 927.0, 653.0 ],
-		"default_fontname" : "Courier",
+		"rect" : [ 897.0, 596.0, 947.0, 701.0 ],
+		"default_fontname" : "Input Mono",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
 		"gridsnaponopen" : 2,
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 735.0, 470.0, 120.0, 23.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 614.0, 326.0, 138.0, 23.0 ],
+					"text" : "ag25.StripPostfix"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-29",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 765.0, 360.0, 54.0, 23.0 ],
+					"text" : "unplug"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "toggle",
@@ -27,33 +62,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 495.0, 140.0, 24.0, 24.0 ],
 					"svg" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "InputMono",
-					"id" : "obj-29",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 705.0, 270.0, 161.0, 35.0 ],
-					"style" : "c.comment",
-					"text" : "The closest we have to a null VST."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontname" : "InputMono",
-					"id" : "obj-26",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 675.0, 245.0, 131.0, 23.0 ],
-					"text" : "studiomux_effect"
 				}
 
 			}
@@ -182,9 +190,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 180.0, 22.0, 222.0, 78.0 ],
+					"patching_rect" : [ 180.0, 22.0, 310.0, 78.0 ],
 					"style" : "c.comment",
-					"text" : "\"note\", \"param\", \"get\" and \"plugged\" are interpreted (partly to deal with \"_\" in pnames); everything else goes straight through."
+					"text" : "\"note\", \"param\", \"get\" and \"plugged\" are interpreted (partly to deal with \"_\" in pnames, .suffix in VST instance); everything else goes straight through."
 				}
 
 			}
@@ -327,8 +335,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 360.0, 131.0, 23.0 ],
-					"text" : "prepend plug_vst"
+					"patching_rect" : [ 615.0, 360.0, 100.0, 23.0 ],
+					"text" : "prepend plug"
 				}
 
 			}
@@ -339,7 +347,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 320.0, 100.0, 23.0 ],
+					"patching_rect" : [ 615.0, 290.0, 100.0, 23.0 ],
 					"style" : "cassiel.abstraction",
 					"text" : "ag25.Strip-_"
 				}
@@ -604,7 +612,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
+					"destination" : [ "obj-30", 0 ],
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -639,15 +647,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
+					"destination" : [ "obj-29", 0 ],
 					"source" : [ "obj-24", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-26", 0 ]
 				}
 
 			}
@@ -681,8 +682,32 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"midpoints" : [ 774.5, 427.7578125, 54.5, 427.7578125 ],
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"order" : 1,
+					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-22", 1 ],
+					"order" : 0,
+					"source" : [ "obj-30", 0 ]
 				}
 
 			}
@@ -792,7 +817,7 @@
 
 			}
  ],
-		"originid" : "pat-288",
+		"originid" : "pat-470",
 		"parameters" : 		{
 			"obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
 			"parameterbanks" : 			{
@@ -823,6 +848,13 @@
 			}
 , 			{
 				"name" : "ag25.Strip-_.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.StripPostfix.maxpat",
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
