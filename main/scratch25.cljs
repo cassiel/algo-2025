@@ -67,6 +67,7 @@
 ;; Params
 
 (px/request-params PARAMS :Microtonic)
+(px/request-params PARAMS :Other_Desert_Cities)
 (px/request-params PARAMS :Enso.A)
 (px/request-params PARAMS :Replika_XT)
 
@@ -80,6 +81,7 @@
 (px/get-matching-to-dict PARAMS :Microtonic #"Morph|Mute")
 (px/get-matching-to-dict PARAMS :Microtonic #"NFil")
 (px/get-matching-to-dict PARAMS :Microtonic #"Level")
+(px/get-matching-to-dict PARAMS :Microtonic #"Pattern")
 
 
 (px/xmit-some-params-now :Microtonic [:Mute1 0])

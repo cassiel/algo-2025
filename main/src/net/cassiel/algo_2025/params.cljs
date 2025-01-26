@@ -145,18 +145,14 @@
         params (get-in data [device :params])]
     (->> (keys params)
          (filter (comp (partial re-find re) name))
+         sort                           ; Purely cosmetic
          (map (fn [p] [p (get params p)])))))
 
 (defn get-matching-to-dict [PARAMS device re]
   (let [items (get-matching PARAMS device re)
         data (deref PARAMS)
-        json-obj (clj->js (into {} (map
-                                    (fn [x]
-                                      (let [pvec (get-in data [device :params x])]
-                                        [x (str (nth pvec 1)
-                                                " ["
-                                                (nth pvec 2) "]")]))
-                                    items)))]
+        ;; (sorted-map) is cosmetic.
+        json-obj (clj->js (into (sorted-map) items))]
     (go
       (<p! (.setDict c/max-api "X" json-obj))
       (.outlet c/max-api "show"))))
