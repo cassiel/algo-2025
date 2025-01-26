@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 897.0, 596.0, 947.0, 701.0 ],
+		"rect" : [ 966.0, 662.0, 947.0, 701.0 ],
 		"default_fontname" : "Input Mono",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
@@ -24,7 +24,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 735.0, 470.0, 120.0, 23.0 ]
+					"patching_rect" : [ 735.0, 470.0, 120.0, 23.0 ],
+					"text" : "#1"
 				}
 
 			}
@@ -394,7 +395,7 @@
 			}
 , 			{
 				"box" : 				{
-					"autosave" : 1,
+					"autosave" : 0,
 					"bgmode" : 0,
 					"border" : 0,
 					"clickthrough" : 0,
@@ -405,8 +406,8 @@
 					"numoutlets" : 8,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "list", "int", "", "", "" ],
-					"patching_rect" : [ 45.0, 460.0, 138.0, 23.0 ],
-					"save" : [ "#N", "vst~", "loaduniqueid", 0, "@prefer", "VST3", ";" ],
+					"patching_rect" : [ 45.0, 460.0, 230.0, 23.0 ],
+					"save" : [ "#N", "vst~", "loaduniqueid", 0, "@prefer", "VST3", "@autosave", 0, ";" ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
@@ -420,54 +421,13 @@
 					}
 ,
 					"saved_object_attributes" : 					{
+						"autosave" : 0,
 						"parameter_enable" : 1,
 						"parameter_mappable" : 0,
 						"prefer" : "VST3"
 					}
 ,
-					"snapshot" : 					{
-						"filetype" : "C74Snapshot",
-						"version" : 2,
-						"minorversion" : 0,
-						"name" : "snapshotlist",
-						"origin" : "vst~",
-						"type" : "list",
-						"subtype" : "Undefined",
-						"embed" : 1,
-						"snapshot" : 						{
-
-						}
-,
-						"snapshotlist" : 						{
-							"current_snapshot" : 0,
-							"entries" : [ 								{
-									"filetype" : "C74Snapshot",
-									"version" : 2,
-									"minorversion" : 0,
-									"name" : "",
-									"origin" : "",
-									"type" : "AudioUnit",
-									"subtype" : "AudioEffect",
-									"embed" : 0,
-									"snapshot" : 									{
-
-									}
-,
-									"fileref" : 									{
-										"name" : "",
-										"filename" : ".maxsnap",
-										"filepath" : "~/Documents/Max 9/Snapshots",
-										"filepos" : -1,
-										"snapshotfileid" : "3827a06d9cc15132306218a2cfb55df4"
-									}
-
-								}
- ]
-						}
-
-					}
-,
-					"text" : "vst~ @prefer VST3",
+					"text" : "vst~ @prefer VST3 @autosave 0",
 					"varname" : "vst~[1]",
 					"viewvisibility" : 0
 				}
@@ -817,7 +777,7 @@
 
 			}
  ],
-		"originid" : "pat-470",
+		"originid" : "pat-735",
 		"parameters" : 		{
 			"obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
 			"parameterbanks" : 			{
@@ -833,13 +793,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : ".maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ag25.Break.maxpat",
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",
