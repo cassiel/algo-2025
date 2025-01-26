@@ -1,7 +1,7 @@
-(ns net.cassiel.khyal-live.params
+(ns net.cassiel.algo-2025.params
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [net.cassiel.khyal-live.core :as c]
-            [net.cassiel.khyal-live.conformer :as cx]
+  (:require [net.cassiel.algo-2025.core :as c]
+            [net.cassiel.algo-2025.conformer :as cx]
             [cljs-promises.async :as a :refer-macros [<?]]
             [clojure.spec.alpha :as s]
             [cljs.core.async :as async :refer [<! >!]]

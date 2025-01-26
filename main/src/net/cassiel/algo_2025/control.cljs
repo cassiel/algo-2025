@@ -1,8 +1,8 @@
-(ns net.cassiel.khyal-live.control
+(ns net.cassiel.algo-2025.control
   "General control routines: windows, unload/reload, ..."
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [net.cassiel.khyal-live.core :as c]
-            [net.cassiel.khyal-live.params :as px]
+  (:require [net.cassiel.algo-2025.core :as c]
+            [net.cassiel.algo-2025.params :as px]
             [cljs.core.async :as async :refer [<! >!]]))
 
 (def win-state (atom {}))

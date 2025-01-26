@@ -1,4 +1,4 @@
-(ns net.cassiel.khyal-live.core
+(ns net.cassiel.algo-2025.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs-promises.async :as a]
             [cljs.core.async :as async :refer [<! >!]]))

@@ -1,4 +1,4 @@
-(ns net.cassiel.khyal-live.conformer
+(ns net.cassiel.algo-2025.conformer
   (:require [clojure.spec.alpha :as s]))
 
 (defn debug [tag x]

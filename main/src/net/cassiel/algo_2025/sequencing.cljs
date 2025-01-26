@@ -1,6 +1,6 @@
-(ns net.cassiel.khyal-live.sequencing
-  (:require [net.cassiel.khyal-live.params :as px]
-            [net.cassiel.khyal-live.conformer :as cx]
+(ns net.cassiel.algo-2025.sequencing
+  (:require [net.cassiel.algo-2025.params :as px]
+            [net.cassiel.algo-2025.conformer :as cx]
             [clojure.spec.alpha :as s]))
 
 ;; Sequencer prompts just come in as repeated counts of 1..4. For each
