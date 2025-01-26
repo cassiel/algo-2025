@@ -44,34 +44,43 @@
                       (take (+ (* 8 12) 5))
                       (map keyword)))
 
-(def param-enums {:Replika_XT {:Modulation_Mode [:No_FX :Phaser :Flanger
-                                                 :Chorus :Freq_Shifter
-                                                 :Filter :Pitch_Shifter
-                                                 :Micro_Pitcher]
-                               :Delay_Mode [:Modern :Analogue :Tape_Echo
-                                            :Vintage_Digital :Diffusion]
-                               :PS_Shift_L (symbolic-range -12 12)
-                               :PS_Shift_R (symbolic-range -12 12)
-                               :Time_Mode [:Straight :Dotted :Triplets :Milliseconds]}
-                  :Enso (let [speeds {:-2.0 0.574349164962769
-                                      :-1.0 0.675480008125305
-                                      :-0.5 0.718441188335419
-                                      :+0.5 0.794417858123779
-                                      :+1.0 0.828613519668579
-                                      :+2.0 0.891301214694977}]
-                          {:Mode [:Record :Overdub :Play :Stop]
-                           :Link_Speeds [:Off :On]
-                           :Play_Speed speeds
-                           :Rec_Speed speeds})
-                  :Basic (let [shapes [:Triangle :Sawtooth :DigiGrit
-                                       :20%Pulse :Square :80%Pulse]]
-                           {:Osc1Shap shapes
-                            :Osc2Shap shapes
-                            :Osc3Shap shapes})
-                  :Axon (->> (map (fn [i] [(keyword (gstring/format  "V%d_Pitch" i))
-                                           named-notes])
-                                  (range 7))
-                             (into {:ClockRat [:32 :16 :8]}))})
+(def param-enums
+  (let [enso       (let [speeds {:-2.0 0.574349164962769
+                                 :-1.0 0.675480008125305
+                                 :-0.5 0.718441188335419
+                                 :+0.5 0.794417858123779
+                                 :+1.0 0.828613519668579
+                                 :+2.0 0.891301214694977}]
+                     {:Mode        [:Record :Overdub :Play :Stop]
+                      :Link_Speeds [:Off :On]
+                      :Play_Speed  speeds
+                      :Rec_Speed   speeds})
+        replika-xt {:Modulation_Mode [:No_FX :Phaser :Flanger
+                                      :Chorus :Freq_Shifter
+                                      :Filter :Pitch_Shifter
+                                      :Micro_Pitcher]
+                    :Delay_Mode      [:Modern :Analogue :Tape_Echo
+                                      :Vintage_Digital :Diffusion]
+                    :PS_Shift_L      (symbolic-range -12 12)
+                    :PS_Shift_R      (symbolic-range -12 12)
+                    :Time_Mode       [:Straight :Dotted :Triplets :Milliseconds]}
+        ;; Basic is obsolete:
+        basic      (let [shapes [:Triangle :Sawtooth :DigiGrit
+                                 :20%Pulse :Square :80%Pulse]]
+                     {:Osc1Shap shapes
+                      :Osc2Shap shapes
+                      :Osc3Shap shapes})
+        ;; Axon is obsolete - but possibly same for Axon_2.
+        axon       (->> (map (fn [i] [(keyword (gstring/format  "V%d_Pitch" i))
+                                      named-notes])
+                             (range 7))
+                        (into {:ClockRat [:32 :16 :8]}))
+        ]
+    {:Replika_XT replika-xt
+     :Enso.A     enso
+     :Enso.B     enso
+     :Basic      basic
+     :Axon       axon}))
 
 (defn positions
   [pred coll]
@@ -80,6 +89,7 @@
 
 (defn map-value [device pname value-str]
   (when-let [vals (get-in param-enums [device pname])]
+    ;; A named value can be a vector of enum names, or a map from names to numerical values.
     (if (map? vals)
       (get vals value-str)
       (when-let [idx (positions #{value-str} vals)]
@@ -164,8 +174,10 @@
 (defn xmit-some-params-now [dev & args]
   (doseq [[pname v] args]
     (let [v' (if (keyword? v) (map-value dev pname v) v)]
-      (c/xmit :now dev :param pname v')))
-  (async/timeout 500))
+      (if v' (do (c/xmit :now dev :param pname v')
+                 (async/timeout 500))
+          (do (c/error "Cannot map" dev pname ":" v)
+              (async/timeout 0))))))
 
 (defn axon-pitch-set [& values]
   (apply xmit-some-params-now

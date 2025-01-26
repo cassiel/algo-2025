@@ -76,6 +76,11 @@
 (px/get-matching PARAMS :Enso.A #"Speed")
 (px/get-matching PARAMS :Replika_XT #"Mix")
 
+(go
+  (<! (ctrl/reset-device :Enso.A))
+  (px/request-params PARAMS :Enso.A)
+  (ctrl/window :Enso.A 1))
+
 ;; Microtonic:
 
 (px/get-matching-to-dict PARAMS :Microtonic #"Morph|Mute")
@@ -85,3 +90,15 @@
 
 
 (px/xmit-some-params-now :Microtonic [:Mute1 0])
+
+;; Test symbolic parameter values:
+(px/xmit-some-params-now :Enso.A
+                         [:Link_Speeds :Off]
+                         [:Play_Speed :+1.0]
+                         [:Rec_Speed :-0.5]
+                         [:Dry_Level 0]
+                         [:Feedback 0.5])
+
+(c/alert "AAA")
+
+(c/error "OTHER" 1 2 3)
