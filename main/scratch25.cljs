@@ -45,9 +45,9 @@
              :pvalue
              (fn [& args] (apply px/pvalue-in PARAMS args)))
 
-;; WINDOW CONTROL: TODO broken for :seq/:main/:audio
+;; WINDOW CONTROL. Toggle works for VSTs, not Max windows.
 
-(ctrl/window :seq 1)
+(ctrl/window :seq 0)
 (ctrl/window :main 1)
 (ctrl/window :Microtonic)
 (ctrl/window :Enso.A)
@@ -55,10 +55,18 @@
 (ctrl/window :Other_Desert_Cities)
 (ctrl/window :Rift)
 (ctrl/window :Replika_XT)
-(ctrl/window :audio 1)
+(ctrl/window :audio 0)
 
-;; params
+;; Mixing
 
+(ctrl/mix :* :* -40 1)
+
+(ctrl/mix :Replika_XT :IO 0 1)
+(ctrl/mix :Enso.A :IO -40 1)
+
+;; Params
+
+(px/request-params PARAMS :Microtonic)
 (px/request-params PARAMS :Enso.A)
 (px/request-params PARAMS :Replika_XT)
 
@@ -66,3 +74,12 @@
 (px/get-matching-to-dict PARAMS :Enso.A #"Mode")
 (px/get-matching PARAMS :Enso.A #"Speed")
 (px/get-matching PARAMS :Replika_XT #"Mix")
+
+;; Microtonic:
+
+(px/get-matching-to-dict PARAMS :Microtonic #"Morph|Mute")
+(px/get-matching-to-dict PARAMS :Microtonic #"NFil")
+(px/get-matching-to-dict PARAMS :Microtonic #"Level")
+
+
+(px/xmit-some-params-now :Microtonic [:Mute1 0])

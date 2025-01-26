@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 79.0, 456.0, 810.0, 740.0 ],
+		"rect" : [ 221.0, 427.0, 805.0, 731.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,31 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontsize" : 20.0,
+					"id" : "obj-47",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 60.0, 95.0, 197.0, 30.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 195.0, 75.0, 30.0, 30.0 ],
+					"text" : ":"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-43",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 450.0, 290.0, 85.0, 23.0 ],
+					"text" : "print node"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-32",
 					"maxclass" : "newobj",
@@ -478,7 +503,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 495.0, 540.0, 34.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 195.0, 75.0, 34.0, 32.0 ],
+					"presentation_rect" : [ 210.0, 75.0, 34.0, 32.0 ],
 					"triangle" : 0
 				}
 
@@ -532,7 +557,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 660.0, 540.0, 105.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 165.0, 110.0, 105.0, 25.0 ],
+					"presentation_rect" : [ 225.0, 110.0, 105.0, 25.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -640,8 +665,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 740.0, 37.0 ],
-									"text" : "setdirection down, setalignment right, setsize 7, clear, append Replika_XT, append Rift, append Enso.B, append Enso.A, append Other_Desert_Cities, append Axon_2, append Microtonic, append IO"
+									"patching_rect" : [ 50.0, 100.0, 742.0, 37.0 ],
+									"text" : "setdirection down, setalignment right, setsize 8, clear, append Replika_XT, append Rift, append Enso.B, append Enso.A, append Other_Desert_Cities, append Axon_2, append Microtonic, append IO"
 								}
 
 							}
@@ -751,7 +776,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 525.0, 540.0, 87.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 225.0, 75.0, 87.0, 32.0 ],
+					"presentation_rect" : [ 255.0, 75.0, 75.0, 32.0 ],
 					"textcolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
 					"triangle" : 0
 				}
@@ -954,14 +979,13 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 684.0, 356.0, 1528.0, 777.0 ],
+						"rect" : [ 193.0, 460.0, 1528.0, 777.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Input Mono",
@@ -2964,14 +2988,13 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1138.0, 158.0, 781.0, 787.0 ],
+						"rect" : [ 448.0, 559.0, 781.0, 787.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-28",
@@ -3070,7 +3093,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 510.0, 113.0, 23.0 ],
-									"text" : "0 0 54 0"
+									"text" : "0 7 29 500"
 								}
 
 							}
@@ -4113,7 +4136,7 @@
 					"numinlets" : 6,
 					"numoutlets" : 6,
 					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 15.0, 175.0, 230.0, 23.0 ],
+					"patching_rect" : [ 15.0, 185.0, 230.0, 23.0 ],
 					"text" : "route show win seq now master"
 				}
 
@@ -4221,12 +4244,20 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 405.0, 410.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 150.0, 70.0, 180.0, 70.0 ]
+					"presentation_rect" : [ 150.0, 70.0, 195.0, 70.0 ]
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-43", 0 ],
+					"order" : 0,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"color" : [ 0.815686274509804, 0.858823529411765, 0.349019607843137, 1.0 ],
 					"destination" : [ "obj-6", 0 ],
@@ -4237,6 +4268,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
+					"order" : 1,
 					"source" : [ "obj-1", 0 ]
 				}
 

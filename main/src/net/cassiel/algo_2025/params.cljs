@@ -14,11 +14,15 @@
                                             (s/nilable keyword?))))
 (s/def ::counter integer?)
 (s/def ::device (s/keys :opt-un [::params ::counter]))
-(s/def ::Basic ::device)
-(s/def ::Enso ::device)
+(s/def ::Microtonic ::device)
+(s/def ::Axon_2 ::device)
+(s/def ::Other_Desert_Cities ::device)
+(s/def ::Enso.A ::device)
+(s/def ::Enso.B ::device)
+(s/def ::Rift ::device)
 (s/def ::Replika_XT ::device)
-(s/def ::Filter_MINI ::device)
-(s/def ::param-tracking (s/keys :opt-un [::Basic ::Enso ::Replika_XT ::Filter_MINI ::Axon]))
+(s/def ::param-tracking (s/keys :opt-un [::Microtonic ::Axon_2 ::Other_Desert_Cities
+                                         ::Enso.A ::Enso.B ::Rift ::Replika_XT]))
 
 ;; For now we'll preset some enums for some parameters. (We could
 ;; potentially automate this data gathering.)
