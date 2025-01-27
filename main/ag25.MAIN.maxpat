@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 167.0, 416.0, 810.0, 754.0 ],
+		"rect" : [ 454.0, 133.0, 810.0, 754.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -126,14 +126,12 @@
 
 							}
  ],
-						"originid" : "pat-1115",
-						"default_bgcolor" : [ 0.125, 0.125, 0.125, 1.0 ],
+						"originid" : "pat-6",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 270.0, 275.0, 62.0, 23.0 ],
 					"saved_object_attributes" : 					{
-						"bgcolor" : [ 0.125, 0.125, 0.125, 1.0 ],
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ],
 						"fontname" : "Input Mono",
 						"globalpatchername" : ""
@@ -322,6 +320,12 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
+					"connections" : [ 						{
+							"in" : 1,
+							"out" : 4,
+							"gain" : 1.0
+						}
+ ],
 					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
 					"dividers" : [ "in", 0 ],
 					"fontface" : 0,
@@ -541,7 +545,7 @@
 
 							}
  ],
-						"originid" : "pat-892",
+						"originid" : "pat-11",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -896,7 +900,7 @@
 
 							}
  ],
-						"originid" : "pat-894",
+						"originid" : "pat-13",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1628,7 +1632,7 @@
 
 											}
  ],
-										"originid" : "pat-934",
+										"originid" : "pat-53",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2324,7 +2328,7 @@
 
 											}
  ],
-										"originid" : "pat-1000",
+										"originid" : "pat-119",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3010,7 +3014,7 @@
 
 							}
  ],
-						"originid" : "pat-896",
+						"originid" : "pat-15",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3284,7 +3288,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 510.0, 113.0, 23.0 ],
-									"text" : "0 0 7 0"
+									"text" : "1 0 41 0"
 								}
 
 							}
@@ -4245,7 +4249,7 @@
 
 							}
  ],
-						"originid" : "pat-1018",
+						"originid" : "pat-137",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4379,8 +4383,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4781,7 +4783,7 @@
 
 			}
  ],
-		"originid" : "pat-889",
+		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
 			"obj-13::obj-64::obj-28" : [ "vst~[5]", "vst~[1]", 0 ],
@@ -4801,55 +4803,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Enso.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Enso_20250125.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Enso_20250125_1.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Enso_20250125_2.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Enso_20250125_3.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Enso_20250125_4.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Enso_20250125_5.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ag25.Break.maxpat",
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",

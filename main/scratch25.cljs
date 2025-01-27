@@ -64,6 +64,9 @@
 (ctrl/mix :Replika_XT :IO 0 1)
 (ctrl/mix :Enso.A :IO -40 1)
 
+(ctrl/mix :Microtonic :IO -40 10)
+(ctrl/mix :Microtonic :Enso.A 0 1)
+
 ;; Params
 
 (px/request-params PARAMS :Microtonic)
@@ -71,15 +74,19 @@
 (px/request-params PARAMS :Enso.A)
 (px/request-params PARAMS :Replika_XT)
 
-(px/get-matching PARAMS :Enso.A #"Link")
+(px/get-matching PARAMS :Enso.A #"Speed|Link")
 (px/get-matching-to-dict PARAMS :Enso.A #"Mode")
-(px/get-matching PARAMS :Enso.A #"Speed")
+(px/get-matching-to-dict PARAMS :Enso.A #"Level")
+(px/get-matching-to-dict PARAMS :Enso.A #"Level|MIDI")
 (px/get-matching PARAMS :Replika_XT #"Mix")
 
 (go
   (<! (ctrl/reset-device :Enso.A))
   (px/request-params PARAMS :Enso.A)
   (ctrl/window :Enso.A 1))
+
+(px/xmit-some-params-now :Enso.A
+                         [:Input_Level 0])
 
 ;; Microtonic:
 
@@ -94,6 +101,7 @@
 ;; Test symbolic parameter values:
 (px/xmit-some-params-now :Enso.A
                          [:Link_Speeds :Off]
+                         [:Input_Level 0]
                          [:Play_Speed :+1.0]
                          [:Rec_Speed :-0.5]
                          [:Dry_Level 0]
