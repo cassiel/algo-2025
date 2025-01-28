@@ -25,11 +25,21 @@
   (c/xmit :now device :plugged how)
   (async/timeout 1000))
 
+(defn restore
+  "Snapshop restore. have to use index, so only really reliable if we only have one (#0)"
+  [device i]
+  (c/xmit :now device :restore i)
+  (async/timeout 500))
+
+(defn makenote
+  "Simple note on/off, immediate."
+  [device pitch]
+  (c/xmit :now device :note pitch 64 100))
+
 (defn reset-device
   [device]
-  (let [c0 (plug-device device 0)]
-    (go (<! c0)
-        (<! (plug-device device 1)))))
+  (go (<! (plug-device device 0))
+      (<! (plug-device device 1))))
 
 (defn unload-all
   "Utility to unload all VSTs: useful before saving Max patcher, to save space."

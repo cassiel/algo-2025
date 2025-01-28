@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 966.0, 662.0, 947.0, 701.0 ],
+		"rect" : [ 1420.0, 683.0, 947.0, 701.0 ],
 		"default_fontname" : "Input Mono",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
@@ -19,13 +19,39 @@
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 415.0, 190.0, 85.0, 23.0 ],
+					"text" : "restore $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"ignoreclick" : 1,
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 415.0, 160.0, 50.0, 23.0 ],
+					"triangle" : 0
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-22",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 735.0, 470.0, 120.0, 23.0 ],
-					"text" : "#1"
+					"patching_rect" : [ 735.0, 470.0, 169.0, 23.0 ],
+					"text" : "\"Other Desert Cities\""
 				}
 
 			}
@@ -61,7 +87,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 495.0, 140.0, 24.0, 24.0 ],
+					"patching_rect" : [ 510.0, 140.0, 24.0, 24.0 ],
 					"svg" : ""
 				}
 
@@ -87,7 +113,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 245.0, 47.0, 23.0 ],
+					"patching_rect" : [ 615.0, 245.0, 154.0, 23.0 ],
 					"text" : "#1"
 				}
 
@@ -205,7 +231,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 420.0, 510.0, 161.0, 23.0 ],
+					"patching_rect" : [ 420.0, 510.0, 268.0, 23.0 ],
 					"text" : "prepend pvalue #1"
 				}
 
@@ -218,7 +244,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 240.0, 510.0, 176.0, 23.0 ],
+					"patching_rect" : [ 240.0, 510.0, 283.0, 23.0 ],
 					"text" : "sprintf pname #1 %s"
 				}
 
@@ -233,7 +259,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 495.0, 207.0, 75.0, 23.0 ]
+					"patching_rect" : [ 510.0, 207.0, 75.0, 23.0 ]
 				}
 
 			}
@@ -241,7 +267,7 @@
 				"box" : 				{
 					"comment" : "1/0: open/close VST window",
 					"id" : "obj-14",
-					"index" : 0,
+					"index" : 3,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -255,11 +281,11 @@
 					"fontname" : "InputMono",
 					"id" : "obj-16",
 					"maxclass" : "newobj",
-					"numinlets" : 5,
-					"numoutlets" : 5,
-					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 135.0, 105.0, 222.0, 23.0 ],
-					"text" : "route note param get plugged"
+					"numinlets" : 6,
+					"numoutlets" : 6,
+					"outlettype" : [ "", "", "", "", "", "" ],
+					"patching_rect" : [ 135.0, 105.0, 283.0, 23.0 ],
+					"text" : "route note param get plugged restore"
 				}
 
 			}
@@ -319,7 +345,7 @@
 				"box" : 				{
 					"comment" : "commands to VST",
 					"id" : "obj-3",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -411,7 +437,7 @@
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
-							"parameter_longname" : "vst~[1]",
+							"parameter_longname" : "vst~[3]",
 							"parameter_modmode" : 0,
 							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "vst~[1]",
@@ -437,11 +463,11 @@
 				"box" : 				{
 					"comment" : "[mc 2] audio in",
 					"id" : "obj-59",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "multichannelsignal" ],
 					"patching_rect" : [ 45.0, 40.0, 30.0, 30.0 ]
 				}
 
@@ -450,7 +476,7 @@
 				"box" : 				{
 					"comment" : "param names out",
 					"id" : "obj-61",
-					"index" : 0,
+					"index" : 2,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -462,7 +488,7 @@
 				"box" : 				{
 					"comment" : "[mc 2] audio out",
 					"id" : "obj-62",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -530,8 +556,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-28", 0 ],
+					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-16", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-16", 5 ]
 				}
 
 			}
@@ -609,6 +642,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
 					"source" : [ "obj-24", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-28", 0 ],
+					"source" : [ "obj-27", 0 ]
 				}
 
 			}
@@ -777,44 +824,7 @@
 
 			}
  ],
-		"originid" : "pat-735",
-		"parameters" : 		{
-			"obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
-			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"inherited_shortname" : 1
-		}
-,
-		"dependency_cache" : [ 			{
-				"name" : "ag25.Break.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ag25.Strip-_.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ag25.StripPostfix.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0,
+		"originid" : "pat-91",
 		"styles" : [ 			{
 				"name" : "c.comment",
 				"default" : 				{

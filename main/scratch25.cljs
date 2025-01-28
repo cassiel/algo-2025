@@ -45,9 +45,14 @@
              :pvalue
              (fn [& args] (apply px/pvalue-in PARAMS args)))
 
+;; **PREFLIGHT**: snapshot recalls for loopers.
+
+(go (<! (ctrl/restore :Enso.A 0))
+    (<! (ctrl/restore :Enso.B 0)))
+
 ;; WINDOW CONTROL. Toggle works for VSTs, not Max windows.
 
-(ctrl/window :seq 0)
+(ctrl/window :seq 1)
 (ctrl/window :main 1)
 (ctrl/window :Microtonic)
 (ctrl/window :Enso.A)
@@ -57,15 +62,32 @@
 (ctrl/window :Replika_XT)
 (ctrl/window :audio 0)
 
+(ctrl/plug-device :Microtonic 0)
+(ctrl/restore :Enso.A 0)
+
 ;; Mixing
 
 (ctrl/mix :* :* -40 1)
 
 (ctrl/mix :Replika_XT :IO 0 1)
-(ctrl/mix :Enso.A :IO -40 1)
+(ctrl/mix :Enso.A :IO -40 5)
 
-(ctrl/mix :Microtonic :IO -40 10)
+(ctrl/mix :Microtonic :IO 0 5)
 (ctrl/mix :Microtonic :Enso.A 0 1)
+(ctrl/mix :Enso.A :Other_Desert_Cities -10 5)
+(ctrl/mix :Microtonic :Other_Desert_Cities 0 1)
+(ctrl/mix :Other_Desert_Cities :IO 0 0)
+
+;; MIDI test for Enso:
+
+(ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
+                                 :ClearLoop))
+
+
+;; MIDI test for Microtonic:
+
+(ctrl/makenote :Microtonic (+ 60 (rand-int 16)))
+
 
 ;; Params
 
@@ -75,9 +97,10 @@
 (px/request-params PARAMS :Replika_XT)
 
 (px/get-matching PARAMS :Enso.A #"Speed|Link")
-(px/get-matching-to-dict PARAMS :Enso.A #"Mode")
+(px/get-matching-to-dict PARAMS :Enso.A #"Mode|Dub")
 (px/get-matching-to-dict PARAMS :Enso.A #"Level")
 (px/get-matching-to-dict PARAMS :Enso.A #"Level|MIDI")
+(px/get-matching-to-dict PARAMS :Other_Desert_Cities #"Mix|Algorithm|Speed")
 (px/get-matching PARAMS :Replika_XT #"Mix")
 
 (go
@@ -86,7 +109,13 @@
   (ctrl/window :Enso.A 1))
 
 (px/xmit-some-params-now :Enso.A
-                         [:Input_Level 0])
+                         [:Input_Level 1])
+
+(px/xmit-some-params-now :Other_Desert_Cities
+                         [:Loop :Off]
+                         [:Algorithm :Cactus])
+
+
 
 ;; Microtonic:
 
@@ -101,11 +130,18 @@
 ;; Test symbolic parameter values:
 (px/xmit-some-params-now :Enso.A
                          [:Link_Speeds :Off]
-                         [:Input_Level 0]
+                         [:Input_Level 1]
                          [:Play_Speed :+1.0]
                          [:Rec_Speed :-0.5]
                          [:Dry_Level 0]
                          [:Feedback 0.5])
+
+(px/xmit-some-params-now :Enso.A
+                         [:Play_Speed :+1.0]
+                         [:Rec_Speed :-0.5]
+                         [:Dub_In_Place 1]
+                         )
+
 
 (c/alert "AAA")
 
