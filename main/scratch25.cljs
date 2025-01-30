@@ -117,6 +117,9 @@
 
 
 
+(keyword "A..B")
+(identity :A..B)
+
 ;; Microtonic:
 
 (px/get-matching-to-dict PARAMS :Microtonic #"Morph|Mute")
