@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 304.0, 244.0, 803.0, 733.0 ],
+		"rect" : [ 169.0, 227.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -192,7 +192,7 @@
 
 							}
  ],
-						"originid" : "pat-171",
+						"originid" : "pat-8",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
@@ -264,7 +264,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\n}\n",
+					"code" : "{\n\t\"Algo03.._Speed_1\" : [ 19, 0.25, null ],\n\t\"Algo03.._Speed_2\" : [ 20, 0.75, null ],\n\t\"Algo05.._Speed\" : [ 65, 0.75, null ],\n\t\"Algorithm\" : [ 8, 0.400000005960464, null ],\n\t\"Diffuser.._Mix\" : [ 98, 0, null ],\n\t\"Mix\" : [ 4, 0.5, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -605,7 +605,7 @@
 
 							}
  ],
-						"originid" : "pat-174",
+						"originid" : "pat-11",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -960,7 +960,7 @@
 
 							}
  ],
-						"originid" : "pat-176",
+						"originid" : "pat-13",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1234,7 +1234,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 404.0, 458.0, 1528.0, 777.0 ],
+						"rect" : [ 88.0, 398.0, 1528.0, 777.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1692,7 +1692,7 @@
 
 											}
  ],
-										"originid" : "pat-216",
+										"originid" : "pat-53",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2388,7 +2388,7 @@
 
 											}
  ],
-										"originid" : "pat-282",
+										"originid" : "pat-119",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3074,7 +3074,7 @@
 
 							}
  ],
-						"originid" : "pat-178",
+						"originid" : "pat-15",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3348,7 +3348,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 5 12 500"
+									"text" : "0 30 19 0"
 								}
 
 							}
@@ -4309,7 +4309,7 @@
 
 							}
  ],
-						"originid" : "pat-300",
+						"originid" : "pat-137",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4443,8 +4443,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4872,16 +4870,16 @@
 
 			}
  ],
-		"originid" : "pat-169",
+		"originid" : "pat-6",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
-			"obj-13::obj-64::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
-			"obj-13::obj-65::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
-			"obj-13::obj-66::obj-28" : [ "vst~[3]", "vst~[1]", 0 ],
-			"obj-13::obj-67::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
-			"obj-13::obj-6::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
-			"obj-13::obj-8::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
-			"obj-13::obj-9::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-64::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
+			"obj-13::obj-65::obj-28" : [ "vst~[2]", "vst~[1]", 0 ],
+			"obj-13::obj-66::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-67::obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
+			"obj-13::obj-6::obj-28" : [ "vst~[12]", "vst~[1]", 0 ],
+			"obj-13::obj-8::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
+			"obj-13::obj-9::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
 			"parameterbanks" : 			{
@@ -4921,6 +4919,13 @@
 			}
 , 			{
 				"name" : "ag25.Ramps.maxpat",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.Strip-DotDot.maxpat",
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

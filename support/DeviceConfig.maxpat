@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1083.0, 1821.0, 958.0, 665.0 ],
+		"rect" : [ 1083.0, 1821.0, 520.0, 665.0 ],
 		"default_fontname" : "Input Mono",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
@@ -18,44 +18,6 @@
 		"objectsnaponopen" : 0,
 		"subpatcher_template" : "Untitled1_template",
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-10",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 675.0, 75.0, 24.0, 24.0 ],
-					"svg" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 675.0, 195.0, 24.0, 24.0 ],
-					"svg" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-2",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 675.0, 115.0, 123.0, 23.0 ],
-					"text" : "adstatus switch"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-40",
 					"linecount" : 4,
@@ -354,13 +316,6 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
-					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
@@ -377,13 +332,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-19", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -479,7 +427,7 @@
 
 			}
  ],
-		"originid" : "pat-12",
+		"originid" : "pat-165",
 		"parameters" : 		{
 			"obj-1" : [ "vst~", "vst~", 0 ],
 			"parameterbanks" : 			{

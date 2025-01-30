@@ -52,21 +52,24 @@
     (first idx)))
 
 (defn pname-in
-  "Parameter message in. Clean up the possibly multi-part name, map to param ID
-   with nil for numeric and string value."
+  "Parameter message in. Clean up the possibly multi-part name (we could probably
+   fix that in the MAX sprintf()), turn ':' into '..' so that it can be keywordised,
+   map to param ID with nil for numeric and string value."
   [PARAMS device & name-parts]
   (let [device-k (keyword device)
-        pname (keyword (clojure.string/join "_" name-parts))
-        P'
-        (swap! PARAMS
-               (fn [P]
-                 (let [counter (or (get-in P [device-k :counter]) 0)
-                       params (get-in P [device-k :params])]
-                   (-> P
-                       (assoc-in [device-k :counter] (inc counter))
-                       (assoc-in [device-k :params pname] [(inc counter) nil nil])
-                       #_ (as-> X
-                           (cx/conformer ::param-tracking X))))))]
+        pname (-> name-parts
+                  (as-> X (clojure.string/join "_" X))
+                  (clojure.string/replace #":" "..")
+                  keyword)
+        P' (swap! PARAMS
+                  (fn [P]
+                    (let [counter (or (get-in P [device-k :counter]) 0)
+                          params (get-in P [device-k :params])]
+                      (-> P
+                          (assoc-in [device-k :counter] (inc counter))
+                          (assoc-in [device-k :params pname] [(inc counter) nil nil])
+                          #_ (as-> X
+                                 (cx/conformer ::param-tracking X))))))]
 
     ;; Filter_MINI has a huge number of "MIDI CC [...]" params. Don't try to get the
     ;; initial values, it'll cause trouble.

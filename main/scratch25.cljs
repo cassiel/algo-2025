@@ -13,6 +13,8 @@
 (def SEQ (atom {:sequences {} :messages nil}))
 (def PARAMS (atom {}))
 
+(deref PARAMS)
+
 ;; Messages out to Max:
 ;; "win" [name] [1/0]: open or close named window (audio, basic, enso)
 ;; "now" [...m...]: output message
@@ -49,6 +51,11 @@
 
 (go (<! (ctrl/restore :Enso.A 0))
     (<! (ctrl/restore :Enso.B 0)))
+
+(-> ["A" "B:C" "D"]
+    (as-> X (clojure.string/join "_" X))
+    (clojure.string/replace #":" "..")
+    keyword)
 
 ;; WINDOW CONTROL. Toggle works for VSTs, not Max windows.
 
@@ -115,10 +122,8 @@
                          [:Loop :Off]
                          [:Algorithm :Cactus])
 
-
-
-(keyword "A..B")
-(identity :A..B)
+(px/xmit-some-params-now :Other_Desert_Cities
+                         [:Algo03.._Speed_1 0.75])
 
 ;; Microtonic:
 
