@@ -192,7 +192,7 @@
 
 							}
  ],
-						"originid" : "pat-8",
+						"originid" : "pat-12",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
@@ -264,7 +264,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Algo03.._Speed_1\" : [ 19, 0.25, null ],\n\t\"Algo03.._Speed_2\" : [ 20, 0.75, null ],\n\t\"Algo05.._Speed\" : [ 65, 0.75, null ],\n\t\"Algorithm\" : [ 8, 0.400000005960464, null ],\n\t\"Diffuser.._Mix\" : [ 98, 0, null ],\n\t\"Mix\" : [ 4, 0.5, null ]\n}\n",
+					"code" : "{\n\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -605,7 +605,7 @@
 
 							}
  ],
-						"originid" : "pat-11",
+						"originid" : "pat-15",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -960,7 +960,7 @@
 
 							}
  ],
-						"originid" : "pat-13",
+						"originid" : "pat-17",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1692,7 +1692,7 @@
 
 											}
  ],
-										"originid" : "pat-53",
+										"originid" : "pat-69",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2388,7 +2388,7 @@
 
 											}
  ],
-										"originid" : "pat-119",
+										"originid" : "pat-151",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3074,7 +3074,7 @@
 
 							}
  ],
-						"originid" : "pat-15",
+						"originid" : "pat-19",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3348,7 +3348,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 30 19 0"
+									"text" : "0 28 49 0"
 								}
 
 							}
@@ -4309,7 +4309,7 @@
 
 							}
  ],
-						"originid" : "pat-137",
+						"originid" : "pat-169",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4443,6 +4443,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4870,7 +4872,7 @@
 
 			}
  ],
-		"originid" : "pat-6",
+		"originid" : "pat-10",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
 			"obj-13::obj-64::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],

@@ -10,10 +10,9 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(def SEQ (atom {:sequences {} :messages nil}))
-(def PARAMS (atom {}))
-
+;; Debug:
 (deref PARAMS)
+(-> PARAMS deref :Microtonic)
 
 ;; Messages out to Max:
 ;; "win" [name] [1/0]: open or close named window (audio, basic, enso)
@@ -33,46 +32,20 @@
 ;; "pname" [device] [param-name]: incoming parameter name
 ;; "pvalue" [device] [param-id] [value] [value-str]: incoming parameter value (such as change)
 
-;; Generic handler:
+;; *** WINDOW CONTROL
 
-(ctrl/handle :request
-             (fn [pos]
-               (let [{:keys [messages]} (swap! SEQ seq/process-request pos)]
-                 (doseq [x messages]
-                   (apply c/xmit :seq :add :main x))))
-
-             :pname
-             (fn [& args] (apply px/pname-in PARAMS args))
-
-             :pvalue
-             (fn [& args] (apply px/pvalue-in PARAMS args)))
-
-;; **PREFLIGHT**: snapshot recalls for loopers.
-
-(go (<! (ctrl/restore :Enso.A 0))
-    (<! (ctrl/restore :Enso.B 0)))
-
-(-> ["A" "B:C" "D"]
-    (as-> X (clojure.string/join "_" X))
-    (clojure.string/replace #":" "..")
-    keyword)
-
-;; WINDOW CONTROL. Toggle works for VSTs, not Max windows.
-
-(ctrl/window :seq 1)
-(ctrl/window :main 1)
 (ctrl/window :Microtonic)
 (ctrl/window :Enso.A)
 (ctrl/window :Enso.B)
 (ctrl/window :Other_Desert_Cities)
 (ctrl/window :Rift)
 (ctrl/window :Replika_XT)
-(ctrl/window :audio 0)
 
-(ctrl/plug-device :Microtonic 0)
-(ctrl/restore :Enso.A 0)
+(ctrl/window :seq)
+(ctrl/window :main 1)
+(ctrl/window :audio)
 
-;; Mixing
+;; *** MIX
 
 (ctrl/mix :* :* -40 1)
 
@@ -80,7 +53,7 @@
 (ctrl/mix :Enso.A :IO -40 5)
 
 (ctrl/mix :Microtonic :IO 0 5)
-(ctrl/mix :Microtonic :Enso.A 0 1)
+(ctrl/mix :Microtonic :Enso.B -40 1)
 (ctrl/mix :Enso.A :Other_Desert_Cities -10 5)
 (ctrl/mix :Microtonic :Other_Desert_Cities 0 1)
 (ctrl/mix :Other_Desert_Cities :IO 0 0)
