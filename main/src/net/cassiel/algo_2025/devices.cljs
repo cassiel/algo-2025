@@ -44,13 +44,19 @@
                                       named-notes])
                              (range 7))
                         (into {:ClockRat [:32 :16 :8]}))
-        ods        (let [times [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
-                                :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
-                                :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]]
-                     {:Algorithm [:Desert_Shores :Mecca :Cactus :Thermal :Mirage :Sky_Valley]
-                      :Loop      [:Off :On]
-                      :_Time_1   times
-                      :_Time_2   times})
+        ods        (let [times  [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
+                                 :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
+                                 :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]
+                         taps   (vec (map #(keyword (str (inc %))) (range 16)))
+                         speeds [:-2.0 :-1.5 :-1.0 :-0.5 :0 :+0.5 :+1.0 :+1.5 :+2.0]]
+                     {:Algorithm         [:Desert_Shores :Mecca :Cactus :Thermal :Mirage :Sky_Valley]
+                      :Loop              [:Off :On]
+                      :_Time_1           times
+                      :_Time_2           times
+                      :Algo05.._Speed    speeds
+                      :Algo04.._#_Taps_1 taps
+                      :Algo04.._#_Taps_2 taps
+                      })
         ]
     {:Replika_XT          replika-xt
      :Enso.A              enso

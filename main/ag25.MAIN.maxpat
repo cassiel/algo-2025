@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 156.0, 199.0, 803.0, 733.0 ],
+		"rect" : [ 210.0, 373.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,18 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 420.0, 290.0, 169.0, 23.0 ],
+					"text" : "script npm install ws"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -264,7 +276,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Length_Unit\" : [ 2, 1, null ],\n\t\"Mode_Quantize\" : [ 12, 1, null ]\n}\n",
+					"code" : "{\n\t\"Algo04.._#_Taps_1\" : [ 27, 0.119999997317791, null ],\n\t\"Algo04.._#_Taps_2\" : [ 28, 0.142857149243355, null ],\n\t\"Algorithm\" : [ 8, 0.600000023841858, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -3348,7 +3360,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "1 20 35 500"
+									"text" : "0 54 0 0"
 								}
 
 							}
@@ -4309,7 +4321,7 @@
 
 							}
  ],
-						"originid" : "pat-165",
+						"originid" : "pat-163",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4443,8 +4455,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4735,6 +4745,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"source" : [ "obj-42", 0 ]
 				}
@@ -4900,6 +4917,13 @@
 			}
 , 			{
 				"name" : "Note_Ctrl.maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Other Desert Cities.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",

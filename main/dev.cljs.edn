@@ -1,2 +1,2 @@
 {:target :nodejs
- :main   net.cassiel.khyal-live.core}
+ :main   net.cassiel.algo-2025.core}

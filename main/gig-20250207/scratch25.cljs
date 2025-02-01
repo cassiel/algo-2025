@@ -16,6 +16,11 @@
 
 (c/xmit :FOO :BAR)
 
+(name :A#_B)
+
+(keyword (str 2))
+
+
 ;; Messages out to Max:
 ;; "win" [name] [1/0]: open or close named window (audio, basic, enso)
 ;; "now" [...m...]: output message
