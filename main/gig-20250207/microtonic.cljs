@@ -10,16 +10,14 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(go
-  (<! (px/request-params s/PARAMS :Axon_2)))
+(go (<! (px/request-params s/PARAMS :Microtonic)))
 
-(ctrl/window :Axon_2)
+(ctrl/window :Microtonic 0)
 
-;; >>> OUTPUTS:
+(ctrl/mix :Microtonic :IO 0 10)
 
-(ctrl/mix :Axon_2 :IO -40 10)
+(ctrl/mix :Microtonic :Enso.A -40 1)
+(ctrl/mix :Microtonic :Enso.B -40 5)
 
-(ctrl/mix :Axon_2 :Enso.A -40 5)
-(ctrl/mix :Axon_2 :Enso.B -40 5)
-
-(ctrl/mix :Axon_2 :Other_Desert_Cities 0 5)
+(ctrl/makenote :Microtonic (+ 60 (rand-int 16)))
+(ctrl/mix :Microtonic :IO -40 10)

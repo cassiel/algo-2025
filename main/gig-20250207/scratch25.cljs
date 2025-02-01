@@ -127,3 +127,5 @@
 (c/alert "AAA")
 
 (c/error "OTHER" 1 2 3)
+
+:A.B

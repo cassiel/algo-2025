@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 169.0, 227.0, 803.0, 733.0 ],
+		"rect" : [ 106.0, 343.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -192,7 +192,7 @@
 
 							}
  ],
-						"originid" : "pat-12",
+						"originid" : "pat-6",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
@@ -264,7 +264,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\n}\n",
+					"code" : "{\n\t\"Levels.._Output_Level\" : [ 107, 1, null ],\n\t\"Time_1\" : [ 1, 0.418666660785675, null ],\n\t\"Time_2\" : [ 2, 0.445333302021027, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -605,7 +605,7 @@
 
 							}
  ],
-						"originid" : "pat-15",
+						"originid" : "pat-9",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -960,7 +960,7 @@
 
 							}
  ],
-						"originid" : "pat-17",
+						"originid" : "pat-11",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1234,7 +1234,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 88.0, 398.0, 1528.0, 777.0 ],
+						"rect" : [ 172.0, 478.0, 1528.0, 777.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1692,7 +1692,7 @@
 
 											}
  ],
-										"originid" : "pat-69",
+										"originid" : "pat-63",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2388,7 +2388,7 @@
 
 											}
  ],
-										"originid" : "pat-151",
+										"originid" : "pat-145",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3074,7 +3074,7 @@
 
 							}
  ],
-						"originid" : "pat-19",
+						"originid" : "pat-13",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3348,7 +3348,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 28 49 0"
+									"text" : "0 33 34 500"
 								}
 
 							}
@@ -4309,7 +4309,7 @@
 
 							}
  ],
-						"originid" : "pat-169",
+						"originid" : "pat-165",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4872,7 +4872,7 @@
 
 			}
  ],
-		"originid" : "pat-10",
+		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
 			"obj-13::obj-64::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],

@@ -41,8 +41,13 @@
                                       named-notes])
                              (range 7))
                         (into {:ClockRat [:32 :16 :8]}))
-        ods        {:Algorithm [:Desert_Shores :Mecca :Cactus :Thermal :Mirage :Sky_Valley]
-                    :Loop [:Off :On]}
+        ods        (let [times [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
+                                :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
+                                :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]]
+                     {:Algorithm [:Desert_Shores :Mecca :Cactus :Thermal :Mirage :Sky_Valley]
+                      :Loop [:Off :On]
+                      :Time_1 times
+                      :Time_2 times})
         ]
     {:Replika_XT          replika-xt
      :Enso.A              enso
