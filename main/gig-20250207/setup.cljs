@@ -24,6 +24,14 @@
              :pvalue
              (fn [& args] (apply px/pvalue-in s/PARAMS args)))
 
+;; >>> BULK PARAMETER REFLECTION.
+
+(go (<! (px/request-params s/PARAMS :Microtonic))
+    (<! (px/request-params s/PARAMS :Enso.A))
+    (<! (px/request-params s/PARAMS :Enso.B))
+    (<! (px/request-params s/PARAMS :Axon_2))
+    (<! (px/request-params s/PARAMS :Rift))
+    (<! (px/request-params s/PARAMS :Replika_XT)))
 
 ;; >>> MIX ZERO.
 

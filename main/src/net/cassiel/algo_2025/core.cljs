@@ -1,6 +1,7 @@
 (ns net.cassiel.algo-2025.core
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [cljs.core.async :as async :refer [<! >!]]))
+  (:require [cljs.core.async :as async :refer [<! >!]]
+            [cljs.core.async.interop :refer [<p!]]))
 
 (def max-api (js/require "max-api"))
 
@@ -30,7 +31,7 @@
   (if (keyword? x) (name x) x))
 
 (defn xmit [& args]
-  (apply var-outlet (map de-keyword args)))
+  (go (<p! (apply var-outlet (map de-keyword args)))))
 
 (defn alert [& args]
   (apply xmit :alert args))

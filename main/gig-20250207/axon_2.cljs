@@ -10,10 +10,8 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(go
-  (<! (px/request-params s/PARAMS :Axon_2)))
 
-(ctrl/window :Axon_2)
+(ctrl/window :Axon_2 0)
 
 ;; >>> OUTPUTS:
 

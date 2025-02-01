@@ -54,11 +54,15 @@
 (defn pname-in
   "Parameter message in. Clean up the possibly multi-part name (we could probably
    fix that in the MAX sprintf()), turn ':' into '..' so that it can be keywordised,
-   map to param ID with nil for numeric and string value."
-  [PARAMS device & name-parts]
+   map to param ID with nil for numeric and string value.
+   UPDATE: name should now be a single string (we aren't tokenising it using sprintf
+   any more, since it screws up leading-space names) - so no need to join, instead
+   we regex-replace spaces."
+  [PARAMS device name]
   (let [device-k (keyword device)
-        pname (-> name-parts
-                  (as-> X (clojure.string/join "_" X))
+        pname (-> name
+                  #_ (as-> X (clojure.string/join "_" X))
+                  (clojure.string/replace #" " "_")
                   (clojure.string/replace #":" "..")
                   keyword)
         P' (swap! PARAMS
@@ -86,7 +90,6 @@
   "Parameter value in by ID: update the parameter tracking data.
    Ignore if device or ID not (yet) known."
   [PARAMS device id value value-str]
-  (println id value value-str)
   (let [kdevice (keyword device)]
     (swap! PARAMS
            (fn [P]
@@ -130,7 +133,7 @@
   (doseq [[pname v] args]
     (let [v' (if (keyword? v) (map-value dev pname v) v)]
       (if v' (do (c/xmit :now dev :param pname v')
-                 (async/timeout 500))
+                 (async/timeout 50))
           (do (c/error "Cannot map" dev pname ":" v)
               (async/timeout 0))))))
 

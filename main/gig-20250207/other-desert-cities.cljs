@@ -11,9 +11,7 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(go (<! (px/request-params s/PARAMS :Other_Desert_Cities)))
-
-(ctrl/window :Other_Desert_Cities 1)
+(ctrl/window :Other_Desert_Cities 0)
 
 (px/get-matching s/PARAMS :Other_Desert_Cities #"Level")
 (px/get-matching-to-dict s/PARAMS :Other_Desert_Cities #"Output|Time")
@@ -25,14 +23,13 @@
 
 (-> dev/param-enums :Other_Desert_Cities keys)
 (-> dev/param-enums :Other_Desert_Cities :Algorithm)
-(-> dev/param-enums :Other_Desert_Cities :Time_1)
+(-> dev/param-enums :Other_Desert_Cities :_Time_1)
 
 (px/xmit-some-params-now :Other_Desert_Cities
                          [:Loop :Off]
                          [:Algorithm :Cactus])
 
 (px/xmit-some-params-now :Other_Desert_Cities
-                         [:Time_1 :1.1])
-
+                         [:_Time_1 :1.2])
 
 (ctrl/mix :Other_Desert_Cities :IO 0 5)

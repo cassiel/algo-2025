@@ -14,6 +14,8 @@
 (deref PARAMS)
 (-> PARAMS deref :Microtonic)
 
+(c/xmit :FOO :BAR)
+
 ;; Messages out to Max:
 ;; "win" [name] [1/0]: open or close named window (audio, basic, enso)
 ;; "now" [...m...]: output message

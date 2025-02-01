@@ -11,16 +11,19 @@
     (vec (map (comp keyword as-str) (range f (inc t))))))
 
 (def param-enums
-  (let [enso       (let [speeds {:-2.0 0.574349164962769
-                                 :-1.0 0.675480008125305
-                                 :-0.5 0.718441188335419
-                                 :+0.5 0.794417858123779
-                                 :+1.0 0.828613519668579
-                                 :+2.0 0.891301214694977}]
-                     {:Mode        [:Record :Overdub :Play :Stop]
-                      :Link_Speeds [:Off :On]
-                      :Play_Speed  speeds
-                      :Rec_Speed   speeds})
+  (let [enso       (let [speeds  {:-2.0 0.574349164962769
+                                  :-1.0 0.675480008125305
+                                  :-0.5 0.718441188335419
+                                  :+0.5 0.794417858123779
+                                  :+1.0 0.828613519668579
+                                  :+2.0 0.891301214694977}
+                         lengths [:Free :1.16 :1.8 :1.4 :1.2 :Measure]]
+                     {:Mode          [:Record :Overdub :Play :Stop]
+                      :Link_Speeds   [:Off :On]
+                      :Play_Speed    speeds
+                      :Rec_Speed     speeds
+                      :Mode_Quantize lengths
+                      :Length_Unit   lengths})
         replika-xt {:Modulation_Mode [:No_FX :Phaser :Flanger
                                       :Chorus :Freq_Shifter
                                       :Filter :Pitch_Shifter
@@ -45,9 +48,9 @@
                                 :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
                                 :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]]
                      {:Algorithm [:Desert_Shores :Mecca :Cactus :Thermal :Mirage :Sky_Valley]
-                      :Loop [:Off :On]
-                      :Time_1 times
-                      :Time_2 times})
+                      :Loop      [:Off :On]
+                      :_Time_1   times
+                      :_Time_2   times})
         ]
     {:Replika_XT          replika-xt
      :Enso.A              enso

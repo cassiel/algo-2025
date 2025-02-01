@@ -10,8 +10,6 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(go (<! (px/request-params s/PARAMS :Microtonic)))
-
 (ctrl/window :Microtonic 0)
 
 (ctrl/mix :Microtonic :IO 0 10)

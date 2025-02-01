@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 106.0, 343.0, 803.0, 733.0 ],
+		"rect" : [ 156.0, 199.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -264,7 +264,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Levels.._Output_Level\" : [ 107, 1, null ],\n\t\"Time_1\" : [ 1, 0.418666660785675, null ],\n\t\"Time_2\" : [ 2, 0.445333302021027, null ]\n}\n",
+					"code" : "{\n\t\"Length_Unit\" : [ 2, 1, null ],\n\t\"Mode_Quantize\" : [ 12, 1, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -1234,7 +1234,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 172.0, 478.0, 1528.0, 777.0 ],
+						"rect" : [ 60.0, 155.0, 1528.0, 777.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3348,7 +3348,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 33 34 500"
+									"text" : "1 20 35 500"
 								}
 
 							}
@@ -4875,13 +4875,13 @@
 		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
-			"obj-13::obj-64::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
-			"obj-13::obj-65::obj-28" : [ "vst~[2]", "vst~[1]", 0 ],
+			"obj-13::obj-64::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
+			"obj-13::obj-65::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
 			"obj-13::obj-66::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
-			"obj-13::obj-67::obj-28" : [ "vst~[1]", "vst~[1]", 0 ],
-			"obj-13::obj-6::obj-28" : [ "vst~[12]", "vst~[1]", 0 ],
-			"obj-13::obj-8::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
-			"obj-13::obj-9::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
+			"obj-13::obj-67::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
+			"obj-13::obj-6::obj-28" : [ "vst~[5]", "vst~[1]", 0 ],
+			"obj-13::obj-8::obj-28" : [ "vst~[4]", "vst~[1]", 0 ],
+			"obj-13::obj-9::obj-28" : [ "vst~[3]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
 			"parameterbanks" : 			{
