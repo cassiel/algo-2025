@@ -5,7 +5,7 @@
 (def
   ^{:doc "Channels incorporates all devices and IO routes."}
   channel-names
-  [:IO :Microtonic :Axon_2 :Other_Desert_Cities
+  [:IO :Microtonic :Axon_2 :ODS
    :Enso.A :Enso.B :Rift :Replika_XT])
 
 (defn- notes-on-octave [octave]
@@ -73,9 +73,9 @@
                       :Algo04.._#_Taps_2 taps
                       })
         ]
-    {:Replika_XT          replika-xt
-     :Enso.A              enso
-     :Enso.B              enso
-     :Basic               basic
-     :Axon                axon
-     :Other_Desert_Cities ods}))
+    {:Replika_XT replika-xt
+     :Enso.A     enso
+     :Enso.B     enso
+     :Basic      basic
+     :Axon       axon
+     :ODS        ods}))

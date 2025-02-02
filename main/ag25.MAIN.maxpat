@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 210.0, 373.0, 803.0, 733.0 ],
+		"rect" : [ 288.0, 232.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -276,7 +276,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Algo04.._#_Taps_1\" : [ 27, 0.119999997317791, null ],\n\t\"Algo04.._#_Taps_2\" : [ 28, 0.142857149243355, null ],\n\t\"Algorithm\" : [ 8, 0.600000023841858, null ]\n}\n",
+					"code" : "{\n\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -1246,7 +1246,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 60.0, 155.0, 1528.0, 777.0 ],
+						"rect" : [ 569.0, 529.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1287,7 +1287,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 1050.0, 240.0, 161.0, 23.0 ],
+									"patching_rect" : [ 1065.0, 240.0, 161.0, 23.0 ],
 									"style" : "cassiel.abstraction",
 									"text" : "ag25.VST3 Replika_XT"
 								}
@@ -1301,7 +1301,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 930.0, 240.0, 115.0, 23.0 ],
+									"patching_rect" : [ 945.0, 240.0, 115.0, 23.0 ],
 									"style" : "cassiel.abstraction",
 									"text" : "ag25.VST3 Rift"
 								}
@@ -1315,9 +1315,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 795.0, 240.0, 131.0, 23.0 ],
+									"patching_rect" : [ 810.0, 270.0, 169.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Enso.B"
+									"text" : "ag25.VST3 Enso.B Enso"
 								}
 
 							}
@@ -1819,9 +1819,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 417.0, 240.0, 230.0, 23.0 ],
+									"patching_rect" : [ 420.0, 240.0, 260.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Other_Desert_Cities"
+									"text" : "ag25.VST3 ODS Other_Desert_Cities"
 								}
 
 							}
@@ -1833,9 +1833,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 660.0, 240.0, 131.0, 23.0 ],
+									"patching_rect" : [ 630.0, 280.0, 169.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Enso.A"
+									"text" : "ag25.VST3 Enso.A Enso"
 								}
 
 							}
@@ -2548,8 +2548,8 @@
 									"numinlets" : 9,
 									"numoutlets" : 9,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 15.0, 130.0, 612.0, 23.0 ],
-									"text" : "route audio Microtonic Axon_2 Other_Desert_Cities Enso.A Enso.B Rift Replika_XT"
+									"patching_rect" : [ 15.0, 130.0, 490.0, 23.0 ],
+									"text" : "route audio Microtonic Axon_2 ODS Enso.A Enso.B Rift Replika_XT"
 								}
 
 							}
@@ -2573,8 +2573,8 @@
 									"numinlets" : 9,
 									"numoutlets" : 9,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 390.0, 50.0, 596.0, 23.0 ],
-									"text" : "route mix Microtonic Axon_2 Other_Desert_Cities Enso.A Enso.B Rift Replika_XT"
+									"patching_rect" : [ 390.0, 50.0, 474.0, 23.0 ],
+									"text" : "route mix Microtonic Axon_2 ODS Enso.A Enso.B Rift Replika_XT"
 								}
 
 							}
@@ -3360,7 +3360,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 54 0 0"
+									"text" : "0 7 32 500"
 								}
 
 							}
@@ -4455,6 +4455,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4892,13 +4894,13 @@
 		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
-			"obj-13::obj-64::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
+			"obj-13::obj-64::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
 			"obj-13::obj-65::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
-			"obj-13::obj-66::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-66::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
 			"obj-13::obj-67::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
-			"obj-13::obj-6::obj-28" : [ "vst~[5]", "vst~[1]", 0 ],
-			"obj-13::obj-8::obj-28" : [ "vst~[4]", "vst~[1]", 0 ],
-			"obj-13::obj-9::obj-28" : [ "vst~[3]", "vst~[1]", 0 ],
+			"obj-13::obj-6::obj-28" : [ "vst~[12]", "vst~[1]", 0 ],
+			"obj-13::obj-8::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
+			"obj-13::obj-9::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
 			"parameterbanks" : 			{
@@ -4959,13 +4961,6 @@
 			}
 , 			{
 				"name" : "ag25.Strip-_.maxpat",
-				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ag25.StripPostfix.maxpat",
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",

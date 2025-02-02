@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 412.0, 245.0, 947.0, 701.0 ],
+		"rect" : [ 742.0, 1727.0, 947.0, 701.0 ],
 		"default_fontname" : "Input Mono",
 		"gridonopen" : 2,
 		"gridsize" : [ 15.0, 5.0 ],
@@ -20,13 +20,65 @@
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 615.0, 305.0, 195.0, 23.0 ],
+					"text" : "#1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-38",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "" ],
+					"patching_rect" : [ 616.0, 270.0, 47.0, 23.0 ],
+					"text" : "sel 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-35",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 735.0, 360.0, 150.0, 54.0 ],
+					"text" : "We could just use spaces in the argument..."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "InputMono",
+					"id" : "obj-32",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 675.0, 85.0, 225.0, 78.0 ],
+					"presentation_linecount" : 4,
+					"style" : "c.comment",
+					"text" : "#1 = coding name (e.g. \"ODS\", \"Enso.A\"). #2 = actual VST name (e.g. \"Other Desert Cities\", \"Enso\"), defaults to #1."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-36",
 					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 135.0, 575.0, 180.0, 37.0 ],
+					"patching_rect" : [ 165.0, 590.0, 180.0, 37.0 ],
 					"text" : "prepend pname #1"
 				}
 
@@ -83,24 +135,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-30",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 614.0, 326.0, 138.0, 23.0 ],
-					"text" : "ag25.StripPostfix"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-29",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 765.0, 360.0, 54.0, 23.0 ],
+					"patching_rect" : [ 765.0, 425.0, 54.0, 23.0 ],
 					"text" : "unplug"
 				}
 
@@ -126,7 +166,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 615.0, 210.0, 62.0, 23.0 ],
+					"patching_rect" : [ 615.0, 200.0, 62.0, 23.0 ],
 					"text" : "sel 1 0"
 				}
 
@@ -139,8 +179,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 245.0, 154.0, 23.0 ],
-					"text" : "#1"
+					"patching_rect" : [ 615.0, 235.0, 195.0, 23.0 ],
+					"text" : "#2"
 				}
 
 			}
@@ -152,7 +192,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "int", "int" ],
-					"patching_rect" : [ 615.0, 180.0, 70.0, 23.0 ],
+					"patching_rect" : [ 615.0, 170.0, 70.0, 23.0 ],
 					"text" : "change 0"
 				}
 
@@ -258,7 +298,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 210.0, 510.0, 180.0, 37.0 ],
+					"patching_rect" : [ 240.0, 545.0, 180.0, 37.0 ],
 					"text" : "prepend pvalue #1"
 				}
 
@@ -376,7 +416,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 360.0, 100.0, 23.0 ],
+					"patching_rect" : [ 615.0, 420.0, 100.0, 23.0 ],
 					"text" : "prepend plug"
 				}
 
@@ -388,7 +428,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 615.0, 290.0, 100.0, 23.0 ],
+					"patching_rect" : [ 615.0, 375.0, 100.0, 23.0 ],
 					"style" : "cassiel.abstraction",
 					"text" : "ag25.Strip-_"
 				}
@@ -428,7 +468,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 45.0, 495.0, 85.0, 23.0 ],
+					"patching_rect" : [ 45.0, 540.0, 85.0, 23.0 ],
 					"text" : "mc.pack~ 2"
 				}
 
@@ -446,12 +486,12 @@
 					"numoutlets" : 8,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "signal", "signal", "", "list", "int", "", "", "" ],
-					"patching_rect" : [ 45.0, 460.0, 230.0, 23.0 ],
+					"patching_rect" : [ 45.0, 505.0, 230.0, 23.0 ],
 					"save" : [ "#N", "vst~", "loaduniqueid", 0, "@prefer", "VST3", "@autosave", 0, ";" ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
 							"parameter_invisible" : 1,
-							"parameter_longname" : "vst~[7]",
+							"parameter_longname" : "vst~[6]",
 							"parameter_modmode" : 0,
 							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "vst~[1]",
@@ -465,6 +505,40 @@
 						"parameter_enable" : 1,
 						"parameter_mappable" : 0,
 						"prefer" : "VST3"
+					}
+,
+					"snapshot" : 					{
+						"filetype" : "C74Snapshot",
+						"version" : 2,
+						"minorversion" : 0,
+						"name" : "snapshotlist",
+						"origin" : "vst~",
+						"type" : "list",
+						"subtype" : "Undefined",
+						"embed" : 1,
+						"snapshotlist" : 						{
+							"current_snapshot" : -1,
+							"entries" : [ 								{
+									"filetype" : "C74Snapshot",
+									"version" : 2,
+									"minorversion" : 0,
+									"name" : "Microtonic",
+									"origin" : "Microtonic.vst3info",
+									"type" : "VST3",
+									"subtype" : "Instrument",
+									"embed" : 0,
+									"fileref" : 									{
+										"name" : "Microtonic",
+										"filename" : "Microtonic.maxsnap",
+										"filepath" : "~/Documents/Max 9/Snapshots",
+										"filepos" : -1,
+										"snapshotfileid" : "f14160cfe3c5cc830dc3affc8c33ad0b"
+									}
+
+								}
+ ]
+						}
+
 					}
 ,
 					"text" : "vst~ @prefer VST3 @autosave 0",
@@ -506,7 +580,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 545.0, 30.0, 30.0 ]
+					"patching_rect" : [ 45.0, 590.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -535,7 +609,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
-					"midpoints" : [ 624.5, 417.0, 54.5, 417.0 ],
+					"midpoints" : [ 624.5, 458.44921875, 54.5, 458.44921875 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
@@ -619,7 +693,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-30", 0 ],
+					"destination" : [ "obj-12", 0 ],
 					"source" : [ "obj-2", 0 ]
 				}
 
@@ -640,7 +714,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-2", 0 ],
+					"destination" : [ "obj-38", 0 ],
 					"source" : [ "obj-23", 0 ]
 				}
 
@@ -711,7 +785,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
-					"midpoints" : [ 774.5, 427.7578125, 54.5, 427.7578125 ],
+					"midpoints" : [ 774.5, 475.73828125, 54.5, 475.73828125 ],
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -720,13 +794,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-3", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-30", 0 ]
 				}
 
 			}
@@ -767,6 +834,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-38", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-40", 0 ],
+					"source" : [ "obj-38", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
@@ -776,6 +857,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-11", 1 ],
 					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-40", 0 ]
 				}
 
 			}
@@ -843,7 +931,7 @@
 
 			}
  ],
-		"originid" : "pat-97",
+		"originid" : "pat-81",
 		"styles" : [ 			{
 				"name" : "c.comment",
 				"default" : 				{

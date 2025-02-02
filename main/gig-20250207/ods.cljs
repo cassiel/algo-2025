@@ -12,30 +12,28 @@
             [goog.string.format]))
 
 ;; Preset state:
-(ctrl/restore :Other_Desert_Cities 0)
+(ctrl/restore :ODS 0)
 
-(ctrl/window :Other_Desert_Cities 0)
+(ctrl/window :ODS 1)
 
-(px/request-params s/PARAMS :Other_Desert_Cities)
+(px/get-matching-to-dict s/PARAMS :ODS #"Speed")
+(px/get-matching-to-dict s/PARAMS :ODS #"Output|Time")
+(px/get-matching-to-dict s/PARAMS :ODS #"Algorithm|Taps")
+(px/get-matching-to-dict s/PARAMS :ODS #"Crossfeed|Mix|Regen")
 
-(px/get-matching-to-dict s/PARAMS :Other_Desert_Cities #"Speed")
-(px/get-matching-to-dict s/PARAMS :Other_Desert_Cities #"Output|Time")
-(px/get-matching-to-dict s/PARAMS :Other_Desert_Cities #"Algorithm|Taps")
-(px/get-matching-to-dict s/PARAMS :Other_Desert_Cities #"Crossfeed|Mix|Regen")
-
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Mix 1]
                          [:Regen 0.5])
 
 
-(-> dev/param-enums :Other_Desert_Cities keys)
-(-> dev/param-enums :Other_Desert_Cities :Algorithm)
-(-> dev/param-enums :Other_Desert_Cities :_Time_1)
-(-> dev/param-enums :Other_Desert_Cities :Algo04.._#_Taps_1)
+(-> dev/param-enums :ODS keys)
+(-> dev/param-enums :ODS :Algorithm)
+(-> dev/param-enums :ODS :_Time_1)
+(-> dev/param-enums :ODS :Algo04.._#_Taps_1)
 
 ;; DESERT SHORES (1)
 
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Loop :Off]
                          [:Algorithm :Desert_Shores]
                          [:_Time_1 :1.4]
@@ -47,35 +45,34 @@
 
 ;; THERMAL (4)
 
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Loop :Off]
                          [:Algorithm :Thermal]
                          [:Algo04.._#_Taps_1 0.12]
                          [:Mix 1])
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:_Time_2 :1.4D])
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Regen 0.4])
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Algo04.._Crossfeed 0]
                          [:Algo04.._#_Taps_2 :8])
 
 ;; MIRAGE (5)
 
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Loop :Off]
                          [:Algorithm :Mirage]
                          [:Mix 1])
 
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Loop :Off]
                          [:Algorithm :Mirage]
                          [:Algo05.._Speed +1.0])
 
-(px/xmit-some-params-now :Other_Desert_Cities
+(px/xmit-some-params-now :ODS
                          [:Algo05.._Speed :-0.5])
 
-((ctrl/mix :Other_Desert_Cities :IO 0 5)
+(ctrl/mix :ODS :IO 0 5)
 
-
- ctrl/mix :Other_Desert_Cities :Enso.A 0 10)
+(ctrl/mix :ODS :Enso.A -40 10)
