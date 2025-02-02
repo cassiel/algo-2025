@@ -1,7 +1,7 @@
 (ns net.cassiel.algo-2025.control
   "General control routines: windows, unload/reload, ..."
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [net.cassiel.algo-2025.config :as cfg]
+  (:require [net.cassiel.algo-2025.devices :as dev]
             [net.cassiel.algo-2025.core :as c]
             [net.cassiel.algo-2025.params :as px]
             [cljs.core.async :as async :refer [<! >!]]))
@@ -51,8 +51,8 @@
 
 (defn mix
   ([f t level secs]
-   (let [f' (if (= f :*) cfg/channel-names f)
-         t' (if (= t :*) cfg/channel-names t)]
+   (let [f' (if (= f :*) dev/channel-names f)
+         t' (if (= t :*) dev/channel-names t)]
      (cond
        (seqable? f')
        (doseq [f1 f'] (mix f1 t level secs))
@@ -61,8 +61,8 @@
        (doseq [t1 t'] (mix f t1 level secs))
 
        :else
-       (when-first [fc (px/positions #{f} cfg/channel-names)]
-         (when-first [tc (px/positions #{t} cfg/channel-names)]
+       (when-first [fc (px/positions #{f} dev/channel-names)]
+         (when-first [tc (px/positions #{t} dev/channel-names)]
            (c/xmit :now :mix :set fc tc level secs))))))
 
   ([f t level] (mix f t level 0)))

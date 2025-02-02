@@ -1,0 +1,20 @@
+-*- mode: org; mode: visual-line; -*-
+#+STARTUP: indent
+
+* algo-2025
+** Device Change
+*** Max
+
+- Labels subpatcher driving TextBrick (loadbang)
+- Labels in crosspatch
+- Audio subpatcher: routes and VST instances
+
+*** ClojureScript
+
+- params.cljs has a spec incorporating channel names
+- devices.cljs has array of channel names (devices + IO)
+- devices.cljs establishes symbolic parameter values per device (partial/optional)
+
+** TO DO
+
+- We could have a single =ag25.Break= in the multichannel loopback connection

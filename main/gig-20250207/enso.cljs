@@ -20,7 +20,7 @@
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
 
-(ctrl/window :Enso.A 1)
+(ctrl/window :Enso.A 0)
 
 (ctrl/mix :Enso.B :IO -40 10)
 
@@ -78,5 +78,5 @@
   (<! (ctrl/mix :Enso.A :IO 0 10))
   (<! (ctrl/mix :Enso.B :IO -40 10)))
 
-(ctrl/mix :Enso.A :IO -40 10)
+(ctrl/mix :Enso.A :IO 0 10)
 (ctrl/mix :Enso.B :IO -20 10)

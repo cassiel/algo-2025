@@ -2,6 +2,21 @@
   (:require [goog.string :as gstring]
             [goog.string.format]))
 
+(def
+  ^{:doc "Channels incorporates all devices and IO routes."}
+  channel-names
+  [:IO :Microtonic :Axon_2 :Other_Desert_Cities
+   :Enso.A :Enso.B :Rift :Replika_XT])
+
+(defn- notes-on-octave [octave]
+  (map (fn [s] (goog.string/format "%s%d" s octave))
+       ["C" "C#" "D" "D#" "E" "F" "F#" "G" "G#" "A" "A#" "B"]))
+
+(def named-notes (->> (map notes-on-octave (range -2 7))
+                      flatten
+                      (take (+ (* 8 12) 5))
+                      (map keyword)))
+
 (defn- symbolic-range
   "Inclusive range. `0` is `:0`, all others are signed `+n` or `-n`."
   [f t]

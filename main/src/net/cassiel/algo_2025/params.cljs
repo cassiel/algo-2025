@@ -25,15 +25,6 @@
 (s/def ::param-tracking (s/keys :opt-un [::Microtonic ::Axon_2 ::Other_Desert_Cities
                                          ::Enso.A ::Enso.B ::Rift ::Replika_XT]))
 
-(defn notes-on-octave [octave]
-  (map (fn [s] (goog.string/format "%s%d" s octave))
-       ["C" "C#" "D" "D#" "E" "F" "F#" "G" "G#" "A" "A#" "B"]))
-
-(def named-notes (->> (map notes-on-octave (range -2 7))
-                      flatten
-                      (take (+ (* 8 12) 5))
-                      (map keyword)))
-
 (defn positions
   [pred coll]
   (seq (keep-indexed (fn [idx x] (when (pred x) idx))
@@ -48,7 +39,7 @@
         (/ (first idx) (dec (count vals)))))))
 
 (defn pitch [note-name]
-  (when-some [idx (positions #{note-name} named-notes)]
+  (when-some [idx (positions #{note-name} dev/named-notes)]
     (first idx)))
 
 (defn pname-in
@@ -75,10 +66,7 @@
                           #_ (as-> X
                                  (cx/conformer ::param-tracking X))))))]
 
-    ;; Filter_MINI has a huge number of "MIDI CC [...]" params. Don't try to get the
-    ;; initial values, it'll cause trouble.
-    (when-not (= (first name-parts) "MIDI")
-      (.outlet c/max-api "now" device "get" (dec (get-in P' [device-k :counter]))))))
+    (.outlet c/max-api "now" device "get" (dec (get-in P' [device-k :counter])))))
 
 (defn lookup-param-name [param-map id]
   (let [map-seq (seq param-map)

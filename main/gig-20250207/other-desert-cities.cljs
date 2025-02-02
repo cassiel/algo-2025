@@ -14,7 +14,7 @@
 ;; Preset state:
 (ctrl/restore :Other_Desert_Cities 0)
 
-(ctrl/window :Other_Desert_Cities 1)
+(ctrl/window :Other_Desert_Cities 0)
 
 (px/request-params s/PARAMS :Other_Desert_Cities)
 
@@ -25,7 +25,7 @@
 
 (px/xmit-some-params-now :Other_Desert_Cities
                          [:Mix 1]
-                         [:Regen 0])
+                         [:Regen 0.5])
 
 
 (-> dev/param-enums :Other_Desert_Cities keys)
@@ -41,7 +41,7 @@
                          [:_Time_1 :1.4]
                          [:_Time_2 :1.4D]
                          [:Mix 1]
-                         [:Regen 0.2]
+                         [:Regen 0]
                          )
 
 
@@ -75,4 +75,7 @@
 (px/xmit-some-params-now :Other_Desert_Cities
                          [:Algo05.._Speed :-0.5])
 
-(ctrl/mix :Other_Desert_Cities :IO 0 5)
+((ctrl/mix :Other_Desert_Cities :IO 0 5)
+
+
+ ctrl/mix :Other_Desert_Cities :Enso.A 0 10)
