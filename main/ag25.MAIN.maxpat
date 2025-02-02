@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 288.0, 232.0, 803.0, 733.0 ],
+		"rect" : [ 89.0, 213.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -408,7 +408,7 @@
 					"id" : "obj-36",
 					"ignoreclick" : 1,
 					"incolormap" : "none",
-					"inlabels" : [ "IO", "Microtonic", "Axon_2", "Other_Desert_Cities", "Enso.A", "Enso.B", "Rift", "Replika_XT" ],
+					"inlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Replika_XT" ],
 					"labelwidth" : 95.0,
 					"maxclass" : "crosspatch",
 					"maxgain" : 2.0,
@@ -417,7 +417,7 @@
 					"numoutlets" : 2,
 					"numouts" : 8,
 					"outcolormap" : "none",
-					"outlabels" : [ "IO", "Microtonic", "Axon_2", "Other_Desert_Cities", "Enso.A", "Enso.B", "Rift", "Replika_XT" ],
+					"outlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Replika_XT" ],
 					"outlettype" : [ "", "dictionary" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 900.0, 260.0, 330.0, 220.0 ],
@@ -890,7 +890,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1500.0, 472.0, 790.0, 529.0 ],
+						"rect" : [ 1164.0, 798.0, 927.0, 538.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -932,8 +932,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 742.0, 37.0 ],
-									"text" : "setdirection down, setalignment right, setsize 8, clear, append Replika_XT, append Rift, append Enso.B, append Enso.A, append Other_Desert_Cities, append Axon_2, append Microtonic, append IO"
+									"patching_rect" : [ 50.0, 100.0, 871.0, 37.0 ],
+									"text" : "setdirection down, setalignment right, setsize 8, clear, append Replika_XT, append Enso.B, append Enso.A, append ODS.B, append ODS.A, append Axon_2, append Microtonic, append IO"
 								}
 
 							}
@@ -1246,11 +1246,12 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 569.0, 529.0, 1429.0, 709.0 ],
+						"rect" : [ 633.0, 545.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
+						"objectsnaponopen" : 0,
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
 						"boxes" : [ 							{
@@ -1287,7 +1288,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 1065.0, 240.0, 161.0, 23.0 ],
+									"patching_rect" : [ 1080.0, 280.0, 161.0, 23.0 ],
 									"style" : "cassiel.abstraction",
 									"text" : "ag25.VST3 Replika_XT"
 								}
@@ -1301,9 +1302,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 945.0, 240.0, 115.0, 23.0 ],
+									"patching_rect" : [ 900.0, 280.0, 169.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Rift"
+									"text" : "ag25.VST3 Enso.B Enso"
 								}
 
 							}
@@ -1315,9 +1316,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 810.0, 270.0, 169.0, 23.0 ],
+									"patching_rect" : [ 780.0, 240.0, 169.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Enso.B Enso"
+									"text" : "ag25.VST3 Enso.A Enso"
 								}
 
 							}
@@ -1819,9 +1820,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 420.0, 240.0, 260.0, 23.0 ],
+									"patching_rect" : [ 375.0, 240.0, 276.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 ODS Other_Desert_Cities"
+									"text" : "ag25.VST3 ODS.A Other_Desert_Cities"
 								}
 
 							}
@@ -1833,9 +1834,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 630.0, 280.0, 169.0, 23.0 ],
+									"patching_rect" : [ 600.0, 280.0, 276.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Enso.A Enso"
+									"text" : "ag25.VST3 ODS.B Other_Desert_Cities"
 								}
 
 							}
@@ -1847,7 +1848,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 270.0, 240.0, 131.0, 23.0 ],
+									"patching_rect" : [ 255.0, 280.0, 131.0, 23.0 ],
 									"style" : "cassiel.abstraction",
 									"text" : "ag25.VST3 Axon_2"
 								}
@@ -2548,8 +2549,8 @@
 									"numinlets" : 9,
 									"numoutlets" : 9,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 15.0, 130.0, 490.0, 23.0 ],
-									"text" : "route audio Microtonic Axon_2 ODS Enso.A Enso.B Rift Replika_XT"
+									"patching_rect" : [ 15.0, 130.0, 512.0, 23.0 ],
+									"text" : "route audio Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Replika_XT"
 								}
 
 							}
@@ -2573,8 +2574,8 @@
 									"numinlets" : 9,
 									"numoutlets" : 9,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 390.0, 50.0, 474.0, 23.0 ],
-									"text" : "route mix Microtonic Axon_2 ODS Enso.A Enso.B Rift Replika_XT"
+									"patching_rect" : [ 390.0, 50.0, 497.0, 23.0 ],
+									"text" : "route mix Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Replika_XT"
 								}
 
 							}
@@ -3360,7 +3361,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 7 32 500"
+									"text" : "0 25 54 0"
 								}
 
 							}
@@ -4899,7 +4900,7 @@
 			"obj-13::obj-66::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
 			"obj-13::obj-67::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
 			"obj-13::obj-6::obj-28" : [ "vst~[12]", "vst~[1]", 0 ],
-			"obj-13::obj-8::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
+			"obj-13::obj-8::obj-28" : [ "vst~[13]", "vst~[1]", 0 ],
 			"obj-13::obj-9::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],

@@ -5,8 +5,8 @@
 (def
   ^{:doc "Channels incorporates all devices and IO routes."}
   channel-names
-  [:IO :Microtonic :Axon_2 :ODS
-   :Enso.A :Enso.B :Rift :Replika_XT])
+  [:IO :Microtonic :Axon_2 :ODS.A :ODS.B
+   :Enso.A :Enso.B :Replika_XT])
 
 (defn- notes-on-octave [octave]
   (map (fn [s] (goog.string/format "%s%d" s octave))
@@ -78,4 +78,5 @@
      :Enso.B     enso
      :Basic      basic
      :Axon       axon
-     :ODS        ods}))
+     :ODS.A      ods
+     :ODS.B      ods}))

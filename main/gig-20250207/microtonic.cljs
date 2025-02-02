@@ -17,8 +17,10 @@
 (ctrl/mix :Microtonic :Enso.A -40 10)
 (ctrl/mix :Microtonic :Enso.B -40 5)
 
-(ctrl/mix :Microtonic :Other_Desert_Cities 0 1)
+(ctrl/mix :Microtonic :ODS.A 0 1)
+(ctrl/mix :Microtonic :ODS.B 0 1)
 
 
 (ctrl/makenote :Microtonic (+ 60 (rand-int 16)))
-(ctrl/mix :Microtonic :IO 0 10)
+(ctrl/mix :Microtonic :IO -40 10)
+(ctrl/mix :Microtonic :* -40 10)

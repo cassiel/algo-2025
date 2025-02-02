@@ -17,13 +17,13 @@
 (s/def ::device (s/keys :opt-un [::params ::counter]))
 (s/def ::Microtonic ::device)
 (s/def ::Axon_2 ::device)
-(s/def ::ODS ::device)
+(s/def ::ODS.A ::device)
+(s/def ::ODS.B ::device)
 (s/def ::Enso.A ::device)
 (s/def ::Enso.B ::device)
-(s/def ::Rift ::device)
 (s/def ::Replika_XT ::device)
-(s/def ::param-tracking (s/keys :opt-un [::Microtonic ::Axon_2 ::ODS
-                                         ::Enso.A ::Enso.B ::Rift ::Replika_XT]))
+(s/def ::param-tracking (s/keys :opt-un [::Microtonic ::Axon_2 ::ODS.A ::ODS.B
+                                         ::Enso.A ::Enso.B ::Replika_XT]))
 
 (defn positions
   [pred coll]

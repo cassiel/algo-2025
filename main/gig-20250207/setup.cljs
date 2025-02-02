@@ -30,8 +30,8 @@
     (<! (px/request-params s/PARAMS :Enso.A))
     (<! (px/request-params s/PARAMS :Enso.B))
     (<! (px/request-params s/PARAMS :Axon_2))
-    (<! (px/request-params s/PARAMS :ODS))
-    (<! (px/request-params s/PARAMS :Rift))
+    (<! (px/request-params s/PARAMS :ODS.A))
+    (<! (px/request-params s/PARAMS :ODS.B))
     (<! (px/request-params s/PARAMS :Replika_XT)))
 
 ;; >>> MIX ZERO.
