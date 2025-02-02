@@ -19,7 +19,7 @@
 (ctrl/window :ODS.A 1)
 (ctrl/window :ODS.B 1)
 
-(px/get-matching-to-dict s/PARAMS :ODS.A #"Speed")
+(px/get-matching-to-dict s/PARAMS :ODS.A #"Speed|Heads")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Output|Time")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Algorithm|Taps")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Crossfeed|Mix|Regen")
@@ -33,14 +33,15 @@
 (-> dev/param-enums :ODS.A :Algorithm)
 (-> dev/param-enums :ODS.A :_Time_1)
 (-> dev/param-enums :ODS.A :Algo04.._#_Taps_1)
+(-> dev/param-enums :ODS.A :Algo05.._Speed)
 
 ;; DESERT SHORES (1) - delay line
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Desert_Shores]
-                         [:_Time_1 :1.4]
-                         [:_Time_2 :1.4D]
+                         [:_Time_1 :1.8]
+                         [:_Time_2 :1.8D]
                          [:Mix 1]
                          [:Regen 0]
                          )
@@ -65,18 +66,20 @@
 
 ;; MIRAGE (5) - tumble
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Mirage]
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.B
-                         [:Algo05.._Speed :+0.5])
+                         [:Algo05.._Speed :+0.5]
+                         )
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :-0.5])
+                         [:Algo05.._Speed :0]
+                         [:Algo05.._Heads :4])
 
-(ctrl/mix :ODS.A :IO -40 5)
+(ctrl/mix :ODS.A :IO 0 5)
 (ctrl/mix :ODS.B :IO 0 5)
 
 (ctrl/mix :ODS.B :Enso.A -40 10)

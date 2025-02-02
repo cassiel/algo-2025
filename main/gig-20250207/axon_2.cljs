@@ -16,7 +16,8 @@
 
 (ctrl/mix :Axon_2 :IO -40 10)
 
-(ctrl/mix :Axon_2 :Enso.A -40 5)
-(ctrl/mix :Axon_2 :Enso.B -40 5)
+(go
+  (<! (ctrl/mix :Axon_2 :Enso.A -40 5))
+  (<! (ctrl/mix :Axon_2 :Enso.B -40 5)))
 
-(ctrl/mix :Axon_2 :Other_Desert_Cities 0 5)
+(ctrl/mix :Axon_2 :ODS.A 0 5)

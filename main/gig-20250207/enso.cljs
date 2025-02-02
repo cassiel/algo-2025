@@ -20,15 +20,15 @@
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
 
-(ctrl/window :Enso.A 1)
+(ctrl/window :Enso.A 0)
 
 (ctrl/mix :Enso.B :IO -40 10)
 
 (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :Overdub))
+                                 :ClearLoop))
 
 (ctrl/makenote :Enso.B (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :Play))
+                                 :Overdub))
 
 (px/get-matching s/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict s/PARAMS :Enso.A #"Quant|Unit")
@@ -64,6 +64,8 @@
 ;; ---
 (px/xmit-some-params-now :Enso.A
                          [:Mode_Quantize :Free])
+(px/xmit-some-params-now :Enso.A
+                         [:Saturation 0.5])
 (go
   (<! (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
                                        :Overdub)))
@@ -72,11 +74,11 @@
                                        :Play))))
 ;; ---
 
-(px/xmit-some-params-now :Enso.A [:Dub_In_Place 0])
+(px/xmit-some-params-now :Enso.A [:Dub_In_Place 1])
 
 (go
   (<! (ctrl/mix :Enso.A :IO 0 10))
   (<! (ctrl/mix :Enso.B :IO -40 10)))
 
-(ctrl/mix :Enso.A :IO 0 10)
 (ctrl/mix :Enso.A :IO -40 10)
+(ctrl/mix :Enso.B :IO 0 10)

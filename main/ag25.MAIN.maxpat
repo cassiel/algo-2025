@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 89.0, 213.0, 803.0, 733.0 ],
+		"rect" : [ 148.0, 233.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -276,7 +276,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\n}\n",
+					"code" : "{\n\t\"Delay_Mode\" : [ 10, 0, null ],\n\t\"Mix\" : [ 6, 1, null ],\n\t\"MixLock\" : [ 55, 0, null ],\n\t\"Modulation_Mode\" : [ 18, 0.857142865657806, null ],\n\t\"PS_Mix\" : [ 19, 1, null ],\n\t\"PS_Mode\" : [ 24, 0, null ],\n\t\"Time_Mode\" : [ 2, 0.333333343267441, null ],\n\t\"Dual_Mode\" : [ 42, 0, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -1246,7 +1246,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 633.0, 545.0, 1429.0, 709.0 ],
+						"rect" : [ 294.0, 326.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1705,7 +1705,7 @@
 
 											}
  ],
-										"originid" : "pat-63",
+										"originid" : "pat-59",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2401,7 +2401,7 @@
 
 											}
  ],
-										"originid" : "pat-145",
+										"originid" : "pat-133",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3087,7 +3087,7 @@
 
 							}
  ],
-						"originid" : "pat-13",
+						"originid" : "pat-15",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3361,7 +3361,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 25 54 0"
+									"text" : "0 52 10 500"
 								}
 
 							}
@@ -4322,7 +4322,7 @@
 
 							}
  ],
-						"originid" : "pat-163",
+						"originid" : "pat-151",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4456,8 +4456,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

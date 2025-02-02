@@ -117,6 +117,7 @@
   (c/xmit :now (name dev) i)
   (async/timeout 1000))
 
+;; TODO: need to space this out and return a final timeout channel.
 (defn xmit-some-params-now [dev & args]
   (doseq [[pname v] args]
     (let [v' (if (keyword? v) (map-value dev pname v) v)]
