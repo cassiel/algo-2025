@@ -16,7 +16,7 @@
 (go (<! (ctrl/restore :ODS.A 0)
         (ctrl/restore :ODS.B 0)))
 
-(ctrl/window :ODS.A 1)
+(ctrl/window :ODS.A 0)
 (ctrl/window :ODS.B 1)
 
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Speed|Heads")
@@ -49,20 +49,21 @@
 
 ;; THERMAL (4) - multitap 16
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Thermal]
-                         [:Regen 0]
-                         [:Algo04.._#_Taps_1 0.12]
+                         [:Regen 0.5]
+                         [:Algo04.._#_Taps_1 :2]
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
-                         [:_Time_2 :1.4D])
+                         [:_Time_2 :1.2]
+                         [:_Time_2 :1.2D])
 (px/xmit-some-params-now :ODS.B
                          [:Regen 0.5])
 (px/xmit-some-params-now :ODS.A
-                         [:Algo04.._Crossfeed 0]
-                         [:Algo04.._#_Taps_2 :8])
+                         [:Algo04.._Crossfeed 0.5]
+                         [:Algo04.._#_Taps_2 :3])
 
 ;; MIRAGE (5) - tumble
 

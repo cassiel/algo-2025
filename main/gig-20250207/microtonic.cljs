@@ -11,6 +11,7 @@
             [goog.string.format]))
 
 (ctrl/window :Microtonic 0)
+(ctrl/restore :Microtonic 0)
 
 (ctrl/mix :Microtonic :IO 0 10)
 
@@ -22,5 +23,7 @@
 
 
 (ctrl/makenote :Microtonic (+ 60 (rand-int 16)))
-(ctrl/mix :Microtonic :IO -40 10)
+(ctrl/mix :Microtonic :IO 0 10)
 (ctrl/mix :Microtonic :* -40 10)
+
+#_ (-> s/PARAMS deref :Microtonic :params)

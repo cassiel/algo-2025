@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 148.0, 233.0, 803.0, 733.0 ],
+		"rect" : [ 173.0, 272.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -204,7 +204,7 @@
 
 							}
  ],
-						"originid" : "pat-6",
+						"originid" : "pat-337",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
@@ -276,7 +276,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Delay_Mode\" : [ 10, 0, null ],\n\t\"Mix\" : [ 6, 1, null ],\n\t\"MixLock\" : [ 55, 0, null ],\n\t\"Modulation_Mode\" : [ 18, 0.857142865657806, null ],\n\t\"PS_Mix\" : [ 19, 1, null ],\n\t\"PS_Mode\" : [ 24, 0, null ],\n\t\"Time_Mode\" : [ 2, 0.333333343267441, null ],\n\t\"Dual_Mode\" : [ 42, 0, null ]\n}\n",
+					"code" : "{\n\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -617,7 +617,7 @@
 
 							}
  ],
-						"originid" : "pat-9",
+						"originid" : "pat-340",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -972,7 +972,7 @@
 
 							}
  ],
-						"originid" : "pat-11",
+						"originid" : "pat-342",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1705,7 +1705,7 @@
 
 											}
  ],
-										"originid" : "pat-59",
+										"originid" : "pat-388",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2401,7 +2401,7 @@
 
 											}
  ],
-										"originid" : "pat-133",
+										"originid" : "pat-462",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3087,7 +3087,7 @@
 
 							}
  ],
-						"originid" : "pat-15",
+						"originid" : "pat-344",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3361,7 +3361,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 52 10 500"
+									"text" : "0 17 1 500"
 								}
 
 							}
@@ -4322,7 +4322,7 @@
 
 							}
  ],
-						"originid" : "pat-151",
+						"originid" : "pat-480",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4456,6 +4456,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4890,16 +4892,16 @@
 
 			}
  ],
-		"originid" : "pat-4",
+		"originid" : "pat-335",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
-			"obj-13::obj-64::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
+			"obj-13::obj-64::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
 			"obj-13::obj-65::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
 			"obj-13::obj-66::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
 			"obj-13::obj-67::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
 			"obj-13::obj-6::obj-28" : [ "vst~[12]", "vst~[1]", 0 ],
 			"obj-13::obj-8::obj-28" : [ "vst~[13]", "vst~[1]", 0 ],
-			"obj-13::obj-9::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-9::obj-28" : [ "vst~[14]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
 			"parameterbanks" : 			{
@@ -4910,7 +4912,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Microtonic.maxsnap",
+				"name" : "Microtonic[2].maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
