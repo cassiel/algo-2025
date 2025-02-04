@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 173.0, 272.0, 803.0, 733.0 ],
+		"rect" : [ 114.0, 231.0, 803.0, 733.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -204,7 +204,7 @@
 
 							}
  ],
-						"originid" : "pat-337",
+						"originid" : "pat-6",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
@@ -617,7 +617,7 @@
 
 							}
  ],
-						"originid" : "pat-340",
+						"originid" : "pat-9",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -972,7 +972,7 @@
 
 							}
  ],
-						"originid" : "pat-342",
+						"originid" : "pat-11",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1246,7 +1246,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 294.0, 326.0, 1429.0, 709.0 ],
+						"rect" : [ 175.0, 364.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1705,7 +1705,7 @@
 
 											}
  ],
-										"originid" : "pat-388",
+										"originid" : "pat-57",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -2401,7 +2401,7 @@
 
 											}
  ],
-										"originid" : "pat-462",
+										"originid" : "pat-131",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -3087,7 +3087,7 @@
 
 							}
  ],
-						"originid" : "pat-344",
+						"originid" : "pat-13",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3361,7 +3361,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 17 1 500"
+									"text" : "0 59 14 500"
 								}
 
 							}
@@ -4322,7 +4322,7 @@
 
 							}
  ],
-						"originid" : "pat-480",
+						"originid" : "pat-149",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4892,15 +4892,15 @@
 
 			}
  ],
-		"originid" : "pat-335",
+		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
-			"obj-13::obj-64::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-64::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
 			"obj-13::obj-65::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
-			"obj-13::obj-66::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
+			"obj-13::obj-66::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
 			"obj-13::obj-67::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
-			"obj-13::obj-6::obj-28" : [ "vst~[12]", "vst~[1]", 0 ],
-			"obj-13::obj-8::obj-28" : [ "vst~[13]", "vst~[1]", 0 ],
+			"obj-13::obj-6::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
+			"obj-13::obj-8::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
 			"obj-13::obj-9::obj-28" : [ "vst~[14]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
@@ -4912,7 +4912,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Microtonic[2].maxsnap",
+				"name" : "Microtonic_Starter[2].maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
@@ -4927,6 +4927,13 @@
 			}
 , 			{
 				"name" : "Other Desert Cities.maxsnap",
+				"bootpath" : "~/Documents/Max 9/Snapshots",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
+				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Replika XT.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",

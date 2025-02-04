@@ -16,17 +16,15 @@
 (go (<! (ctrl/restore :ODS.A 0)
         (ctrl/restore :ODS.B 0)))
 
-(ctrl/window :ODS.A 0)
+(ctrl/window :ODS.A 1)
 (ctrl/window :ODS.B 1)
 
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Speed|Heads")
+(px/get-matching-to-dict s/PARAMS :ODS.A #"Saturation")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Output|Time")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Algorithm|Taps")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Crossfeed|Mix|Regen")
 
-(px/xmit-some-params-now :ODS.A
-                         [:Mix 1]
-                         [:Regen 0.5])
 
 
 (-> dev/param-enums :ODS.A keys)
@@ -44,6 +42,17 @@
                          [:_Time_2 :1.8D]
                          [:Mix 1]
                          [:Regen 0]
+                         )
+
+(px/xmit-some-params-now :ODS.A
+                         [:Mix 1]
+                         [:Regen 0]
+                         [:_Time_1 :1.4]
+                         [:_Time_2 :1.4D]
+                         [:Algo01.._Saturation 1])
+
+(px/xmit-some-params-now :ODS.A
+                         [:Regen 0.5]
                          )
 
 
@@ -72,18 +81,18 @@
                          [:Algorithm :Mirage]
                          [:Mix 1])
 
-(px/xmit-some-params-now :ODS.B
-                         [:Algo05.._Speed :+0.5]
+(px/xmit-some-params-now :ODS.A
+                         [:Algo05.._Speed :0]
                          )
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :0]
+                         [:Algo05.._Speed :+2.0]
                          [:Algo05.._Heads :4])
 
 (ctrl/mix :ODS.A :IO 0 5)
 (ctrl/mix :ODS.B :IO 0 5)
 
-(ctrl/mix :ODS.B :Enso.A -40 10)
+(ctrl/mix :ODS.A :Enso.A 0 10)
 
 (ctrl/mix :ODS.A :* -40 5)
 
