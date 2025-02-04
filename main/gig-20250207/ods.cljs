@@ -16,9 +16,6 @@
 (go (<! (ctrl/restore :ODS.A 0)
         (ctrl/restore :ODS.B 0)))
 
-(ctrl/window :ODS.A 1)
-(ctrl/window :ODS.B 1)
-
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Speed|Heads")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Saturation")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Output|Time")
@@ -45,6 +42,13 @@
                          )
 
 (px/xmit-some-params-now :ODS.A
+                         [:_Time_1 :1.4]
+                         [:_Time_2 :1.8D]
+                         [:Mix 1]
+                         [:Regen 0.5]
+                         )
+
+(px/xmit-some-params-now :ODS.A
                          [:Mix 1]
                          [:Regen 0]
                          [:_Time_1 :1.4]
@@ -61,8 +65,9 @@
 (px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Thermal]
-                         [:Regen 0.5]
-                         [:Algo04.._#_Taps_1 :2]
+                         [:Regen 0.25]
+                         [:Algo04.._#_Taps_1 :4]
+                         [:Algo04.._#_Taps_1 :3]
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
@@ -76,21 +81,20 @@
 
 ;; MIRAGE (5) - tumble
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Loop :Off]
                          [:Algorithm :Mirage]
                          [:Mix 1])
 
-(px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :0]
-                         )
+(px/xmit-some-params-now :ODS.B
+                         [:Algo05.._Speed :0])
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Algo05.._Speed :+2.0]
                          [:Algo05.._Heads :4])
 
-(ctrl/mix :ODS.A :IO 0 5)
-(ctrl/mix :ODS.B :IO 0 5)
+(ctrl/mix :ODS.A :IO -40 5)
+(ctrl/mix :ODS.B :IO 0 10)
 
 (ctrl/mix :ODS.A :Enso.A 0 10)
 

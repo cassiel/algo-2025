@@ -11,17 +11,13 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(ctrl/window :Replika_XT 1)
-
 (ctrl/restore :Replika_XT 0)
 
 (-> dev/param-enums :Replika_XT keys)
-(-> dev/param-enums :ODS.A :Algorithm)
-(-> dev/param-enums :ODS.A :_Time_1)
 
 
 (px/get-matching-to-dict s/PARAMS :Replika_XT #"Mix|Mode")
-(px/get-matching-to-dict s/PARAMS :Replika_XT #"Shift")
+(px/get-matching-to-dict s/PARAMS :Replika_XT #"Time")
 
 ;; BROKEN: need to space
 #_ (go
@@ -40,8 +36,9 @@
 ;;(px/xmit-some-params-now :Replika_XT [:Modulation_Mode :Filter])
 
 (px/xmit-some-params-now :Replika_XT
-                         [:PS_Shift_L :+12]
-                         [:PS_Shift_R :-7]
+                         [:PS_Shift_L :+7]
+                         [:PS_Shift_R :+12]
+                         [:Delay_Time 0.7]
                          [:PS_Mix 1]
                          [:Mix 1]
                          )
@@ -60,4 +57,7 @@
 
 (ctrl/mix :Replika_XT :Enso.A 0 10)
 (ctrl/mix :Replika_XT :ODS.A 0 10)
+(ctrl/mix :Replika_XT :ODS.B 0 10)
 (ctrl/mix :Replika_XT :IO -40 10)
+
+(ctrl/mix :Replika_XT :* -40 5)

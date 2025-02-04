@@ -20,13 +20,10 @@
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
 
-(ctrl/window :Enso.B 1)
-(ctrl/window :Enso.A 0)
-
 (ctrl/mix :Enso.B :IO -20 10)
 
 (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :ClearLoop))
+                                 :Overdub))
 
 (ctrl/makenote :Enso.B (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
                                  :Play))
@@ -79,9 +76,12 @@
 
 (px/xmit-some-params-now :Enso.B [:Dub_In_Place 1])
 
+
 (go
   (<! (ctrl/mix :Enso.A :IO 0 10))
   (<! (ctrl/mix :Enso.B :IO -40 10)))
 
-(ctrl/mix :Enso.A :IO 0 10)
-(ctrl/mix :Enso.B :IO -40 10)
+(ctrl/mix :Enso.A :IO -40 10)
+((ctrl/mix :Enso.B :IO -40 10))
+
+(ctrl/mix :Enso.A :Replika_XT -40 10)

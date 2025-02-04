@@ -34,6 +34,15 @@
     (<! (px/request-params s/PARAMS :ODS.B))
     (<! (px/request-params s/PARAMS :Replika_XT)))
 
+(c/xmit :toggle :dsp 1)
+(c/xmit :toggle :transport 1)
+
+(go (<! (async/timeout 500)))
+
+(go (<! (c/xmit :toggle :transport 0))
+    (<! (async/timeout 250))
+    (<! (c/xmit :toggle :dsp 0)))
+
 ;; >>> MIX ZERO.
 
 (ctrl/mix :* :* -40 10)
@@ -43,3 +52,13 @@
 (ctrl/window :seq)
 (ctrl/window :main 1)
 (ctrl/window :audio)
+
+;; >>> DEVICE WINDOWS.
+
+(ctrl/window :Axon_2 0)
+(ctrl/window :Enso.B 0)
+(ctrl/window :Enso.A 0)
+(ctrl/window :Microtonic 0)
+(ctrl/window :ODS.A 0)
+(ctrl/window :ODS.B 0)
+(ctrl/window :Replika_XT 0)
