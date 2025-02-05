@@ -16,12 +16,10 @@
   (map (fn [pos] [pos :Microtonic :note (+ 36 pitch-offset) 64 0]) positions))
 
 (->> (reset! s/SEQ {:sequences (-> {:b0 {1 (row 0 [0 0.5])
-                                         2 (row 0 [0.5 0.75])
+                                         2 (row 0 nil #_ [0.5 0.75])
                                          3 (row 0 [0 0.75])
-                                         4 (row 0 [0.5])}
-                                    :bs {1 (row 0 [0 0.5])
-                                         2 (row 0 [0 0.75])
-                                         4 (row 0 [0.25 0.5])}
+                                         4 (row 0 nil #_ [0 0.5])}
+                                    :bs {1 (row 0 [0 0.5])}
                                     :ds {1 (row 1 [0 0.75])
                                          4 (row 1 [0 0.75])}
                                     :hh {2 (row 2 [0])
@@ -29,19 +27,20 @@
                                     :sc {2 (row 3 [0.5])
                                          4 (row 3 [0.5])}
                                     :sd {1 (row 4 [])}
-                                    :h2 {1 (row 5 [0 0.25])}
-                                    :ch {2 (row 6 [0 0.25])}
+                                    :h2 {1 (row 5 [0 0.5])}
+                                    :ch {2 (row 6 [0 0.5])}
                                     :rd {1 (row 7 [0.25])
                                          3 (row 7 [0.75])}
                                     }
+                                   #_ (dissoc :b0)
                                    (dissoc :bs)
                                    (dissoc :ds)
                                    #_ (dissoc :hh)
-                                   #_ (dissoc :sc)
+                                   (dissoc :sc)
                                    (dissoc :sd)
-                                   #_ (dissoc :hh2)
+                                   (dissoc :h2)
                                    #_ (dissoc :ch)
-                                   (dissoc :rd)
+                                   #_ (dissoc :rd)
                                    )
                     :messages nil})
      (cx/conformer ::seq/sequencer-state))

@@ -38,7 +38,7 @@
 (px/xmit-some-params-now :Replika_XT
                          [:PS_Shift_L :+7]
                          [:PS_Shift_R :+12]
-                         [:Delay_Time 0.7]
+                         [:Delay_Time 0.4]
                          [:PS_Mix 1]
                          [:Mix 1]
                          )
@@ -58,6 +58,6 @@
 (ctrl/mix :Replika_XT :Enso.A 0 10)
 (ctrl/mix :Replika_XT :ODS.A 0 10)
 (ctrl/mix :Replika_XT :ODS.B 0 10)
-(ctrl/mix :Replika_XT :IO -40 10)
+(ctrl/mix :Replika_XT :IO -10 5)
 
 (ctrl/mix :Replika_XT :* -40 5)

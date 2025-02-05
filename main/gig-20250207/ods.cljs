@@ -83,7 +83,9 @@
 
 (px/xmit-some-params-now :ODS.B
                          [:Loop :Off]
+                         [:Algo05.._Speed :+1]
                          [:Algorithm :Mirage]
+                         [:Algo05.._Heads :1]
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.B
@@ -95,6 +97,8 @@
 
 (ctrl/mix :ODS.A :IO -40 5)
 (ctrl/mix :ODS.B :IO 0 10)
+
+(ctrl/mix :ODS.B :Replika_XT -40 5)
 
 (ctrl/mix :ODS.A :Enso.A 0 10)
 

@@ -34,10 +34,12 @@
     (<! (px/request-params s/PARAMS :ODS.B))
     (<! (px/request-params s/PARAMS :Replika_XT)))
 
-(c/xmit :toggle :dsp 1)
-(c/xmit :toggle :transport 1)
-
-(go (<! (async/timeout 500)))
+(go
+  (<! (c/xmit :toggle :dsp 1))
+  (<! (async/timeout 500))
+  (<! (c/xmit :toggle :rewind 1))
+  (<! (async/timeout 100))
+  (<! (c/xmit :toggle :transport 1)))
 
 (go (<! (c/xmit :toggle :transport 0))
     (<! (async/timeout 250))

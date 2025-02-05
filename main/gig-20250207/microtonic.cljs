@@ -14,8 +14,8 @@
 
 (ctrl/mix :Microtonic :IO -40 10)
 
-(ctrl/mix :Microtonic :Enso.A -40 5)
-(ctrl/mix :Microtonic :Enso.B -40 5)
+(ctrl/mix :Microtonic :Enso.A -40 10)
+(ctrl/mix :Microtonic :Enso.B 0 5)
 
 (ctrl/mix :Microtonic :ODS.A -40 10)
 (ctrl/mix :Microtonic :ODS.B 0 1)

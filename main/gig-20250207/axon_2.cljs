@@ -18,4 +18,5 @@
   (<! (ctrl/mix :Axon_2 :Enso.A -40 5))
   (<! (ctrl/mix :Axon_2 :Enso.B -40 5)))
 
-(ctrl/mix :Axon_2 :ODS.A 0 5)
+(ctrl/mix :Axon_2 :Enso.A -40 5)
+(ctrl/mix :Axon_2 :ODS.A -40 10)
