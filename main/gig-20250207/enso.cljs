@@ -75,11 +75,11 @@
 ;; ---
 
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 0])
-(px/xmit-some-params-now :Enso.B [:Dub_In_Place 1])
+(px/xmit-some-params-now :Enso.A [:Dub_In_Place 1])
 
 
 (go
-  (<! (ctrl/mix :Enso.A :IO 0 10))
+  (<! (ctrl/mix :Enso.A :IO 5 10))
   (<! (ctrl/mix :Enso.B :IO -40 10)))
 
 (ctrl/mix :Enso.A :IO -40 10)

@@ -35,10 +35,10 @@
 (px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Desert_Shores]
-                         [:_Time_1 :1.8]
+                         [:_Time_1 :1.4]
                          [:_Time_2 :1.8D]
                          [:Mix 1]
-                         [:Regen 0]
+                         [:Regen 0.25]
                          )
 
 (px/xmit-some-params-now :ODS.A
@@ -65,7 +65,7 @@
 (px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Thermal]
-                         [:Regen 0.25]
+                         [:Regen 0.5]
                          [:Algo04.._#_Taps_1 :4]
                          [:Algo04.._#_Taps_1 :3]
                          [:Mix 1])
@@ -92,15 +92,15 @@
                          [:Algo05.._Speed :0])
 
 (px/xmit-some-params-now :ODS.B
-                         [:Algo05.._Speed :+2.0]
-                         [:Algo05.._Heads :4])
+                         [:Algo05.._Speed :+1.0]
+                         [:Algo05.._Heads :2])
 
 (ctrl/mix :ODS.A :IO -40 5)
 (ctrl/mix :ODS.B :IO 0 10)
 
 (ctrl/mix :ODS.B :Replika_XT -40 5)
 
-(ctrl/mix :ODS.A :Enso.A 0 10)
+(ctrl/mix :ODS.A :Enso.A -40 10)
 
 (ctrl/mix :ODS.A :* -40 5)
 

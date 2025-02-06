@@ -16,8 +16,8 @@
   (map (fn [pos] [pos :Microtonic :note (+ 36 pitch-offset) 64 0]) positions))
 
 (->> (reset! s/SEQ {:sequences (-> {:b0 {1 (row 0 [0 0.5])
-                                         2 (row 0 nil #_ [0.5 0.75])
-                                         3 (row 0 [0 0.75])
+                                         2 (row 0 [0.5])
+                                         3 (row 0 [0.75])
                                          4 (row 0 nil #_ [0 0.5])}
                                     :bs {1 (row 0 [0 0.5])}
                                     :ds {1 (row 1 [0 0.75])
@@ -35,12 +35,12 @@
                                    #_ (dissoc :b0)
                                    (dissoc :bs)
                                    (dissoc :ds)
-                                   #_ (dissoc :hh)
-                                   (dissoc :sc)
+                                   (dissoc :hh)
+                                   #_ (dissoc :sc)
                                    (dissoc :sd)
-                                   (dissoc :h2)
-                                   #_ (dissoc :ch)
-                                   #_ (dissoc :rd)
+                                   #_ (dissoc :h2)
+                                   (dissoc :ch)
+                                   (dissoc :rd)
                                    )
                     :messages nil})
      (cx/conformer ::seq/sequencer-state))
