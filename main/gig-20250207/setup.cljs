@@ -53,13 +53,13 @@
 
 (ctrl/window :seq)
 (ctrl/window :main 1)
-(ctrl/window :audio)
+(ctrl/window :audio 1)
 
 ;; >>> DEVICE WINDOWS.
 
 (ctrl/window :Axon_2 0)
 (ctrl/window :Enso.B 0)
-(ctrl/window :Enso.A 0)
+(ctrl/window :Enso.A 1)
 (ctrl/window :Microtonic 0)
 (ctrl/window :ODS.A 0)
 (ctrl/window :ODS.B 0)

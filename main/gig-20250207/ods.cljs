@@ -76,8 +76,8 @@
 (px/xmit-some-params-now :ODS.B
                          [:Regen 0.5])
 (px/xmit-some-params-now :ODS.A
-                         [:Algo04.._Crossfeed 0.5]
-                         [:Algo04.._#_Taps_2 :3])
+                         [:Algo04.._Crossfeed 0.7]
+                         [:Algo04.._#_Taps_2 :5])
 
 ;; MIRAGE (5) - tumble
 
@@ -95,12 +95,12 @@
                          [:Algo05.._Speed :+1.0]
                          [:Algo05.._Heads :2])
 
-(ctrl/mix :ODS.A :IO -40 5)
+(ctrl/mix :ODS.A :IO 0 5)
 (ctrl/mix :ODS.B :IO 0 10)
 
 (ctrl/mix :ODS.B :Replika_XT -40 5)
 
-(ctrl/mix :ODS.A :Enso.A -40 10)
+(ctrl/mix :ODS.A :Enso.A 0 10)
 
 (ctrl/mix :ODS.A :* -40 5)
 

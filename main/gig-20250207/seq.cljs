@@ -33,8 +33,8 @@
                                          3 (row 7 [0.75])}
                                     }
                                    #_ (dissoc :b0)
-                                   (dissoc :bs)
-                                   (dissoc :ds)
+                                   #_ (dissoc :bs)
+                                   #_ (dissoc :ds)
                                    (dissoc :hh)
                                    #_ (dissoc :sc)
                                    (dissoc :sd)

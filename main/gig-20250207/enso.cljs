@@ -23,7 +23,7 @@
 (px/xmit-some-params-now :Enso.A
                          [:Link_Speeds :Off]
                          [:Input_Level 1]
-                         [:Play_Speed :+1.0]
+                         [:Play_Speed :+2.0]
                          [:Rec_Speed :+2.0]
                          [:Dry_Level 0]
                          [:Dub_In_Place 0]
@@ -82,7 +82,7 @@
   (<! (ctrl/mix :Enso.A :IO 5 10))
   (<! (ctrl/mix :Enso.B :IO -40 10)))
 
-(ctrl/mix :Enso.A :IO -40 10)
+(ctrl/mix :Enso.A :IO 0 10)
 (ctrl/mix :Enso.B :IO -40 10)
 (ctrl/mix :Enso.B :ODS.B 0 5)
 

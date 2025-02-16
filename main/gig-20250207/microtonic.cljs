@@ -12,10 +12,10 @@
 
 (ctrl/restore :Microtonic 0)
 
-(ctrl/mix :Microtonic :IO 0 10)
+(ctrl/mix :Microtonic :IO 0 5)
 
-(ctrl/mix :Microtonic :Enso.A 0 5)
-(ctrl/mix :Microtonic :Enso.B 0 5)
+(ctrl/mix :Microtonic :Enso.A -40 5)
+(ctrl/mix :Microtonic :Enso.B -40 5)
 
 (ctrl/mix :Microtonic :ODS.A 0 10)
 (ctrl/mix :Microtonic :ODS.B 0 1)
