@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 4,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 259.0, 195.0, 813.0, 719.0 ],
+		"rect" : [ 88.0, 130.0, 813.0, 719.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -199,7 +199,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -281,15 +281,13 @@
 
 							}
  ],
-						"originid" : "pat-6",
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ]
 					}
 ,
 					"patching_rect" : [ 270.0, 275.0, 62.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"editing_bgcolor" : [ 0.517647058823529, 0.517647058823529, 0.517647058823529, 1.0 ],
-						"fontname" : "Input Mono",
-						"globalpatchername" : ""
+						"fontname" : "Input Mono"
 					}
 ,
 					"text" : "p Alert"
@@ -525,7 +523,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -629,7 +627,6 @@
 											"parameter_mmax" : 6.0,
 											"parameter_mmin" : -70.0,
 											"parameter_modmode" : 0,
-											"parameter_osc_name" : "<default>",
 											"parameter_shortname" : "master",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
@@ -694,7 +691,6 @@
 
 							}
  ],
-						"originid" : "pat-9",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -921,7 +917,6 @@
 							"parameter_longname" : "live.tab",
 							"parameter_mmax" : 3,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "live.tab",
 							"parameter_type" : 2,
 							"parameter_unitstyle" : 9
@@ -944,7 +939,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
 					"patching_rect" : [ 525.0, 15.0, 92.0, 23.0 ],
-					"text" : "mc.adc~ 3 3"
+					"text" : "mc.adc~ 1 1"
 				}
 
 			}
@@ -961,7 +956,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1049,7 +1044,6 @@
 
 							}
  ],
-						"originid" : "pat-11",
 						"styles" : [ 							{
 								"name" : "cassiel",
 								"default" : 								{
@@ -1080,7 +1074,6 @@
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "Anonymous Pro",
-						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 						"style" : "cassiel"
 					}
@@ -1164,8 +1157,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 555.0, 170.0, 24.0, 24.0 ],
-					"svg" : ""
+					"patching_rect" : [ 555.0, 170.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -1216,7 +1208,6 @@
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
 							"parameter_modmode" : 0,
-							"parameter_osc_name" : "<default>",
 							"parameter_shortname" : "in.level",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4
@@ -1276,8 +1267,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 15.0, 15.0, 35.199999999999989, 35.199999999999989 ],
-					"svg" : ""
+					"patching_rect" : [ 15.0, 15.0, 35.199999999999989, 35.199999999999989 ]
 				}
 
 			}
@@ -1317,13 +1307,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 175.0, 364.0, 1429.0, 709.0 ],
+						"rect" : [ 165.0, 315.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1411,7 +1401,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1782,7 +1772,6 @@
 
 											}
  ],
-										"originid" : "pat-57",
 										"styles" : [ 											{
 												"name" : "c.comment",
 												"default" : 												{
@@ -1841,7 +1830,6 @@
 									"patching_rect" : [ 1260.0, 395.0, 108.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"fontname" : "InputMono",
-										"globalpatchername" : "",
 										"style" : "cassiel"
 									}
 ,
@@ -1943,7 +1931,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 4,
+											"revision" : 6,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2478,7 +2466,6 @@
 
 											}
  ],
-										"originid" : "pat-131",
 										"styles" : [ 											{
 												"name" : "cassiel",
 												"default" : 												{
@@ -2529,7 +2516,6 @@
 										"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 										"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 										"fontname" : "Anonymous Pro",
-										"globalpatchername" : "",
 										"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 										"style" : "cassiel"
 									}
@@ -3164,7 +3150,6 @@
 
 							}
  ],
-						"originid" : "pat-13",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -3292,7 +3277,6 @@
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "Anonymous Pro",
-						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 						"style" : "cassiel"
 					}
@@ -3327,7 +3311,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 4,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3348,8 +3332,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 630.0, 90.0, 24.0, 24.0 ],
-									"svg" : ""
+									"patching_rect" : [ 630.0, 90.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -3438,7 +3421,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 24 12 500"
+									"text" : "1 10 27 0"
 								}
 
 							}
@@ -3884,8 +3867,7 @@
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 435.0, 360.0, 24.0, 24.0 ],
-									"style" : "c.comment",
-									"svg" : ""
+									"style" : "c.comment"
 								}
 
 							}
@@ -4399,7 +4381,6 @@
 
 							}
  ],
-						"originid" : "pat-149",
 						"styles" : [ 							{
 								"name" : "c.comment",
 								"default" : 								{
@@ -4463,7 +4444,6 @@
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
 						"fontname" : "Anonymous Pro",
-						"globalpatchername" : "",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 						"style" : "cassiel"
 					}
@@ -4533,8 +4513,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -5004,16 +4982,8 @@
 
 			}
  ],
-		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
-			"obj-13::obj-64::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
-			"obj-13::obj-65::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
-			"obj-13::obj-66::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
-			"obj-13::obj-67::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
-			"obj-13::obj-6::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
-			"obj-13::obj-8::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
-			"obj-13::obj-9::obj-28" : [ "vst~[14]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
 			"parameterbanks" : 			{
