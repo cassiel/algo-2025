@@ -21,9 +21,9 @@
 (s/def ::ODS.B ::device)
 (s/def ::Enso.A ::device)
 (s/def ::Enso.B ::device)
-(s/def ::Replika_XT ::device)
+(s/def ::Discord4 ::device)
 (s/def ::param-tracking (s/keys :opt-un [::Microtonic ::Axon_2 ::ODS.A ::ODS.B
-                                         ::Enso.A ::Enso.B ::Replika_XT]))
+                                         ::Enso.A ::Enso.B ::Discord4]))
 
 (defn positions
   [pred coll]

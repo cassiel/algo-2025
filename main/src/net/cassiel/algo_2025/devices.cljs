@@ -39,6 +39,7 @@
                       :Rec_Speed     speeds
                       :Mode_Quantize lengths
                       :Length_Unit   lengths})
+        ;; Replika XT currently unused.
         replika-xt {:Modulation_Mode [:No_FX :Phaser :Flanger
                                       :Chorus :Freq_Shifter
                                       :Filter :Pitch_Shifter

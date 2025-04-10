@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 88.0, 130.0, 813.0, 719.0 ],
+		"rect" : [ 52.0, 153.0, 808.0, 737.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,29 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-58",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 990.0, 135.0, 92.0, 23.0 ],
+					"text" : "route float"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 915.0, 175.0, 47.0, 23.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-41",
 					"maxclass" : "newobj",
@@ -40,7 +63,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 675.0, 355.0, 401.0, 38.0 ],
+					"patching_rect" : [ 975.0, 545.0, 401.0, 38.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 40.0, 150.0, 38.0 ],
 					"text" : "CASSIEL",
@@ -57,7 +80,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 660.0, 340.0, 363.0, 35.0 ],
+					"patching_rect" : [ 975.0, 505.0, 363.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 15.0, 150.0, 35.0 ],
 					"text" : "PROJECT",
@@ -76,7 +99,7 @@
 					"mode" : 0,
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 840.0, 630.0, 128.0, 128.0 ],
+					"patching_rect" : [ 1155.0, 600.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 615.0, 10.0, 180.0, 70.0 ],
 					"proportion" : 0.39,
@@ -351,7 +374,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Delay_Mode\" : [ 10, 0, null ],\n\t\"Mix\" : [ 6, 1, null ],\n\t\"MixLock\" : [ 55, 0, null ],\n\t\"Modulation_Mode\" : [ 18, 0.857142865657806, null ],\n\t\"Time_Mode\" : [ 2, 0.333333343267441, null ],\n\t\"Dual_Mode\" : [ 42, 0, null ]\n}\n",
+					"code" : "{\n\t\"Algo03.._Speed_1\" : [ 19, 0.75, null ],\n\t\"Algo03.._Speed_2\" : [ 20, 0.75, null ],\n\t\"Algo05.._Heads\" : [ 67, 0.333333343267441, null ],\n\t\"Algo05.._Speed\" : [ 65, 0.875, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -473,6 +496,17 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
+					"connections" : [ 						{
+							"in" : 0,
+							"out" : 3,
+							"gain" : 1.0
+						}
+, 						{
+							"in" : 3,
+							"out" : 0,
+							"gain" : 1.0
+						}
+ ],
 					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
 					"dividers" : [ "in", 0 ],
 					"fontface" : 0,
@@ -483,7 +517,7 @@
 					"id" : "obj-36",
 					"ignoreclick" : 1,
 					"incolormap" : "none",
-					"inlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Replika_XT" ],
+					"inlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
 					"labelwidth" : 95.0,
 					"maxclass" : "crosspatch",
 					"maxgain" : 2.0,
@@ -492,7 +526,7 @@
 					"numoutlets" : 2,
 					"numouts" : 8,
 					"outcolormap" : "none",
-					"outlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Replika_XT" ],
+					"outlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
 					"outlettype" : [ "", "dictionary" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 900.0, 260.0, 330.0, 220.0 ],
@@ -962,7 +996,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1164.0, 798.0, 927.0, 538.0 ],
+						"rect" : [ 501.0, 281.0, 927.0, 538.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1004,8 +1038,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 100.0, 871.0, 37.0 ],
-									"text" : "setdirection down, setalignment right, setsize 8, clear, append Replika_XT, append Enso.B, append Enso.A, append ODS.B, append ODS.A, append Axon_2, append Microtonic, append IO"
+									"patching_rect" : [ 50.0, 100.0, 856.0, 37.0 ],
+									"text" : "setdirection down, setalignment right, setsize 8, clear, append Discord4, append Enso.B, append Enso.A, append ODS.B, append ODS.A, append Axon_2, append Microtonic, append IO"
 								}
 
 							}
@@ -1313,7 +1347,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 165.0, 315.0, 1429.0, 709.0 ],
+						"rect" : [ 187.0, 267.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1355,9 +1389,9 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "multichannelsignal", "" ],
-									"patching_rect" : [ 1080.0, 280.0, 161.0, 23.0 ],
+									"patching_rect" : [ 1080.0, 280.0, 146.0, 23.0 ],
 									"style" : "cassiel.abstraction",
-									"text" : "ag25.VST3 Replika_XT"
+									"text" : "ag25.VST3 Discord4"
 								}
 
 							}
@@ -1407,7 +1441,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 506.0, 700.0, 931.0, 512.0 ],
+										"rect" : [ 606.0, 339.0, 931.0, 512.0 ],
 										"default_fontname" : "InputMono",
 										"gridonopen" : 2,
 										"gridsize" : [ 15.0, 5.0 ],
@@ -2612,8 +2646,8 @@
 									"numinlets" : 9,
 									"numoutlets" : 9,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 15.0, 130.0, 512.0, 23.0 ],
-									"text" : "route audio Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Replika_XT"
+									"patching_rect" : [ 15.0, 130.0, 497.0, 23.0 ],
+									"text" : "route audio Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Discord4"
 								}
 
 							}
@@ -2637,8 +2671,8 @@
 									"numinlets" : 9,
 									"numoutlets" : 9,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 390.0, 50.0, 497.0, 23.0 ],
-									"text" : "route mix Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Replika_XT"
+									"patching_rect" : [ 390.0, 50.0, 482.0, 23.0 ],
+									"text" : "route mix Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Discord4"
 								}
 
 							}
@@ -3317,7 +3351,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 401.0, 601.0, 781.0, 787.0 ],
+						"rect" : [ 382.0, 230.0, 781.0, 787.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3421,7 +3455,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "1 10 27 0"
+									"text" : "1 22 25 531"
 								}
 
 							}
@@ -4592,6 +4626,7 @@
 				"patchline" : 				{
 					"color" : [ 0.113339, 0.606332, 0.609597, 1.0 ],
 					"destination" : [ "obj-31", 0 ],
+					"order" : 1,
 					"source" : [ "obj-13", 2 ]
 				}
 
@@ -4600,6 +4635,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
 					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"order" : 0,
+					"source" : [ "obj-13", 2 ]
 				}
 
 			}
@@ -4910,6 +4953,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-46", 0 ],
+					"source" : [ "obj-58", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-56", 0 ],
 					"source" : [ "obj-59", 0 ]
 				}
@@ -5009,13 +5059,6 @@
 			}
 , 			{
 				"name" : "Other Desert Cities.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Replika XT.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
