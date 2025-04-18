@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 52.0, 153.0, 808.0, 737.0 ],
+		"rect" : [ 125.0, 171.0, 808.0, 737.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -66,8 +66,15 @@
 					"patching_rect" : [ 975.0, 545.0, 401.0, 38.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 40.0, 150.0, 38.0 ],
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.theme_color"
+						}
+
+					}
+,
 					"text" : "CASSIEL",
-					"textcolor" : [ 0.870588, 0.415686, 0.062745, 1.0 ]
+					"textcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1.0 ]
 				}
 
 			}
@@ -83,17 +90,24 @@
 					"patching_rect" : [ 975.0, 505.0, 363.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 15.0, 150.0, 35.0 ],
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.theme_color"
+						}
+
+					}
+,
 					"text" : "PROJECT",
-					"textcolor" : [ 0.870588, 0.415686, 0.062745, 1.0 ]
+					"textcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"angle" : 270.0,
-					"bgcolor" : [ 0.870588235294118, 0.415686274509804, 0.062745098039216, 0.2 ],
+					"bgcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 0.2 ],
 					"border" : 2,
-					"bordercolor" : [ 0.870588, 0.415686, 0.062745, 1.0 ],
+					"bordercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -103,7 +117,14 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 615.0, 10.0, 180.0, 70.0 ],
 					"proportion" : 0.39,
-					"rounded" : 0
+					"rounded" : 0,
+					"saved_attribute_attributes" : 					{
+						"bordercolor" : 						{
+							"expression" : "themecolor.theme_color"
+						}
+
+					}
+
 				}
 
 			}
@@ -374,7 +395,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Algo03.._Speed_1\" : [ 19, 0.75, null ],\n\t\"Algo03.._Speed_2\" : [ 20, 0.75, null ],\n\t\"Algo05.._Heads\" : [ 67, 0.333333343267441, null ],\n\t\"Algo05.._Speed\" : [ 65, 0.875, null ]\n}\n",
+					"code" : "{\n\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -496,21 +517,10 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
-					"connections" : [ 						{
-							"in" : 0,
-							"out" : 3,
-							"gain" : 1.0
-						}
-, 						{
-							"in" : 3,
-							"out" : 0,
-							"gain" : 1.0
-						}
- ],
 					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
 					"dividers" : [ "in", 0 ],
 					"fontface" : 0,
-					"fontname" : "InputMono",
+					"fontname" : "Input Mono Compressed",
 					"fontsize" : 12.0,
 					"gaincaption" : 1,
 					"gainstyle" : 1,
@@ -996,7 +1006,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 501.0, 281.0, 927.0, 538.0 ],
+						"rect" : [ 1226.0, 568.0, 927.0, 538.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1347,7 +1357,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 187.0, 267.0, 1429.0, 709.0 ],
+						"rect" : [ 406.0, 356.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -4547,6 +4557,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
