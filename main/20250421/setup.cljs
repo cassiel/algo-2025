@@ -24,6 +24,8 @@
              :pvalue
              (fn [& args] (apply px/pvalue-in s/PARAMS args)))
 
+(-> @s/SEQ :messages)
+
 ;; >>> BULK ROOT PRESET LOAD.
 
 (go (<! (ctrl/read :Enso.A "BaseEnso"))
@@ -32,8 +34,7 @@
     (<! (ctrl/read :ODS.B "BaseODS"))
     (<! (ctrl/read :Axon_2 "BaseAxon2"))
     (<! (ctrl/read :Microtonic "BaseMicrotonic"))
-    (<! (ctrl/read :Discord4 "BaseDiscord4"))
-    )
+    (<! (ctrl/read :Discord4 "BaseDiscord4")))
 
 ;; >>> BULK PARAMETER REFLECTION.
 
@@ -45,8 +46,7 @@
     (<! (px/request-params s/PARAMS :ODS.B))
     (<! (px/request-params s/PARAMS :Discord4)))
 
-
-
+;; >>> START
 
 (go
   (<! (c/xmit :toggle :dsp 1))
@@ -54,6 +54,8 @@
   (<! (c/xmit :toggle :rewind 1))
   (<! (async/timeout 100))
   (<! (c/xmit :toggle :transport 1)))
+
+;; >>> STOP
 
 (go (<! (c/xmit :toggle :transport 0))
     (<! (async/timeout 250))

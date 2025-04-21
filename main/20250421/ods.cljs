@@ -13,22 +13,20 @@
 
 ;; Preset state:
 
-(go (<! (ctrl/restore :ODS.A 0)
-        (ctrl/restore :ODS.B 0)))
-
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Speed|Heads")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Saturation")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Output|Time")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Algorithm|Taps")
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Crossfeed|Mix|Regen")
 
-
+;; CHEAT SHEET:
 
 (-> dev/param-enums :ODS.A keys)
 (-> dev/param-enums :ODS.A :Algorithm)
 (-> dev/param-enums :ODS.A :_Time_1)
 (-> dev/param-enums :ODS.A :Algo04.._#_Taps_1)
 (-> dev/param-enums :ODS.A :Algo05.._Speed)
+(-> dev/param-enums :ODS.A :Algo05.._Heads)
 
 ;; DESERT SHORES (1) - delay line
 
@@ -62,18 +60,18 @@
 
 ;; THERMAL (4) - multitap 16
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Thermal]
                          [:Regen 0]
-                         [:Algo04.._#_Taps_1 :4]
-                         [:Algo04.._#_Taps_1 :3]
+                         [:Algo04.._#_Taps_1 :1]
+                         [:Algo04.._#_Taps_1 :2]
                          [:Mix 1])
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:_Time_2 :1.2]
                          [:_Time_2 :1.2D])
-(px/xmit-some-params-now :ODS.B
-                         [:Regen 0])
+(px/xmit-some-params-now :ODS.A
+                         [:Regen 0.3])
 (px/xmit-some-params-now :ODS.B
                          [:Algo04.._Crossfeed 0.7]
                          [:Algo04.._#_Taps_2 :5])

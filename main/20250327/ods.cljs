@@ -23,12 +23,14 @@
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Crossfeed|Mix|Regen")
 
 
+;; CHEAT SHEET:
 
 (-> dev/param-enums :ODS.A keys)
 (-> dev/param-enums :ODS.A :Algorithm)
 (-> dev/param-enums :ODS.A :_Time_1)
 (-> dev/param-enums :ODS.A :Algo04.._#_Taps_1)
 (-> dev/param-enums :ODS.A :Algo05.._Speed)
+(-> dev/param-enums :ODS.A :Algo05.._Heads)
 
 ;; DESERT SHORES (1) - delay line
 
@@ -50,10 +52,10 @@
 
 (px/xmit-some-params-now :ODS.A
                          [:Mix 1]
-                         [:Regen 0]
-                         [:_Time_1 :1.4]
+                         [:Regen 0.3]
+                         [:_Time_1 :1.8]
                          [:_Time_2 :1.4D]
-                         [:Algo01.._Saturation 1])
+                         [:Algo01.._Saturation 0.5])
 
 (px/xmit-some-params-now :ODS.A
                          [:Regen 0.5]

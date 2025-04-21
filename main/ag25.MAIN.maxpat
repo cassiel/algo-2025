@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 195.0, 168.0, 808.0, 737.0 ],
+		"rect" : [ 208.0, 233.0, 808.0, 737.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -371,7 +371,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\n}\n",
+					"code" : "{\n\t\"Algo04.._#_Taps_1\" : [ 27, 0.066666670143604, null ],\n\t\"Algo04.._#_Taps_2\" : [ 28, 0.066666670143604, null ],\n\t\"Algorithm\" : [ 8, 0, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -1333,7 +1333,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 788.0, 594.0, 1429.0, 709.0 ],
+						"rect" : [ 774.0, 403.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3337,7 +3337,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 382.0, 230.0, 781.0, 787.0 ],
+						"rect" : [ 470.0, 347.0, 781.0, 787.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3441,7 +3441,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 5 48 0"
+									"text" : "1 19 52 500"
 								}
 
 							}
@@ -4533,8 +4533,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

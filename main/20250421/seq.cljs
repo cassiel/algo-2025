@@ -17,34 +17,38 @@
 
 (->> (reset! s/SEQ {:sequences (-> {:b0 {1 (row 0 [0 0.5])
                                          2 (row 0 [0.5])
-                                         3 (row 0 [0.75])
-                                         4 (row 0 nil #_ [0 0.5])}
-                                    :bs {1 (row 0 [0 0.5])}
+                                         3 (row 0 [0 0.75])
+                                         4 (row 0 [0])}
+                                    :bs {1 (row 0 [0 0.25 0.5])
+                                         3 (row 0 [0.5])}
                                     :ds {1 (row 1 [0 0.75])
                                          4 (row 1 [0 0.75])}
                                     :hh {2 (row 2 [0])
                                          4 (row 2 [0 0.75])}
-                                    :sc {2 (row 3 [0.5])
-                                         4 (row 3 [0.5])}
+                                    :sc {2 (row 3 [0 0.5])
+                                         3 (row 3 [0])
+                                         4 (row 3 [0.5 0.625 0.75 0.875])}
                                     :sd {1 (row 4 [])}
-                                    :h2 {1 (row 5 [0 0.5])}
-                                    :ch {2 (row 6 [0 0.5])}
+                                    :h2 {1 (row 5 [0.25])
+                                         3 (row 5 [0.5 0.75])}
+                                    :ch {1 (row 6 [0])
+                                         3 (row 6 [0])
+                                         }
                                     :rd {1 (row 7 [0.25])
                                          3 (row 7 [0.75])}
                                     }
                                    #_ (dissoc :b0)
-                                   #_ (dissoc :bs)
-                                   #_ (dissoc :ds)
+                                   (dissoc :bs)
+                                   (dissoc :ds)
                                    (dissoc :hh)
                                    #_ (dissoc :sc)
                                    (dissoc :sd)
-                                   #_ (dissoc :h2)
+                                   (dissoc :h2)
                                    (dissoc :ch)
                                    (dissoc :rd)
                                    )
                     :messages nil})
      (cx/conformer ::seq/sequencer-state))
-
 
 (->> (reset! s/SEQ {:sequences {:main {1 [[0 :Microtonic :note (+ 36 7) 40 100]]
                                        3 [[0 :Microtonic :note (+ 36 7) 64 100]

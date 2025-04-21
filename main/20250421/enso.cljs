@@ -12,12 +12,6 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-;; Preset state (broken):
-#_ (go (<! (ctrl/restore :Enso.A 0))
-       (<! (ctrl/restore :Enso.B 0)))
-
-
-
 (-> dev/param-enums :Enso.A keys)
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
@@ -46,10 +40,18 @@
 (ctrl/mix :IO :Enso.A -40 5)
 
 (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :Overdub))
+                                 :ClearLoop))
 
-(ctrl/makenote :Enso.B (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :Overdub))
+(go
+  (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
+                                   :Record))
+  (<! (async/timeout 1000))
+  (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
+                                   :Overdub)))
+
+
+
+
 
 (px/get-matching s/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict s/PARAMS :Enso.A #"Quant|Unit")
@@ -57,12 +59,10 @@
 
 
 (px/xmit-some-params-now :Enso.A
-                         [:Rec_Speed :+2.0]
-                         )
+                         [:Rec_Speed :+2.0])
 
-(px/xmit-some-params-now :Enso.B
-                         [:Mode_Quantize :Measure]
-                         [:Saturation 0]
+(px/xmit-some-params-now :Enso.A
+                         [:Saturation 0.5]
                          [:Chorus_Depth 0.5])
 
 (go

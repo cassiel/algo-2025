@@ -11,15 +11,15 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(go (<! (ctrl/mix :* :* -40 5))
-    (<! (ctrl/mix :IO :ODS.A 0 5))
-    (<! (ctrl/mix :ODS.A :IO 0 5)))
+(do (ctrl/mix :* :* -40 20)
+    (ctrl/mix :Microtonic :Enso.A 0 2)
+    (ctrl/mix :Enso.A :IO 0 2))
 
-;; TAKE OUT <! ?
+(do (ctrl/mix :* :* -40 20)
+    (ctrl/mix :Microtonic :IO 0 2))
 
-(do (ctrl/mix :* :* -40 5)
-    (ctrl/mix :IO :ODS.A 0 5)
-    (ctrl/mix :ODS.A :IO 0 5))
-
+(do
+  (ctrl/mix :* :* -40 20)
+  (ctrl/mix :Microtonic :IO 0 2))
 
 (ctrl/mix :* :* -40 5)

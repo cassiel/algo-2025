@@ -2,11 +2,11 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [net.cassiel.algo-2025.core :as c]
             [net.cassiel.algo-2025.params :as px]
+            [net.cassiel.algo-2025.state :as s]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
             [net.cassiel.algo-2025.conformer :as cx]
             [cljs.core.async :as async :refer [put! chan <! >!]]
-            [clojure.spec.alpha :as s]
             [goog.string :as gstring]
             [goog.string.format]))
 
@@ -136,3 +136,19 @@
 (c/error "OTHER" 1 2 3)
 
 :A.B
+
+;; Sequencing.
+
+(-> s/SEQ deref :sequences)
+
+(swap! s/SEQ
+       assoc-in
+       [:sequences :enso]
+       ;; Trigger on 2:
+       {4 [[0.75 :Enso.A :note (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
+                                         :Record) 64 0]]
+        1 [[0.25 :Enso.A :note (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
+                                         :Overdub) 64 0]]}
+       )
+
+(swap! s/SEQ assoc-in [:sequences :enso] nil)
