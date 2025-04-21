@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 125.0, 171.0, 808.0, 737.0 ],
+		"rect" : [ 195.0, 168.0, 808.0, 737.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,29 +20,6 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-58",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 990.0, 135.0, 92.0, 23.0 ],
-					"text" : "route float"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-46",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 915.0, 175.0, 47.0, 23.0 ],
-					"text" : "print"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-41",
 					"maxclass" : "newobj",
@@ -107,7 +84,6 @@
 					"angle" : 270.0,
 					"bgcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 0.2 ],
 					"border" : 2,
-					"bordercolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1.0 ],
 					"id" : "obj-54",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -1357,7 +1333,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 406.0, 356.0, 1429.0, 709.0 ],
+						"rect" : [ 788.0, 594.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3465,7 +3441,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "1 22 25 531"
+									"text" : "0 5 48 0"
 								}
 
 							}
@@ -4638,7 +4614,6 @@
 				"patchline" : 				{
 					"color" : [ 0.113339, 0.606332, 0.609597, 1.0 ],
 					"destination" : [ "obj-31", 0 ],
-					"order" : 1,
 					"source" : [ "obj-13", 2 ]
 				}
 
@@ -4647,14 +4622,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-37", 0 ],
 					"source" : [ "obj-13", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-58", 0 ],
-					"order" : 0,
-					"source" : [ "obj-13", 2 ]
 				}
 
 			}
@@ -4965,13 +4932,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-46", 0 ],
-					"source" : [ "obj-58", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-56", 0 ],
 					"source" : [ "obj-59", 0 ]
 				}
@@ -5046,6 +5006,13 @@
  ],
 		"parameters" : 		{
 			"obj-10" : [ "live.tab", "live.tab", 0 ],
+			"obj-13::obj-64::obj-28" : [ "vst~[6]", "vst~[1]", 0 ],
+			"obj-13::obj-65::obj-28" : [ "vst~[11]", "vst~[1]", 0 ],
+			"obj-13::obj-66::obj-28" : [ "vst~[10]", "vst~[1]", 0 ],
+			"obj-13::obj-67::obj-28" : [ "vst~[9]", "vst~[1]", 0 ],
+			"obj-13::obj-6::obj-28" : [ "vst~[8]", "vst~[1]", 0 ],
+			"obj-13::obj-8::obj-28" : [ "vst~[7]", "vst~[1]", 0 ],
+			"obj-13::obj-9::obj-28" : [ "vst~[14]", "vst~[1]", 0 ],
 			"obj-24" : [ "in.level", "in.level", 0 ],
 			"obj-37::obj-34" : [ "master", "master", 0 ],
 			"parameterbanks" : 			{
@@ -5056,21 +5023,21 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Microtonic_Starter[2].maxsnap",
+				"name" : "Enso_NoteCtrl.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Note_Ctrl.maxsnap",
+				"name" : "Microtonic_Starter.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Other Desert Cities.maxsnap",
+				"name" : "ODS_Starter.maxsnap",
 				"bootpath" : "~/Documents/Max 9/Snapshots",
 				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
 				"type" : "mx@s",

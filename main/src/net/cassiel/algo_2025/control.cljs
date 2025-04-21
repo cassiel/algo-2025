@@ -25,11 +25,20 @@
   (c/xmit :now device :plugged how)
   (async/timeout 1000))
 
-(defn restore
-  "Snapshop restore. have to use index, so only really reliable if we only have one (#0)"
+(defn ^:deprecated restore
+  "Snapshop restore. have to use index, so only really reliable if we only have one (#0).
+   DEPRECATED - not reliable - using VST preset files instead."
   [device i]
-  (c/xmit :now device :restore i)
-  (async/timeout 500))
+  (go
+    (c/xmit :now device :restore i)
+    (<! (async/timeout 500))))
+
+(defn read
+  "Read a preset file into a VST instance. Returns a channel which pauses on read."
+  [device filename]
+  (go
+    (c/xmit :now device :read filename)
+    (<! (async/timeout 500))))
 
 (defn makenote
   "Simple note on/off, immediate."
