@@ -23,3 +23,26 @@
   (ctrl/mix :Microtonic :IO 0 2))
 
 (ctrl/mix :* :* -40 5)
+(ctrl/mix :IO :IO -10 5)
+
+;; TODO write pipe with final attenuation parameter
+
+(do
+  (ctrl/mix :IO :ODS.A 0 5)
+  (ctrl/mix :ODS.A :Enso.A 0 5)
+  (ctrl/mix :Enso.A :IO -10 5)
+  )
+
+(ctrl/mix :IO :ODS.A 0 5)
+(ctrl/mix :ODS.A :IO 0 5)
+
+(ctrl/mix :IO :Enso.A -40 5)
+(ctrl/mix :ODS.A :Enso.A 0 5)
+
+(ctrl/mix :Enso.A :IO 0 5)
+(ctrl/mix :IO :IO -40 5)
+
+(ctrl/mix :Discord4 :Enso.A 0 5)
+
+(ctrl/mix :* :* -40 5)
+(ctrl/mix :ODS.A :IO -40 5)

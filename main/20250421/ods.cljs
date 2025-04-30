@@ -86,10 +86,10 @@
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+0.5])
+                         [:Algo05.._Speed :+0.0])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+0.5]
+                         [:Algo05.._Speed :0]
                          [:Algo05.._Heads :4])
 
 
@@ -97,8 +97,6 @@
 
 (ctrl/mix :ODS.A :IO -40 5)
 (ctrl/mix :ODS.B :IO 0 10)
-
-(ctrl/mix :ODS.B :Replika_XT -40 5)
 
 (ctrl/mix :ODS.B :IO -40 5)
 

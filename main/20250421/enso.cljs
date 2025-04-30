@@ -16,6 +16,7 @@
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
 
+;; TODO: make this return a channel.
 (px/xmit-some-params-now :Enso.A
                          [:Link_Speeds :Off]
                          [:Input_Level 1]
@@ -24,6 +25,11 @@
                          [:Dry_Level 0]
                          [:Dub_In_Place 1]
                          [:Feedback 0.5])
+
+(px/xmit-some-params-now :Enso.A
+                         [:Play_Speed :+2.0]
+                         [:Rec_Speed :-1.0]
+                         )
 
 (px/xmit-some-params-now :Enso.B
                          [:Link_Speeds :Off]
@@ -40,7 +46,7 @@
 (ctrl/mix :IO :Enso.A -40 5)
 
 (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :ClearLoop))
+                                 :Overdub))
 
 (go
   (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
@@ -49,15 +55,12 @@
   (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
                                    :Overdub)))
 
-
-
-
-
 (px/get-matching s/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict s/PARAMS :Enso.A #"Quant|Unit")
 (px/get-matching-to-dict s/PARAMS :Enso.A #"Satur|Chor")
 
 
+;; TODO: just mess around with record/playback speed
 (px/xmit-some-params-now :Enso.A
                          [:Rec_Speed :+2.0])
 

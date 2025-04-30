@@ -6,7 +6,7 @@
   ^{:doc "Channels incorporates all devices and IO routes."}
   channel-names
   [:IO :Microtonic :Axon_2 :ODS.A :ODS.B
-   :Enso.A :Enso.B :Replika_XT])
+   :Enso.A :Enso.B :Discord4])
 
 (defn- notes-on-octave [octave]
   (map (fn [s] (goog.string/format "%s%d" s octave))
