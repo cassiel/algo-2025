@@ -22,6 +22,11 @@
   (ctrl/mix :* :* -40 20)
   (ctrl/mix :Microtonic :IO 0 2))
 
+(do
+  (ctrl/mix :* :* -40 20)
+  (ctrl/mix :IO :ODS.A 0 3)
+  (ctrl/mix :ODS.A :IO 0 3))
+
 (ctrl/mix :* :* -40 5)
 (ctrl/mix :IO :IO -10 5)
 
@@ -31,6 +36,27 @@
   (ctrl/mix :IO :ODS.A 0 5)
   (ctrl/mix :ODS.A :Enso.A 0 5)
   (ctrl/mix :Enso.A :IO -10 5)
+  )
+
+(do
+  (ctrl/mix :* :* -40 20)
+  (ctrl/mix :IO :Enso.A 0 2)
+  (ctrl/mix :Enso.A :IO 0 2)
+  (ctrl/mix :IO :Enso.B 0 2)
+  (ctrl/mix :Enso.B :IO 0 2)
+  )
+
+(do
+  (ctrl/mix :* :* -40 20)
+  (ctrl/mix :IO :ODS.A 0 2)
+  (ctrl/mix :ODS.A :Discord4 0 2)
+  (ctrl/mix :Discord4 :IO 0 2)
+  )
+
+(do
+  (ctrl/mix :* :* -40 20)
+  (ctrl/mix :IO :IO 0 2)
+
   )
 
 (ctrl/mix :IO :ODS.A 0 5)

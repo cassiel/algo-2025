@@ -12,23 +12,29 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(-> dev/param-enums :Enso.A keys)
+(-> dev/param-enums :Enso.A keys)       ; TODO get this into dictionary (and enum values)
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
 
+(ctrl/mix :Discord4 :Enso.A 0 5)
+(ctrl/mix :Enso.A :IO -10 5)
+
+
 ;; TODO: make this return a channel.
-(px/xmit-some-params-now :Enso.A
-                         [:Link_Speeds :Off]
-                         [:Input_Level 1]
-                         [:Play_Speed :+1.0]
-                         [:Rec_Speed :-2.0]
-                         [:Dry_Level 0]
-                         [:Dub_In_Place 1]
-                         [:Feedback 0.5])
+
+(doseq [enso [:Enso.A :Enso.B]]
+  (px/xmit-some-params-now enso
+                           [:Link_Speeds :Off]
+                           [:Input_Level 1]
+                           [:Play_Speed :+1.0]
+                           [:Rec_Speed :-2.0]
+                           [:Dry_Level 0]
+                           [:Dub_In_Place 1]
+                           [:Feedback 0.5]))
 
 (px/xmit-some-params-now :Enso.A
-                         [:Play_Speed :+2.0]
-                         [:Rec_Speed :-1.0]
+                         [:Play_Speed :+1.0]
+                         [:Rec_Speed :+1.0]
                          )
 
 (px/xmit-some-params-now :Enso.B
@@ -40,7 +46,9 @@
                          [:Dub_In_Place 0]
                          [:Feedback 0.5])
 
+(ctrl/mix :IO :Enso.B -10 10)
 (ctrl/mix :Enso.B :IO -10 10)
+
 (ctrl/mix :Enso.B :ODS.A -10 10)
 
 (ctrl/mix :IO :Enso.A -40 5)
@@ -55,18 +63,19 @@
   (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
                                    :Overdub)))
 
-(px/get-matching s/PARAMS :Enso.A #"Level|Dub")
+(px/get-matching-to-dict s/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict s/PARAMS :Enso.A #"Quant|Unit")
 (px/get-matching-to-dict s/PARAMS :Enso.A #"Satur|Chor")
 
 
 ;; TODO: just mess around with record/playback speed
 (px/xmit-some-params-now :Enso.A
-                         [:Rec_Speed :+2.0])
+                         [:Rec_Speed :+2.0]
+                         [:Play_Speed :-1.0])
 
 (px/xmit-some-params-now :Enso.A
-                         [:Saturation 0.5]
-                         [:Chorus_Depth 0.5])
+                         [:Saturation 0.9]
+                         [:Chorus_Depth 0.9])
 
 (go
   (<! (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
@@ -79,7 +88,7 @@
 (px/xmit-some-params-now :Enso.A
                          [:Mode_Quantize :Free])
 (px/xmit-some-params-now :Enso.A
-                         [:Saturation 0.5])
+                         [:Saturation 1])
 
 (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
                                  :Record))
@@ -107,9 +116,24 @@
 
 (ctrl/mix :IO :Enso.B 0 10)
 
+;; TODO should mix return a channel?
 (go
-  (<! (ctrl/mix :Enso.A :IO 0 10))
-  (<! (ctrl/mix :Enso.B :IO 0 10)))
+  (ctrl/mix :* :* -40 5)
+  (ctrl/mix :IO :Enso.A 0 5)
+  (ctrl/mix :IO :Enso.B 0 5)
+  (ctrl/mix :Enso.A :IO -10 5)
+  (ctrl/mix :Enso.B :IO -10 5)
+  )
+
+
+(do
+  (ctrl/mix :IO :Enso.A 0 10)
+  (ctrl/mix :Enso.A :ODS.A 0 10)
+  (ctrl/mix :ODS.A :IO -10 10))
+
+
+
+(<! (ctrl/mix :Enso.B :IO 0 10))
 
 (ctrl/mix :Enso.A :IO -40 5)
 (ctrl/mix :Enso.B :IO 0 5)

@@ -68,12 +68,12 @@
                          [:Algo04.._#_Taps_1 :2]
                          [:Mix 1])
 (px/xmit-some-params-now :ODS.A
-                         [:_Time_2 :1.2]
-                         [:_Time_2 :1.2D])
+                         [:_Time_2 :1.4]
+                         [:_Time_2 :1.4D])
 (px/xmit-some-params-now :ODS.A
-                         [:Regen 0.3])
-(px/xmit-some-params-now :ODS.B
-                         [:Algo04.._Crossfeed 0.7]
+                         [:Regen 0.6])
+(px/xmit-some-params-now :ODS.A
+                         [:Algo04.._Crossfeed 0.8]
                          [:Algo04.._#_Taps_2 :5])
 
 ;; MIRAGE (5) - tumble
@@ -86,7 +86,7 @@
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+0.0])
+                         [:Algo05.._Speed :+1.0])
 
 (px/xmit-some-params-now :ODS.A
                          [:Algo05.._Speed :0]

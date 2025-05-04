@@ -15,8 +15,25 @@
 
 (px/get-matching s/PARAMS :Discord4 #".*Level.*")
 (px/get-matching-to-dict s/PARAMS :Discord4 #".*Shift.*")
-(px/get-matching-to-dict s/PARAMS :Discord4 #".*Detune.*")
+(px/get-matching-to-dict s/PARAMS :Discord4 #".*Filter.*")
+(px/get-matching-to-dict s/PARAMS :Discord4 #".*Mode.*")
+
+(ctrl/mix :IO :Discord4 0 5)
+(ctrl/mix :Discord4 :IO 0 5)
 
 (px/xmit-some-params-now :Discord4
-                         [:L_Shift_Amount 0.25]
-                         [:R_Shift_Amount 0.25])
+                         [:L_Shift_Amount 0.5]
+                         [:R_Shift_Amount 0.5])
+
+(px/xmit-some-params-now :Discord4
+                         [:L_Filter_Frequency 0.5]
+                         [:R_Filter_Frequency 0.5])
+
+;; TODO: mode into param enums.
+
+(px/xmit-some-params-now :Discord4
+                         [:Shift_Mode 1])
+
+(ctrl/mix :Discord4 :IO -40 5)
+(ctrl/mix :IO :IO -40 5)
+(ctrl/mix :* :* -40 5)
