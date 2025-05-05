@@ -46,7 +46,7 @@
                          [:Regen 0.5]
                          )
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Mix 1]
                          [:Regen 0]
                          [:_Time_1 :1.4]
@@ -86,7 +86,7 @@
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+1.0])
+                         [:Algo05.._Speed :+2.0])
 
 (px/xmit-some-params-now :ODS.A
                          [:Algo05.._Speed :0]

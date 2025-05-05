@@ -8,6 +8,8 @@
 
 (def win-state (atom {}))
 
+(def OFF -40)
+
 (defn window
   ([item how]
    (c/xmit :win item how))
@@ -58,6 +60,8 @@
       (go (<! c)
           (unload-all ds)))))
 
+;; TODO: confusion with mix over when it returns a channel for chaining.
+
 (defn mix
   ([f t level secs]
    (let [f' (if (= f :*) dev/channel-names f)
@@ -76,6 +80,25 @@
 
   ([f t level] (mix f t level 0)))
 
+(defn mute-all
+  ([secs] (mix :* :* OFF secs))
+  ([] (mute-all 0)))
+
+(def FO 30)
+(def FI 2)
+
+(defn- mix-path0 [& nodes]
+  (let [pairs (partition 2 1 nodes)]
+    (doseq [[n1 n2] pairs] (mix n1 n2 0 FI))))
+
+(defn mix-path [& nodes]
+  (mute-all FO)
+  (apply mix-path0 nodes))
+
+(defn mix-paths [& paths]
+  (mute-all FO)
+  (doseq [p paths] (apply mix-path0 p)))
+
 (defn master
   ([level secs]
    (c/xmit :master level secs))
@@ -83,10 +106,6 @@
   ([level]
    (master level 0.0))
   )
-
-(defn mute-all
-  ([secs] (mix :* :* -40 secs))
-  ([] (mute-all 0)))
 
 (defn handle [& cmd-f-map]
   (doseq [[cmd f] (partition 2 cmd-f-map)]

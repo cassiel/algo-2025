@@ -63,11 +63,7 @@
 
 ;; >>> MIX ZERO.
 
-(ctrl/mix :* :* -40 10)
-
-(ctrl/mix :IO :IO -10 5)
-
-;; UNPLUG ALL PRIOR TO SAVE:
+(ctrl/mute-all 5)
 
 (ctrl/unload-all [:Microtonic
                   :Enso.A

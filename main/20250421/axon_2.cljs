@@ -12,11 +12,25 @@
 
 ;; >>> OUTPUTS:
 
-(ctrl/mix :Axon_2 :IO -40 10)
+(ctrl/mix :Axon_2 :IO ctrl/OFF 10)
 
 (go
-  (<! (ctrl/mix :Axon_2 :Enso.A -40 5))
-  (<! (ctrl/mix :Axon_2 :Enso.B -40 5)))
+  (<! (ctrl/mix :Axon_2 :Enso.A ctrl/OFF 5))
+  (<! (ctrl/mix :Axon_2 :Enso.B ctrl/OFF 5)))
 
-(ctrl/mix :Axon_2 :Enso.A -40 5)
-(ctrl/mix :Axon_2 :ODS.A -40 10)
+(ctrl/mix :Axon_2 :Enso.A ctrl/OFF 5)
+(ctrl/mix :Axon_2 :ODS.A ctrl/OFF 10)
+
+(ctrl/mix-path :Axon_2 :IO)
+
+(ctrl/mix-path :Axon_2 :Discord4 :IO)
+
+(ctrl/mix-path :Axon_2 :ODS.A :IO)
+
+(ctrl/mix-paths [:Axon_2 :ODS.A :IO]
+                [:Axon_2 :ODS.B :IO])
+
+
+(ctrl/master -5 3)
+
+(ctrl/mute-all 5)
