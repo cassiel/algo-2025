@@ -46,18 +46,7 @@
   (ctrl/mix :Enso.B :IO 0 2)
   )
 
-(do
-  (ctrl/mix :* :* -40 20)
-  (ctrl/mix :IO :ODS.A 0 2)
-  (ctrl/mix :ODS.A :Discord4 0 2)
-  (ctrl/mix :Discord4 :IO 0 2)
-  )
 
-(do
-  (ctrl/mix :* :* -40 20)
-  (ctrl/mix :IO :IO 0 2)
-
-  )
 
 (ctrl/mix :IO :ODS.A 0 5)
 (ctrl/mix :ODS.A :IO 0 5)
@@ -72,3 +61,5 @@
 
 (ctrl/mix :* :* -40 5)
 (ctrl/mix :ODS.A :IO -40 5)
+
+(ctrl/mix-path :IO :IO)

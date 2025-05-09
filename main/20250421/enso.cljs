@@ -19,6 +19,9 @@
 (ctrl/mix :Discord4 :Enso.A 0 5)
 (ctrl/mix :Enso.A :IO -10 5)
 
+(ctrl/mix-path :IO :Enso.A :IO)
+(ctrl/mix-path :IO :Enso.A :Discord4 :IO)
+
 
 ;; TODO: make this return a channel.
 
@@ -35,6 +38,7 @@
 (px/xmit-some-params-now :Enso.A
                          [:Play_Speed :+1.0]
                          [:Rec_Speed :+1.0]
+                         [:Saturation 0]
                          )
 
 (px/xmit-some-params-now :Enso.B
@@ -70,7 +74,7 @@
 
 ;; TODO: just mess around with record/playback speed
 (px/xmit-some-params-now :Enso.A
-                         [:Rec_Speed :+2.0]
+                         [:Rec_Speed :+1.0]
                          [:Play_Speed :-1.0])
 
 (px/xmit-some-params-now :Enso.A

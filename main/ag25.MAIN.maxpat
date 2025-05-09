@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 208.0, 233.0, 808.0, 737.0 ],
+		"rect" : [ 152.0, 204.0, 817.0, 742.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -371,7 +371,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Algo04.._#_Taps_1\" : [ 27, 0.066666670143604, null ],\n\t\"Algo04.._#_Taps_2\" : [ 28, 0.066666670143604, null ],\n\t\"Algorithm\" : [ 8, 0, null ]\n}\n",
+					"code" : "{\n\t\"L_Shift_Amount\" : [ 1, 0.25, null ],\n\t\"L_Shift_Mod_1\" : [ 17, 0.5, null ],\n\t\"L_Shift_Mod_2\" : [ 18, 0.5, null ],\n\t\"MIDI_Shift\" : [ 52, 0, null ],\n\t\"R_Shift_Amount\" : [ 23, 0.75, null ],\n\t\"R_Shift_Mod_1\" : [ 39, 0.5, null ],\n\t\"R_Shift_Mod_2\" : [ 40, 0.5, null ],\n\t\"Shift_Mode\" : [ 50, 1, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -464,7 +464,7 @@
 			}
 , 			{
 				"box" : 				{
-					"htabcolor" : [ 0.960784, 0.827451, 0.156863, 1.0 ],
+					"htabcolor" : [ 0.870588235294118, 0.415686274509804, 0.062745098039216, 1.0 ],
 					"id" : "obj-44",
 					"maxclass" : "tab",
 					"numinlets" : 1,
@@ -493,6 +493,17 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
+					"connections" : [ 						{
+							"in" : 0,
+							"out" : 7,
+							"gain" : 1.0
+						}
+, 						{
+							"in" : 7,
+							"out" : 0,
+							"gain" : 1.0
+						}
+ ],
 					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
 					"dividers" : [ "in", 0 ],
 					"fontface" : 0,
@@ -1333,7 +1344,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 774.0, 403.0, 1429.0, 709.0 ],
+						"rect" : [ 686.0, 503.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3441,7 +3452,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "1 19 52 500"
+									"text" : "0 39 1 0"
 								}
 
 							}
@@ -4533,6 +4544,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

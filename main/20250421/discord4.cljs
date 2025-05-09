@@ -34,6 +34,4 @@
 (px/xmit-some-params-now :Discord4
                          [:Shift_Mode 1])
 
-(ctrl/mix :Discord4 :IO -40 5)
-(ctrl/mix :IO :IO -40 5)
-(ctrl/mix :* :* -40 5)
+(ctrl/mix-path :IO :Discord4 :IO)

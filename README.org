@@ -17,5 +17,12 @@
 - Individual scripting files
 
 ** TO DO
+*** Features
+
+- Good known starting points (VST presets)
+- Clojure-end errors (somehow) for things like unknown enumerated parameters
+- Enso: controlled looping cues, and speed change
+
+*** Code
 
 - We could have a single =ag25.Break= in the multichannel loopback connection
