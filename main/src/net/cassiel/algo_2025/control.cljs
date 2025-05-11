@@ -42,6 +42,14 @@
     (c/xmit :now device :read filename)
     (<! (async/timeout 500))))
 
+(defn write
+  "Write a preset file from a VST instance. Returns a channel which pauses on write
+   (though we've probably thrown up a file dialog)."
+  [device filename]
+  (go
+    (c/xmit :now device :write)
+    (<! (async/timeout 500))))
+
 (defn makenote
   "Simple note on/off, immediate."
   [device pitch]

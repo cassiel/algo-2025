@@ -12,18 +12,21 @@
                      :number number?))
 (s/def ::offset (s/and number? #(>= % 0.0) #(< % 1.0)))
 
-(s/def ::seq-item (s/cat :offset ::offset
-                         :message (s/+ ::token)))
+(s/def ::msg-cue (s/cat :offset ::offset
+                        :message (s/+ ::token)))
 
+(s/def ::cue (s/or :msg ::msg-cue
+                   :fn fn?))
 
-;; A sequence of seq-item is filed against a beat:
+;; A sequence of cue is filed against a beat
+;; (ADDITION: we can also file a sequences->sequences function against a beat):
 
-(s/def ::items-in-beat (s/coll-of ::seq-item))
+(s/def ::cues-in-beat (s/coll-of ::cue))
 
 ;; A map of these indexed by beat number is a sequence block:
 
 (s/def ::beat (s/and integer? #(>= % 1) #(<= % 4)))
-(s/def ::seq-block (s/map-of ::beat ::items-in-beat))
+(s/def ::seq-block (s/map-of ::beat ::cues-in-beat))
 
 ;; Overall sequencer content: map from names to sequence block. (The
 ;; names have no significance other than to allow
@@ -44,16 +47,30 @@
 (defn process-request
   "Takes state * pos, returns state' incorporating messages."
   [{:keys [sequences] :as state} pos]
-  (let [seq-maps-for-names (map fnext (seq sequences))
-        ;; Each of those is a map: int -> seq-block
+  (let [beat-maps (map fnext (seq sequences))
+        ;; Discard the block names; each of these items is a map: 1..4 (beat) -> seq-block.
 
-        items-at-this-pos (reduce concat (map #(get % pos) seq-maps-for-names))
-        process-item #(update (vec %) 0 + pos)
-        patch-note (fn [item]
-                     (let [item' (vec item)]
-                       (if (and (= (nth item' 2) :note)
-                                (keyword? (nth item' 3)))
-                         (update item' 3 px/pitch)
-                         item)))
-        ]
-    (assoc state :messages (map (comp patch-note process-item) items-at-this-pos))))
+        ;; All of the cues at this beat. A cue is either a sequence whose first element
+        ;; is a float from 0.0 incl. to 1.0 excl., or a function to apply to the entire
+        ;; sequence memory to mutate it.
+        cues-at-this-pos (reduce concat (map #(get % pos) beat-maps))
+        message-cues (filter #(not (fn? %)) cues-at-this-pos)
+        fn-cues (filter fn? cues-at-this-pos)
+        ;; Vectorise if needed; add pos to each of the fractional offsets:
+        process-cue      #(update (vec %) 0 + pos)
+        ;; Allow usage of note names as well as pitch numbers for non-fn cues:
+        patch-note        (fn [cue]
+                            (let [cue' (vec cue)]
+                              (if (and (= (nth cue' 2) :note)
+                                       (keyword? (nth cue' 3)))
+                                (update cue' 3 px/pitch)
+                                cue)))
+        ;; messages are just seqs of cues with fixed-up beat/offset locations:
+        messages          (map (comp process-cue patch-note) message-cues)
+
+        ;; Apply all function cues (order not defined)
+        sequences' (reduce (fn [s f] (f s)) sequences fn-cues)]
+    (println messages)
+    (assoc state
+           :sequences sequences'
+           :messages messages)))

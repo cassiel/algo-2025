@@ -20,6 +20,9 @@
 
 (keyword (str 2))
 
+(ctrl/mix-path :Microtonic :IO)
+
+
 
 ;; Messages out to Max:
 ;; "win" [name] [1/0]: open or close named window (audio, basic, enso)

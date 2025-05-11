@@ -21,7 +21,7 @@
 (ctrl/window :Axon_2 0)
 (ctrl/window :Enso.B 1)
 (ctrl/window :Enso.A 1)
-(ctrl/window :Microtonic 0)
+(ctrl/window :Microtonic 1)
 (ctrl/window :ODS.A 0)
 (ctrl/window :ODS.B 0)
 (ctrl/window :Discord4 1)

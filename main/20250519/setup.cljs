@@ -65,10 +65,12 @@
 
 (ctrl/mute-all 5)
 
-(ctrl/unload-all [:Microtonic
-                  :Enso.A
-                  :Enso.B
-                  :Axon_2
-                  :ODS.A
-                  :ODS.B
-                  :Discord4])
+;; Cleanup before save:
+
+(comment (ctrl/unload-all [:Microtonic
+                           :Enso.A
+                           :Enso.B
+                           :Axon_2
+                           :ODS.A
+                           :ODS.B
+                           :Discord4]))

@@ -16,8 +16,12 @@
 (-> dev/param-enums :Enso.A :Mode)
 (-> dev/param-enums :Enso.A :Mode_Quantize)
 
-(ctrl/mix :Discord4 :Enso.A 0 5)
-(ctrl/mix :Enso.A :IO -10 5)
+(ctrl/window :Enso.A 1)
+(ctrl/read :Enso.A "BaseEnso")
+
+(ctrl/mix-paths [:Microtonic :Enso.A :IO]
+                [:Microtonic :IO])
+
 
 (ctrl/mix-path :IO :Enso.A :IO)
 (ctrl/mix-path :IO :Enso.A :Discord4 :IO)
@@ -62,7 +66,7 @@
 
 (go
   (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                   :Record))
+                                   :Overdub))
   (<! (async/timeout 1000))
   (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
                                    :Overdub)))

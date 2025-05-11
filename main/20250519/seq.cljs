@@ -12,36 +12,36 @@
 
 (reset! s/SEQ {:sequences {} :messages nil})
 
-(defn row [pitch-offset positions]
-  (map (fn [pos] [pos :Microtonic :note (+ 36 pitch-offset) 64 0]) positions))
+(defn row [pitch positions]
+  (map (fn [pos] [pos :Microtonic :note pitch 64 0]) positions))
 
-(->> (reset! s/SEQ {:sequences (-> {:b0 {1 (row 0 [0 0.5])
-                                         2 (row 0 [0.5])
-                                         3 (row 0 [0 0.75])
-                                         4 (row 0 [0])}
-                                    :bs {1 (row 0 [0 0.25 0.5])
-                                         3 (row 0 [0.5])}
-                                    :ds {1 (row 1 [0 0.75])
-                                         4 (row 1 [0 0.75])}
-                                    :hh {2 (row 2 [0])
-                                         4 (row 2 [0 0.75])}
-                                    :sc {2 (row 3 [0 0.5])
-                                         3 (row 3 [0])
-                                         4 (row 3 [0.5 0.625 0.75 0.875])}
-                                    :sd {1 (row 4 [])}
-                                    :h2 {1 (row 5 [0.25])
-                                         3 (row 5 [0.5 0.75])}
-                                    :ch {1 (row 6 [0])
-                                         3 (row 6 [0])
-                                         }
-                                    :rd {1 (row 7 [0.25])
-                                         3 (row 7 [0.75])}
+(->> (reset! s/SEQ {:sequences (-> {:b0 {1 (row :C1 [0 0.5])
+                                         2 (row :C1 [0.5])
+                                         3 (row :C1 [0 0.75])
+                                         4 (row :C1 [0])}
+                                    :bs {1 (row :C1 [0 0.25 0.5])
+                                         3 (row :C1 [0.5])}
+                                    :ds {1 (row :C#1 [0 0.75])
+                                         4 (row :C#1 [0 0.75])}
+                                    :hh {2 (row :D1 [0])
+                                         4 (row :D1 [0 0.75])}
+                                    :sc {2 (row :D#1 [0 0.5])
+                                         3 (row :D#1 [0])
+                                         4 (row :D#1 [0.5 0.625 0.75 0.875])}
+                                    :sd {1 (row :E1 [])}
+                                    :h2 {1 (row :F1 [0.25])
+                                         3 (row :F1 [0.5 0.75])}
+                                    :ch {1 (row :F#1 [0])
+                                         3 (row :F#1 [0])}
+                                    :rd {1 (row :G1 [0.25])
+                                         3 (row :G1 [0.75])}
+                                    :TEST {4 [(fn [s] (dissoc s :b0))]}
                                     }
                                    #_ (dissoc :b0)
-                                   (dissoc :bs)
-                                   (dissoc :ds)
-                                   (dissoc :hh)
-                                   #_ (dissoc :sc)
+                                   #_ (dissoc :bs)
+                                   #_ (dissoc :ds)
+                                   #_ (dissoc :hh)
+                                   (dissoc :sc)
                                    (dissoc :sd)
                                    (dissoc :h2)
                                    (dissoc :ch)
@@ -50,7 +50,7 @@
                     :messages nil})
      (cx/conformer ::seq/sequencer-state))
 
-(->> (reset! s/SEQ {:sequences {:main {1 [[0 :Microtonic :note (+ 36 7) 40 100]]
+(->> (reset! s/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C1 40 100]]
                                        3 [[0 :Microtonic :note (+ 36 7) 64 100]
                                           [0.5 :Microtonic :note (+ 36 7) 64 100]]
                                        4 [[0 :Microtonic :note (+ 36 7) 64 100]]}}
