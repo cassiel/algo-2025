@@ -12,7 +12,8 @@
 
 ;; >>> OUTPUTS:
 
-(ctrl/mix :Axon_2 :IO ctrl/OFF 10)
+(ctrl/mix-path :Axon_2 :IO)
+(ctrl/mix-paths [])
 
 (go
   (<! (ctrl/mix :Axon_2 :Enso.A ctrl/OFF 5))

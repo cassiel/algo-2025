@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 6,
+			"revision" : 7,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 152.0, 204.0, 817.0, 742.0 ],
+		"rect" : [ 64.0, 124.0, 817.0, 742.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -219,7 +219,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -371,7 +371,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"L_Shift_Amount\" : [ 1, 0.25, null ],\n\t\"L_Shift_Mod_1\" : [ 17, 0.5, null ],\n\t\"L_Shift_Mod_2\" : [ 18, 0.5, null ],\n\t\"MIDI_Shift\" : [ 52, 0, null ],\n\t\"R_Shift_Amount\" : [ 23, 0.75, null ],\n\t\"R_Shift_Mod_1\" : [ 39, 0.5, null ],\n\t\"R_Shift_Mod_2\" : [ 40, 0.5, null ],\n\t\"Shift_Mode\" : [ 50, 1, null ]\n}\n",
+					"code" : "{\n\t\"Chorus_Depth\" : [ 29, 0, null ],\n\t\"Chorus_Rate\" : [ 28, 0, null ],\n\t\"Saturation\" : [ 23, 0, null ]\n}\n",
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -493,17 +493,6 @@
 , 			{
 				"box" : 				{
 					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
-					"connections" : [ 						{
-							"in" : 0,
-							"out" : 7,
-							"gain" : 1.0
-						}
-, 						{
-							"in" : 7,
-							"out" : 0,
-							"gain" : 1.0
-						}
- ],
 					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
 					"dividers" : [ "in", 0 ],
 					"fontface" : 0,
@@ -554,7 +543,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -987,7 +976,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1338,13 +1327,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 686.0, 503.0, 1429.0, 709.0 ],
+						"rect" : [ 513.0, 302.0, 1429.0, 709.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -1432,7 +1421,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1962,7 +1951,7 @@
 										"appversion" : 										{
 											"major" : 9,
 											"minor" : 0,
-											"revision" : 6,
+											"revision" : 7,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3342,13 +3331,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 6,
+							"revision" : 7,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 470.0, 347.0, 781.0, 787.0 ],
+						"rect" : [ 294.0, 580.0, 781.0, 787.0 ],
 						"default_fontname" : "Anonymous Pro",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
@@ -3452,7 +3441,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 39 1 0"
+									"text" : "0 30 33 500"
 								}
 
 							}
@@ -4318,7 +4307,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 1,
+									"source" : [ "obj-47", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-51", 0 ],
+									"order" : 0,
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -4544,8 +4542,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -5034,27 +5030,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "Enso_NoteCtrl.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "Microtonic_Starter.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "ODS_Starter.maxsnap",
-				"bootpath" : "~/Documents/Max 9/Snapshots",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Snapshots",
-				"type" : "mx@s",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "ag25.Break.maxpat",
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",

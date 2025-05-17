@@ -117,7 +117,6 @@
   (c/xmit :now (name dev) i)
   (async/timeout 1000))
 
-;; TODO: need to space this out and return a final timeout channel.
 (defn xmit-some-params-now [dev & args]
   (doseq [[pname v] args]
     (let [v' (if (keyword? v) (map-value dev pname v) v)]
@@ -125,6 +124,14 @@
                  (async/timeout 50))
           (do (c/error "Cannot map" dev pname ":" v)
               (async/timeout 0))))))
+
+;; TODO: intolerant of incorrect parameter values.
+
+(defn param-packet [dev pname value]
+  (let [value' (if (keyword? value)
+                 (map-value dev pname value)
+                 value)]
+    [dev :param pname value']))
 
 (defn axon-pitch-set [& values]
   (apply xmit-some-params-now
