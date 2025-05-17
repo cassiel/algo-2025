@@ -41,8 +41,8 @@
 
 (px/xmit-some-params-now :Enso.A
                          [:Play_Speed :+1.0]
-                         [:Rec_Speed :+1.0]
-                         [:Saturation 0]
+                         [:Rec_Speed :-1.0]
+                         [:Saturation 1]
                          )
 
 (px/xmit-some-params-now :Enso.B
