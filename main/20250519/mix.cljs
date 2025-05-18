@@ -64,5 +64,6 @@
 
 (ctrl/mix-path :IO :IO)
 
-(ctrl/mix-paths [:Microtonic :Enso.A :IO])
+(ctrl/mix-paths [:Microtonic :IO])
+(ctrl/window :Microtonic 1)
 (ctrl/mix-paths nil)

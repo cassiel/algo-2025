@@ -1,7 +1,7 @@
 (ns user
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [net.cassiel.algo-2025.core :as c]
-            [net.cassiel.algo-2025.state :as s]
+            [net.cassiel.algo-2025.state :as state]
             [net.cassiel.algo-2025.params :as px]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]

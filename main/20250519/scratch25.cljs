@@ -155,3 +155,5 @@
        )
 
 (swap! s/SEQ assoc-in [:sequences :enso] nil)
+
+(ctrl/write :Discord4)

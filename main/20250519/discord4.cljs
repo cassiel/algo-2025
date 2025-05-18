@@ -11,19 +11,38 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(-> dev/param-enums :Discord4 keys)     ;; TODO: Not yet
+(ctrl/window :Discord4 1)
+
+(ctrl/mix-path :Microtonic :Discord4 :IO)
+
+
+(-> dev/param-enums :Discord4 keys)
 
 (px/get-matching s/PARAMS :Discord4 #".*Level.*")
 (px/get-matching-to-dict s/PARAMS :Discord4 #".*Shift.*")
+(px/get-matching-to-dict s/PARAMS :Discord4 #".*Size.*")
 (px/get-matching-to-dict s/PARAMS :Discord4 #".*Filter.*")
 (px/get-matching-to-dict s/PARAMS :Discord4 #".*Mode.*")
+(px/get-matching-to-dict s/PARAMS :Discord4 #".*Time.*")
 
 (ctrl/mix :IO :Discord4 0 5)
 (ctrl/mix :Discord4 :IO 0 5)
 
 (px/xmit-some-params-now :Discord4
-                         [:L_Shift_Amount 0.25]
-                         [:R_Shift_Amount 0.75])
+                         [:Shift_Mode :P1]
+                         [:L_Shift_Amount :0]
+                         [:R_Shift_Amount :0]
+                         [:L_Buffer_Size 0] ;; P1/P2
+                         [:R_Buffer_Size 0] ;; P1/P2
+                         [:L_Delay_Sync :On]
+                         [:R_Delay_Sync :On]
+                         [:L_Delay_Time :1.32]
+                         [:R_Delay_Time :1.32]
+                         )
+
+(px/xmit-some-params-now :Discord4
+                         [:Shift_Mode :G2]
+                         )
 
 (px/xmit-some-params-now :Discord4
                          [:L_Filter_Frequency 0.5]

@@ -26,7 +26,10 @@
     (vec (map (comp keyword as-str) (range f (inc t))))))
 
 (def param-enums
-  (let [enso       (let [speeds  {:-2.0 0.574349164962769
+  (let [ad-times   [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
+                  :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
+                  :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]
+        enso       (let [speeds  {:-2.0 0.574349164962769
                                   :-1.0 0.675480008125305
                                   :-0.5 0.718441188335419
                                   :+0.5 0.794417858123779
@@ -56,31 +59,40 @@
                       :Osc2Shap shapes
                       :Osc3Shap shapes})
         ;; Axon is obsolete - but possibly same for Axon_2.
-        axon       (->> (map (fn [i] [(keyword (gstring/format  "V%d_Pitch" i))
+        axon       (->> (map (fn [i] [(keyword (gstring/format "V%d_Pitch" i))
                                       named-notes])
                              (range 7))
                         (into {:ClockRat [:32 :16 :8]}))
-        ods        (let [times  [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
-                                 :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
-                                 :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]
+        discord4   (let [shifts [:-36 :-24 :-12 :0 :+12 :+24 :+36]
+                         off-on [:Off :On]]
+                     {:L_Shift_Amount shifts
+                      :R_Shift_Amount shifts
+                      :Shift_Mode     [:P1 :P2 :G2]
+                      :L_Delay_Sync   off-on
+                      :R_Delay_Sync   off-on
+                      ;; Only if sync mode:
+                      :L_Delay_Time ad-times
+                      :R_Delay_Time ad-times})
+        ods        (let [
                          taps   (vec (map #(keyword (str (inc %))) (range 16)))
                          speeds [:-2.0 :-1.75 :-1.5 :-1.25 :-1.0 :-0.75 :-0.5 :-0.25
                                  :0
                                  :+0.25 :+0.5 :+0.75 :+1.0 :+1.25 :+1.5 :1.75 :+2.0]]
                      {:Algorithm         [:Desert_Shores :Mecca :Cactus :Thermal :Mirage :Sky_Valley]
                       :Loop              [:Off :On]
-                      :_Time_1           times
-                      :_Time_2           times
+                      :_Time_1           ad-times
+                      :_Time_2           ad-times
                       :Algo04.._#_Taps_1 taps
                       :Algo04.._#_Taps_2 taps
                       :Algo05.._Speed    speeds
-                      :Algo05.._Heads   [:1 :2 :3 :4]
+                      :Algo05.._Heads    [:1 :2 :3 :4]
                       })
         ]
     {:Replika_XT replika-xt
      :Enso.A     enso
      :Enso.B     enso
      :Basic      basic
+     :Discord4   discord4
      :Axon       axon
      :ODS.A      ods
      :ODS.B      ods}))

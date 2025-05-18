@@ -54,21 +54,26 @@
         ;; is a float from 0.0 incl. to 1.0 excl., or a function to apply to the entire
         ;; sequence memory to mutate it.
         cues-at-this-pos (reduce concat (map #(get % pos) beat-maps))
-        message-cues (filter #(not (fn? %)) cues-at-this-pos)
-        fn-cues (filter fn? cues-at-this-pos)
+        message-cues     (filter #(not (fn? %)) cues-at-this-pos)
+        fn-cues          (filter fn? cues-at-this-pos)
         ;; Vectorise if needed; add pos to each of the fractional offsets:
         process-cue      #(update (vec %) 0 + pos)
         ;; Allow usage of note names as well as pitch numbers for non-fn cues:
-        patch-note        (fn [cue]
-                            (let [cue' (vec cue)]
+        patch-note       (fn [cue]
+                           (let [cue' (vec cue)]
                               (if (and (= (nth cue' 2) :note)
                                        (keyword? (nth cue' 3)))
                                 (update cue' 3 px/pitch)
                                 cue)))
         ;; messages are just seqs of cues with fixed-up beat/offset locations:
-        messages          (map (comp process-cue patch-note) message-cues)
+        messages         (map (comp process-cue patch-note) message-cues)
 
-        ;; Apply all function cues (order not defined)
+        ;; Apply all function cues (order not defined). Skip on empty list of functions, since
+        ;; the validation seems expensive to do on each beat.
+        #_ sequences' #_ (if (seq fn-cues)
+                     (cx/conformer ::sequences (reduce (fn [s f] (f s)) sequences fn-cues))
+                     sequences)
+
         sequences' (reduce (fn [s f] (f s)) sequences fn-cues)]
     (println messages)
     (assoc state

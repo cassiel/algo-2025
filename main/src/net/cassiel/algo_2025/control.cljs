@@ -45,7 +45,7 @@
 (defn write
   "Write a preset file from a VST instance. Returns a channel which pauses on write
    (though we've probably thrown up a file dialog)."
-  [device filename]
+  [device]
   (go
     (c/xmit :now device :write)
     (<! (async/timeout 500))))

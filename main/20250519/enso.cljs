@@ -27,7 +27,7 @@
 (go (<! (ctrl/read :Enso.A "BaseEnso")))
 (go (<! (ctrl/read :Enso.B "BaseEnso")))
 
-(ctrl/window :Enso.B 1)
+(ctrl/window :Enso.A 1)
 (ctrl/read :Enso.A "BaseEnso")
 
 (ctrl/mix-paths [:Microtonic :Enso.A :IO]
@@ -78,11 +78,17 @@
                                                    (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 :Enso.B :note OVERDUB 64 100]
                                                                                     (fn [seq] (dissoc seq :_ENSO_))]}))]})
 
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.A :Play_Speed :-1.0))
+(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.A :Play_Speed :+0.5))
                                                    (fn [seq] (dissoc seq :_ENSO_))]})
 
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.B :Play_Speed :+2.0))
+(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.A :Play_Speed :+2.0))
                                                    (fn [seq] (dissoc seq :_ENSO_))]})
+
+
+;; BAD:
+(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.B :Play_Speed :+2.0xx))
+                                                   (fn [seq] (dissoc seq :_ENSO_))]})
+
 
 
 (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 :Enso.A :note CLEAR-LOOP 64 100]]})
@@ -92,30 +98,12 @@
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Satur|Chor")
 
 
-;; TODO: just mess around with record/playback speed
-(px/xmit-some-params-now :Enso.A
-                         [:Rec_Speed :+1.0]
-                         [:Play_Speed :-1.0])
-
-(px/xmit-some-params-now :Enso.A
-                         [:Saturation 0.9]
-                         [:Chorus_Depth 0.9])
-
-#_ (go
-  (<! (ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                       :Overdub)))
-
-  (<! (ctrl/makenote :Enso.B (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                       :Overdub))))
-
 ;; ---
 (px/xmit-some-params-now :Enso.A
                          [:Mode_Quantize :Free])
 (px/xmit-some-params-now :Enso.A
                          [:Saturation 1])
 
-(ctrl/makenote :Enso.A (.indexOf [:ClearLoop :Record :Overdub :Play :Stop]
-                                 :Record))
 
 ;; ---
 
