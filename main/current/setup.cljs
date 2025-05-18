@@ -28,7 +28,7 @@
 
 ;; >>> BULK ROOT PRESET LOAD.
 
-(go (<! (ctrl/read :Enso.A "BaseEnso"))
+#_ (go (<! (ctrl/read :Enso.A "BaseEnso"))
     (<! (ctrl/read :Enso.B "BaseEnso"))
     (<! (ctrl/read :ODS.A "BaseODS"))
     (<! (ctrl/read :ODS.B "BaseODS"))

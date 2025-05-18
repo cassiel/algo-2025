@@ -11,6 +11,15 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
+(ctrl/read :ODS.A "BaseODS")
+(ctrl/read :ODS.B "BaseODS")
+
+(ctrl/mix-paths #_ [:Microtonic :Enso.A :ODS.A :IO]
+                #_ [:Microtonic :ODS.A :IO]
+                #_ [:Microtonic :Enso.A :ODS.A :IO]
+                [:Microtonic :ODS.A :IO]
+                )
+
 ;; Preset state:
 
 (px/get-matching-to-dict s/PARAMS :ODS.A #"Speed|Heads")
@@ -40,10 +49,10 @@
                          )
 
 (px/xmit-some-params-now :ODS.A
-                         [:_Time_1 :1.4]
+                         [:_Time_1 :1.8]
                          [:_Time_2 :1.8D]
                          [:Mix 1]
-                         [:Regen 0.5]
+                         [:Regen 0.25]
                          )
 
 (px/xmit-some-params-now :ODS.B
@@ -60,7 +69,7 @@
 
 ;; THERMAL (4) - multitap 16
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Loop :Off]
                          [:Algorithm :Thermal]
                          [:Regen 0]
@@ -74,19 +83,19 @@
                          [:Regen 0.6])
 (px/xmit-some-params-now :ODS.A
                          [:Algo04.._Crossfeed 0.8]
-                         [:Algo04.._#_Taps_2 :5])
+                         [:Algo04.._#_Taps_2 :2])
 
 ;; MIRAGE (5) - tumble
 
 (px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
-                         [:Algo05.._Speed :+1]
+                         [:Algo05.._Speed :+1.0]
                          [:Algorithm :Mirage]
                          [:Algo05.._Heads :1]
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+2.0])
+                         [:Algo05.._Speed :+1.0])
 
 (px/xmit-some-params-now :ODS.A
                          [:Algo05.._Speed :0]

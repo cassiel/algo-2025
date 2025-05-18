@@ -12,11 +12,6 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-(-> dev/param-enums :Enso.A keys)       ; TODO get this into dictionary (and enum values)
-(-> dev/param-enums :Enso.A :Mode)
-(-> dev/param-enums :Enso.A :Mode_Quantize)
-(-> dev/param-enums :Enso.A :Play_Speed)
-
 (do
   (def CLEAR-LOOP :C-2)
   (def RECORD :C#-2)
@@ -26,6 +21,12 @@
 
 (go (<! (ctrl/read :Enso.A "BaseEnso")))
 (go (<! (ctrl/read :Enso.B "BaseEnso")))
+
+(-> dev/param-enums :Enso.A keys)       ; TODO get this into dictionary (and enum values)
+(-> dev/param-enums :Enso.A :Mode)
+(-> dev/param-enums :Enso.A :Mode_Quantize)
+(-> dev/param-enums :Enso.A :Play_Speed)
+
 
 (ctrl/window :Enso.A 1)
 (ctrl/read :Enso.A "BaseEnso")
@@ -68,27 +69,15 @@
 
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 :Enso.A :note CLEAR-LOOP 64 100]
-                                                   [0.5 :Enso.A :note RECORD 64 100]
-                                                   (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 :Enso.A :note OVERDUB 64 100]
-                                                                                    (fn [seq] (dissoc seq :_ENSO_))]}))]})
+(let [enso :Enso.B]
+  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 enso :note CLEAR-LOOP 64 100]
+                                                     [0.5 enso :note RECORD 64 100]
+                                                     (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 enso :note OVERDUB 64 100]
+                                                                                      (fn [seq] (dissoc seq :_ENSO_))]}))]}))
 
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 :Enso.B :note CLEAR-LOOP 64 100]
-                                                   [0.5 :Enso.B :note RECORD 64 100]
-                                                   (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 :Enso.B :note OVERDUB 64 100]
-                                                                                    (fn [seq] (dissoc seq :_ENSO_))]}))]})
-
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.A :Play_Speed :+0.5))
-                                                   (fn [seq] (dissoc seq :_ENSO_))]})
-
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.A :Play_Speed :+2.0))
-                                                   (fn [seq] (dissoc seq :_ENSO_))]})
-
-
-;; BAD:
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet :Enso.B :Play_Speed :+2.0xx))
-                                                   (fn [seq] (dissoc seq :_ENSO_))]})
-
+(let [enso :Enso.B]
+  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :-1.0))
+                                                     (fn [seq] (dissoc seq :_ENSO_))]}))
 
 
 (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 :Enso.A :note CLEAR-LOOP 64 100]]})
@@ -102,7 +91,9 @@
 (px/xmit-some-params-now :Enso.A
                          [:Mode_Quantize :Free])
 (px/xmit-some-params-now :Enso.A
-                         [:Saturation 1])
+                         [:Saturation 1]
+                         [:Chorus_Depth 0.75]
+                         [:Chorus_Rate 0.5])
 
 
 ;; ---
@@ -110,34 +101,8 @@
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 0])
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 1])
 
-
-(ctrl/mix :IO :Enso.B 0 10)
+(ctrl/mix-paths [:Microtonic :Enso.A :IO]
+                #_ [:Microtonic :Enso.B :IO]
+                #_ [:Microtonic :IO])
 
 ;; TODO should mix return a channel?
-(go
-  (ctrl/mix :* :* -40 5)
-  (ctrl/mix :IO :Enso.A 0 5)
-  (ctrl/mix :IO :Enso.B 0 5)
-  (ctrl/mix :Enso.A :IO -10 5)
-  (ctrl/mix :Enso.B :IO -10 5)
-  )
-
-
-(do
-  (ctrl/mix :IO :Enso.A 0 10)
-  (ctrl/mix :Enso.A :ODS.A 0 10)
-  (ctrl/mix :ODS.A :IO -10 10))
-
-
-
-(<! (ctrl/mix :Enso.B :IO 0 10))
-
-(ctrl/mix :Enso.A :IO -40 5)
-(ctrl/mix :Enso.B :IO 0 5)
-(ctrl/mix :Enso.B :ODS.B 0 5)
-
-(ctrl/mix :Enso.A :Replika_XT -40 10)
-(ctrl/mix :Enso.A :IO -10 10)
-(ctrl/mix :Enso.A :ODS.B -40 10)
-
-(ctrl/mix :* :* -40 5)

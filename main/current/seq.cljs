@@ -38,13 +38,13 @@
 
                                           }
                                          #_ (dissoc :b0)
-                                         #_ (dissoc :bs)
+                                         (dissoc :bs)
                                          #_ (dissoc :ds)
                                          #_ (dissoc :hh)
-                                         (dissoc :sc)
+                                         #_ (dissoc :sc)
                                          #_ (dissoc :sd)
                                          #_ (dissoc :h2)
-                                         (dissoc :ch)
+                                         #_ (dissoc :ch)
                                          #_ (dissoc :rd)
                                          )
                           :messages nil})

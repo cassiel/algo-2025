@@ -11,9 +11,11 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
+(ctrl/read :Discord4 "BaseDiscord4")
+
 (ctrl/window :Discord4 1)
 
-(ctrl/mix-path :Microtonic :Discord4 :IO)
+(ctrl/mix-path :Axon_2 :Discord4 :Enso.A :IO)
 
 
 (-> dev/param-enums :Discord4 keys)
@@ -27,6 +29,13 @@
 
 (ctrl/mix :IO :Discord4 0 5)
 (ctrl/mix :Discord4 :IO 0 5)
+
+(px/xmit-some-params-now :Discord4
+                         [:L_Delay_Time :1.8]
+                         [:R_Delay_Time :1.4D]
+                         [:L_Shift_Amount :-12]
+                         [:R_Shift_Amount :+12]
+                         )
 
 (px/xmit-some-params-now :Discord4
                          [:Shift_Mode :P1]
@@ -47,10 +56,5 @@
 (px/xmit-some-params-now :Discord4
                          [:L_Filter_Frequency 0.5]
                          [:R_Filter_Frequency 0.5])
-
-;; TODO: mode into param enums.
-
-(px/xmit-some-params-now :Discord4
-                         [:Shift_Mode 1])
 
 (ctrl/mix-path :IO :Discord4 :IO)
