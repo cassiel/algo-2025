@@ -17,7 +17,8 @@
 (ctrl/mix-paths #_ [:Microtonic :Enso.A :ODS.A :IO]
                 #_ [:Microtonic :ODS.A :IO]
                 #_ [:Microtonic :Enso.A :ODS.A :IO]
-                [:Microtonic :ODS.A :IO]
+                [:IO :ODS.A :IO]
+                [:IO :ODS.B :IO]
                 )
 
 ;; Preset state:
@@ -42,40 +43,40 @@
 (px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Desert_Shores]
-                         [:_Time_1 :1.4]
+                         [:_Time_1 :1.2]
                          [:_Time_2 :1.8D]
-                         [:Mix 1]
-                         [:Regen 0.25]
+                         [:Mix 0.5]
+                         [:Regen 0]
                          )
 
 (px/xmit-some-params-now :ODS.A
                          [:_Time_1 :1.8]
                          [:_Time_2 :1.8D]
-                         [:Mix 1]
-                         [:Regen 0.25]
+                         [:Mix 0.25]
+                         [:Regen 0]
                          )
 
 (px/xmit-some-params-now :ODS.B
-                         [:Mix 1]
+                         [:Mix 0.5]
                          [:Regen 0]
                          [:_Time_1 :1.4]
                          [:_Time_2 :1.4D]
                          [:Algo01.._Saturation 1])
 
-(px/xmit-some-params-now :ODS.A
-                         [:Regen 0]
+(px/xmit-some-params-now :ODS.B
+                         [:Regen 0.25]
                          )
 
 
 ;; THERMAL (4) - multitap 16
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Thermal]
                          [:Regen 0]
                          [:Algo04.._#_Taps_1 :1]
                          [:Algo04.._#_Taps_1 :2]
-                         [:Mix 1])
+                         [:Mix 0.5])
 (px/xmit-some-params-now :ODS.A
                          [:_Time_2 :1.4]
                          [:_Time_2 :1.4D])
@@ -95,11 +96,17 @@
                          [:Mix 1])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+1.0])
+                         [:Algo05.._Speed :+0.5]
+                         [:Algo05.._Heads :1])
 
-(px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :0]
+(px/xmit-some-params-now :ODS.B
+                         [:Algo05.._Speed :+1.0]
                          [:Algo05.._Heads :4])
+
+(doseq [ods [:ODS.A :ODS.B]]
+  (px/xmit-some-params-now ods
+                           [:Algo05.._Speed :0]
+                           ))
 
 
 (ctrl/mix :IO :ODS.B -40 5)

@@ -11,6 +11,9 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
+(ctrl/mix-path :IO :IO)
+(ctrl/mix-paths [])
+
 (do (ctrl/mix :* :* -40 20)
     (ctrl/mix :Microtonic :Enso.A 0 2)
     (ctrl/mix :Enso.A :IO 0 2))

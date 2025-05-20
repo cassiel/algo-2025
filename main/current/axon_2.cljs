@@ -13,6 +13,7 @@
 ;; >>> OUTPUTS:
 
 (ctrl/mix-path :Axon_2 :IO)
+(ctrl/mix-path :IO :IO)
 (ctrl/mix-paths [])
 
 (go

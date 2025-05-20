@@ -15,7 +15,7 @@
 
 (ctrl/window :Discord4 1)
 
-(ctrl/mix-path :Axon_2 :Discord4 :Enso.A :IO)
+(ctrl/mix-path :IO :Discord4 :IO)
 
 
 (-> dev/param-enums :Discord4 keys)
@@ -34,7 +34,11 @@
                          [:L_Delay_Time :1.8]
                          [:R_Delay_Time :1.4D]
                          [:L_Shift_Amount :-12]
-                         [:R_Shift_Amount :+12]
+                         [:R_Shift_Amount :-12]
+                         )
+
+(px/xmit-some-params-now :Discord4
+                         [:Shift_Mode :P1]
                          )
 
 (px/xmit-some-params-now :Discord4

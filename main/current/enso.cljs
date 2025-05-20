@@ -29,13 +29,12 @@
 
 
 (ctrl/window :Enso.A 1)
-(ctrl/read :Enso.A "BaseEnso")
 
 (ctrl/mix-paths [:Microtonic :Enso.A :IO]
                 [:Microtonic :IO])
 
-(ctrl/mix-paths [:Axon_2 :Enso.A :IO]
-                [:Axon_2 :IO])
+(ctrl/mix-paths [:IO :Enso.A :IO]
+                [:IO :IO])
 
 (ctrl/mix-path :IO :Enso.A :Discord4 :IO)
 
@@ -69,14 +68,14 @@
 
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
-(let [enso :Enso.B]
+(let [enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 enso :note CLEAR-LOOP 64 100]
                                                      [0.5 enso :note RECORD 64 100]
                                                      (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 enso :note OVERDUB 64 100]
                                                                                       (fn [seq] (dissoc seq :_ENSO_))]}))]}))
 
-(let [enso :Enso.B]
-  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :-1.0))
+(let [enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
                                                      (fn [seq] (dissoc seq :_ENSO_))]}))
 
 
@@ -90,10 +89,11 @@
 ;; ---
 (px/xmit-some-params-now :Enso.A
                          [:Mode_Quantize :Free])
+
 (px/xmit-some-params-now :Enso.A
                          [:Saturation 1]
-                         [:Chorus_Depth 0.75]
-                         [:Chorus_Rate 0.5])
+                         [:Chorus_Depth 1]
+                         [:Chorus_Rate 0.25])
 
 
 ;; ---
