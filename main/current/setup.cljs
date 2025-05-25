@@ -2,6 +2,7 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [net.cassiel.algo-2025.core :as c]
             [net.cassiel.algo-2025.state :as state]
+            [net.cassiel.algo-2025.devices :as dev]
             [net.cassiel.algo-2025.params :as px]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
@@ -28,14 +29,14 @@
 
 ;; >>> BULK ROOT PRESET LOAD.
 
-#_ (go (<! (ctrl/read :Enso.A "BaseEnso"))
+(go (<! (ctrl/read :Enso.A "BaseEnso"))
     (<! (ctrl/read :Enso.B "BaseEnso"))
     (<! (ctrl/read :ODS.A "BaseODS"))
     (<! (ctrl/read :ODS.B "BaseODS"))
     (<! (ctrl/read :Axon_2 "BaseAxon2"))
     (<! (ctrl/read :Microtonic "BaseMicrotonic"))
     (<! (ctrl/read :Discord4 "BaseDiscord4")))
-(ctrl/read :Microtonic "BaseMicrotonic")
+
 
 ;; >>> BULK PARAMETER REFLECTION.
 
@@ -75,3 +76,9 @@
                            :ODS.A
                            :ODS.B
                            :Discord4]))
+
+;; ---
+
+(dev/get-dev-enums-to-dict :Discord4)
+(dev/get-dev-enums-to-dict :Enso.A)
+(dev/get-dev-enums-to-dict :Microtonic)

@@ -12,6 +12,7 @@
 
 (reset! state/SEQ {:sequences {} :messages nil})
 
+(ctrl/window :Microtonic 0)
 
 (letfn [(row [pitch positions]
           (map (fn [pos] [pos :Microtonic :note pitch 64 0]) positions))]

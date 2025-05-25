@@ -28,10 +28,14 @@
 (-> dev/param-enums :Enso.A :Play_Speed)
 
 
+
 (ctrl/window :Enso.A 1)
 
 (ctrl/mix-paths [:Microtonic :Enso.A :IO]
                 [:Microtonic :IO])
+
+(ctrl/mix-paths [:Microtonic :Enso.A]
+                )
 
 (ctrl/mix-paths [:IO :Enso.A :IO]
                 [:IO :IO])
@@ -69,10 +73,11 @@
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
 (let [enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 enso :note CLEAR-LOOP 64 100]
-                                                     [0.5 enso :note RECORD 64 100]
-                                                     (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 enso :note OVERDUB 64 100]
-                                                                                      (fn [seq] (dissoc seq :_ENSO_))]}))]}))
+  (swap! state/SEQ assoc-in [:sequences :_ENSO_]
+         {4 [[0.1 enso :note CLEAR-LOOP 64 100]
+             [0.5 enso :note RECORD 64 100]
+             (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 enso :note OVERDUB 64 100]
+                                              (fn [seq] (dissoc seq :_ENSO_))]}))]}))
 
 (let [enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))

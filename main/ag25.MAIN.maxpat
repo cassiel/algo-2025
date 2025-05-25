@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 64.0, 124.0, 817.0, 742.0 ],
+		"rect" : [ 51.0, 111.0, 817.0, 806.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -43,15 +43,8 @@
 					"patching_rect" : [ 975.0, 545.0, 401.0, 38.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 40.0, 150.0, 38.0 ],
-					"saved_attribute_attributes" : 					{
-						"textcolor" : 						{
-							"expression" : "themecolor.theme_color"
-						}
-
-					}
-,
 					"text" : "CASSIEL",
-					"textcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1.0 ]
+					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.5 ]
 				}
 
 			}
@@ -67,15 +60,8 @@
 					"patching_rect" : [ 975.0, 505.0, 363.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 15.0, 150.0, 35.0 ],
-					"saved_attribute_attributes" : 					{
-						"textcolor" : 						{
-							"expression" : "themecolor.theme_color"
-						}
-
-					}
-,
 					"text" : "PROJECT",
-					"textcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 1.0 ]
+					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.5 ]
 				}
 
 			}
@@ -84,6 +70,7 @@
 					"angle" : 270.0,
 					"bgcolor" : [ 0.618934978328545, 0.744701397656435, 0.953750108255376, 0.2 ],
 					"border" : 2,
+					"bordercolor" : [ 0.0, 0.0, 0.0, 0.0 ],
 					"id" : "obj-54",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -93,14 +80,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 615.0, 10.0, 180.0, 70.0 ],
 					"proportion" : 0.39,
-					"rounded" : 0,
-					"saved_attribute_attributes" : 					{
-						"bordercolor" : 						{
-							"expression" : "themecolor.theme_color"
-						}
-
-					}
-
+					"rounded" : 0
 				}
 
 			}
@@ -203,7 +183,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 135.0, 520.0, 31.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 120.0, 45.0, 23.0 ],
+					"presentation_rect" : [ 15.0, 100.0, 45.0, 23.0 ],
 					"text" : "Clr"
 				}
 
@@ -371,7 +351,7 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "{\n\t\"Chorus_Depth\" : [ 29, 0, null ],\n\t\"Chorus_Rate\" : [ 28, 0, null ],\n\t\"Saturation\" : [ 23, 0, null ]\n}\n",
+					"embed" : 0,
 					"fontface" : 0,
 					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
@@ -382,7 +362,7 @@
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 105.0, 640.0, 340.0, 200.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 150.0, 360.0, 220.0 ],
+					"presentation_rect" : [ 15.0, 150.0, 540.0, 430.0 ],
 					"saved_object_attributes" : 					{
 						"legacy" : 0,
 						"parameter_enable" : 0,
@@ -517,7 +497,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 900.0, 260.0, 330.0, 220.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 240.0, 485.0, 540.0, 220.0 ],
+					"presentation_rect" : [ 15.0, 580.0, 540.0, 220.0 ],
 					"showgain" : 2
 				}
 
@@ -1115,7 +1095,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 645.0, 645.0, 225.0, 105.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 380.0, 225.0, 105.0 ],
+					"presentation_rect" : [ 555.0, 475.0, 225.0, 105.0 ],
 					"varname" : "cassiel.textbrick"
 				}
 
@@ -1165,7 +1145,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 645.0, 260.0, 225.0, 220.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 485.0, 225.0, 220.0 ]
+					"presentation_rect" : [ 555.0, 580.0, 225.0, 220.0 ]
 				}
 
 			}
@@ -3441,7 +3421,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 30 33 500"
+									"text" : "0 20 10 0"
 								}
 
 							}
@@ -4525,7 +4505,7 @@
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 15.0, 790.0, 400.0, 220.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 390.0, 150.0, 400.0, 220.0 ],
+					"presentation_rect" : [ 555.0, 255.0, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -5073,15 +5053,15 @@
 			}
 , 			{
 				"name" : "cassiel.krellmixer.js",
-				"bootpath" : "~/Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
+				"bootpath" : "~/Documents/Max 9/Packages/ui-candy-2006/jsui",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Packages/ui-candy-2006/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "cassiel.textbrick.js",
-				"bootpath" : "~/Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
-				"patcherrelativepath" : "../../../../Documents/Max 9/Packages/cassiel.ui-candy-2006/jsui",
+				"bootpath" : "~/Documents/Max 9/Packages/ui-candy-2006/jsui",
+				"patcherrelativepath" : "../../../../Documents/Max 9/Packages/ui-candy-2006/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

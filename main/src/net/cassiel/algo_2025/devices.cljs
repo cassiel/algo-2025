@@ -1,5 +1,9 @@
 (ns net.cassiel.algo-2025.devices
-  (:require [goog.string :as gstring]
+  (:require-macros [cljs.core.async.macros :refer [go]])
+  (:require [net.cassiel.algo-2025.core :as c]
+            [cljs.core.async.interop :refer [<p!]]
+            [cljs.core.async :as async :refer [put! chan <! >!]]
+            [goog.string :as gstring]
             [goog.string.format]))
 
 (def
@@ -96,3 +100,9 @@
      :Axon       axon
      :ODS.A      ods
      :ODS.B      ods}))
+
+(defn get-dev-enums-to-dict [dev]
+  (let [json-obj (clj->js {dev (get param-enums dev)})]
+    (go
+      (<p! (.setDict c/max-api "X" json-obj))
+      (.outlet c/max-api "show"))))
