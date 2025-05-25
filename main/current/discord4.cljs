@@ -13,12 +13,11 @@
 
 (ctrl/read :Discord4 "BaseDiscord4")
 
-(ctrl/window :Discord4 1)
+(ctrl/window :Discord4 0)
 
 (ctrl/mix-path :IO :Discord4 :IO)
 
-
-(-> dev/param-enums :Discord4 keys)
+(dev/get-dev-enums-to-dict :Discord4)
 
 (px/get-matching s/PARAMS :Discord4 #".*Level.*")
 (px/get-matching-to-dict s/PARAMS :Discord4 #".*Shift.*")
