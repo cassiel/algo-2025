@@ -13,9 +13,11 @@
 
 (ctrl/read :Discord4 "BaseDiscord4")
 
-(ctrl/window :Discord4 0)
+(ctrl/window :Discord4 1)
 
-(ctrl/mix-path :IO :Discord4 :IO)
+(ctrl/mix-path :Microtonic :Discord4 :Enso.A :IO)
+(ctrl/mix-path)
+(ctrl/master 0)
 
 (dev/get-dev-enums-to-dict :Discord4)
 
@@ -31,7 +33,7 @@
 
 (px/xmit-some-params-now :Discord4
                          [:L_Delay_Time :1.8]
-                         [:R_Delay_Time :1.4D]
+                         [:R_Delay_Time :1.8D]
                          [:L_Shift_Amount :-12]
                          [:R_Shift_Amount :-12]
                          )

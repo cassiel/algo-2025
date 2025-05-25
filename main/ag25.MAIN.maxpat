@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 51.0, 111.0, 817.0, 806.0 ],
+		"rect" : [ 51.0, 111.0, 964.0, 808.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -3421,7 +3421,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 20 10 0"
+									"text" : "0 11 37 500"
 								}
 
 							}
@@ -4522,6 +4522,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

@@ -80,28 +80,34 @@
                                               (fn [seq] (dissoc seq :_ENSO_))]}))]}))
 
 (let [enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
+  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :+0.5))
                                                      (fn [seq] (dissoc seq :_ENSO_))]}))
 
 
-(swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 :Enso.A :note CLEAR-LOOP 64 100]]})
+(let [enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 enso :note OVERDUB 64 100]]}))
 
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Quant|Unit")
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Satur|Chor")
+(px/xmit-some-params-now :Enso.A [:Saturation 0.5])
 
+(dev/get-dev-enums-to-dict :Enso.A)
 
 ;; ---
 (px/xmit-some-params-now :Enso.A
                          [:Mode_Quantize :Free])
 
 (px/xmit-some-params-now :Enso.A
-                         [:Saturation 1]
+                         [:Saturation 0.5]
                          [:Chorus_Depth 1]
-                         [:Chorus_Rate 0.25])
+                         [:Chorus_Rate 0.1])
+
 
 
 ;; ---
+
+(ctrl/master -5 1)
 
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 0])
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 1])

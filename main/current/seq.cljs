@@ -13,6 +13,7 @@
 (reset! state/SEQ {:sequences {} :messages nil})
 
 (ctrl/window :Microtonic 0)
+(ctrl/mix-path :Microtonic :IO)
 
 (letfn [(row [pitch positions]
           (map (fn [pos] [pos :Microtonic :note pitch 64 0]) positions))]
@@ -39,12 +40,12 @@
 
                                           }
                                          #_ (dissoc :b0)
-                                         (dissoc :bs)
+                                         #_ (dissoc :bs)
                                          #_ (dissoc :ds)
                                          #_ (dissoc :hh)
                                          #_ (dissoc :sc)
-                                         #_ (dissoc :sd)
-                                         #_ (dissoc :h2)
+                                         (dissoc :sd)
+                                         (dissoc :h2)
                                          #_ (dissoc :ch)
                                          #_ (dissoc :rd)
                                          )
