@@ -17,8 +17,9 @@
 (ctrl/mix-paths #_ [:Microtonic :Enso.A :ODS.A :IO]
                 #_ [:Microtonic :ODS.A :IO]
                 #_ [:Microtonic :Enso.A :ODS.A :IO]
-                [:IO :ODS.A :IO]
-                [:IO :ODS.B :IO]
+                [:IO :Enso.A :Discord4 :ODS.A :IO]
+                [:IO :Enso.A :Discord4 :ODS.B :IO]
+                #_ [:IO :ODS.B :IO]
                 )
 
 ;; Preset state:
@@ -37,6 +38,7 @@
 (-> dev/param-enums :ODS.A :Algo04.._#_Taps_1)
 (-> dev/param-enums :ODS.A :Algo05.._Speed)
 (-> dev/param-enums :ODS.A :Algo05.._Heads)
+(dev/get-dev-enums-to-dict :ODS.A)
 
 ;; DESERT SHORES (1) - delay line
 
@@ -50,10 +52,10 @@
                          )
 
 (px/xmit-some-params-now :ODS.A
-                         [:_Time_1 :1.8]
-                         [:_Time_2 :1.8D]
-                         [:Mix 0.25]
-                         [:Regen 0]
+                         [:_Time_1 :1.4]
+                         [:_Time_2 :1.4D]
+                         [:Mix 0.75]
+                         [:Regen 0.75]
                          )
 
 (px/xmit-some-params-now :ODS.B
@@ -70,37 +72,39 @@
 
 ;; THERMAL (4) - multitap 16
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Loop :Off]
                          [:Algorithm :Thermal]
                          [:Regen 0]
                          [:Algo04.._#_Taps_1 :1]
                          [:Algo04.._#_Taps_1 :2]
                          [:Mix 0.5])
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:_Time_2 :1.4]
                          [:_Time_2 :1.4D])
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Regen 0.6])
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Algo04.._Crossfeed 0.8]
                          [:Algo04.._#_Taps_2 :2])
 
 ;; MIRAGE (5) - tumble
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Loop :Off]
                          [:Algo05.._Speed :+1.0]
                          [:Algorithm :Mirage]
                          [:Algo05.._Heads :1]
                          [:Mix 1])
 
-(px/xmit-some-params-now :ODS.A
-                         [:Algo05.._Speed :+0.5]
-                         [:Algo05.._Heads :1])
-
 (px/xmit-some-params-now :ODS.B
-                         [:Algo05.._Speed :+1.0]
+                         [:Loop :Off]
+                         [:Algo05.._Speed :+0.5]
+                         [:Algo05.._Heads :4])
+
+(px/xmit-some-params-now :ODS.A
+                         [:Loop :Off]
+                         [:Algo05.._Speed :+0.5]
                          [:Algo05.._Heads :4])
 
 (doseq [ods [:ODS.A :ODS.B]]

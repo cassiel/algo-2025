@@ -6,6 +6,7 @@
             [net.cassiel.algo-2025.params :as px]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
+            [net.cassiel.algo-2025.tools :as t]
             [net.cassiel.algo-2025.conformer :as cx]
             [cljs.core.async.interop :refer [<p!]]
             [cljs.core.async :as async :refer [put! chan <! >!]]
@@ -38,9 +39,11 @@
                 )
 
 (ctrl/mix-paths [:IO :Enso.A :IO]
-                [:IO :IO])
+                [:IO :Enso.B :IO]
+                )
 
 (ctrl/mix-path :IO :Enso.A :Discord4 :IO)
+(ctrl/mix-path :IO :IO)
 
 ;; TODO: make this return a channel.
 
@@ -72,20 +75,30 @@
 
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
-(let [enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences :_ENSO_]
+(let [uuid (t/uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid]
          {4 [[0.1 enso :note CLEAR-LOOP 64 100]
              [0.5 enso :note RECORD 64 100]
-             (fn [seq] (assoc seq :_ENSO_ {4 [[0.5 enso :note OVERDUB 64 100]
-                                              (fn [seq] (dissoc seq :_ENSO_))]}))]}))
+             (fn [seq] (assoc seq uuid {4 [[0.5 enso :note OVERDUB 64 100]
+                                           (fn [seq] (dissoc seq uuid))]}))]}))
 
-(let [enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {1 [(cons 0 (px/param-packet enso :Play_Speed :+0.5))
-                                                     (fn [seq] (dissoc seq :_ENSO_))]}))
+(let [uuid (t/uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :+1.0))
+                                                  (fn [seq] (dissoc seq uuid))]}))
 
 
-(let [enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences :_ENSO_] {4 [[0.1 enso :note OVERDUB 64 100]]}))
+(let [uuid (t/uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
+                                                  (fn [seq] (dissoc seq uuid))]}))
+
+
+(let [uuid (t/uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [[0.1 enso :note OVERDUB 64 100]
+                                                  (fn [seq] (dissoc seq uuid))]}))
 
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Quant|Unit")
@@ -107,7 +120,7 @@
 
 ;; ---
 
-(ctrl/master -5 1)
+(ctrl/master -3 10)
 
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 0])
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 1])
@@ -117,3 +130,8 @@
                 #_ [:Microtonic :IO])
 
 ;; TODO should mix return a channel?
+
+(let [uuid (t/uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [[0.1 enso :note PLAY 64 100]
+                                                  (fn [seq] (dissoc seq uuid))]}))

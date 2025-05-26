@@ -6,6 +6,7 @@
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
             [net.cassiel.algo-2025.conformer :as cx]
+            [net.cassiel.algo-2025.tools :as t]
             [cljs.core.async :as async :refer [put! chan <! >!]]
             [goog.string :as gstring]
             [goog.string.format]))
@@ -157,3 +158,7 @@
 (swap! s/SEQ assoc-in [:sequences :enso] nil)
 
 (ctrl/write :Discord4)
+
+;; ---
+
+(t/uuid)

@@ -57,8 +57,11 @@
   (<! (async/timeout 100))
   (<! (c/xmit :toggle :transport 1)))
 
+(ctrl/mix-path :IO :IO)
+
 ;; >>> STOP
 
+(ctrl/mix-paths [])
 (go (<! (c/xmit :toggle :transport 0))
     (<! (async/timeout 250))
     (<! (c/xmit :toggle :dsp 0)))
