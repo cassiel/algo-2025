@@ -39,7 +39,7 @@
                 )
 
 (ctrl/mix-paths [:IO :Enso.A :IO]
-                [:IO :Enso.B :IO]
+                #_ [:IO :Enso.B :IO]
                 )
 
 (ctrl/mix-path :IO :Enso.A :Discord4 :IO)
@@ -64,6 +64,10 @@
                          )
 
 (px/xmit-some-params-now :Enso.B
+                         [:Saturation 0.5]
+                         )
+
+(px/xmit-some-params-now :Enso.B
                          [:Link_Speeds :Off]
                          [:Input_Level 1]
                          [:Play_Speed :+1.0]
@@ -76,7 +80,7 @@
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
 (let [uuid (t/uuid)
-      enso :Enso.A]
+      enso :Enso.B]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {4 [[0.1 enso :note CLEAR-LOOP 64 100]
              [0.5 enso :note RECORD 64 100]
@@ -85,13 +89,13 @@
 
 (let [uuid (t/uuid)
       enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :+1.0))
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
 
 (let [uuid (t/uuid)
-      enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
+      enso :Enso.B]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :+1.0))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
 
@@ -126,12 +130,12 @@
 (px/xmit-some-params-now :Enso.A [:Dub_In_Place 1])
 
 (ctrl/mix-paths [:Microtonic :Enso.A :IO]
-                #_ [:Microtonic :Enso.B :IO]
+                [:Microtonic :Enso.B :IO]
                 #_ [:Microtonic :IO])
 
 ;; TODO should mix return a channel?
 
 (let [uuid (t/uuid)
       enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid] {1 [[0.1 enso :note PLAY 64 100]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [[0.1 enso :note OVERDUB 64 100]
                                                   (fn [seq] (dissoc seq uuid))]}))
