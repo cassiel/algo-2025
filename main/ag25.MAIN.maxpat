@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 51.0, 111.0, 964.0, 808.0 ],
+		"rect" : [ 72.0, 103.0, 975.0, 808.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,21 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"autofit" : 1,
+					"id" : "obj-46",
+					"maxclass" : "fpic",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "jit_matrix" ],
+					"patching_rect" : [ 780.0, 175.0, 100.0, 50.0 ],
+					"pic" : "the-printer-jam.jpeg",
+					"presentation" : 1,
+					"presentation_rect" : [ 630.0, 85.0, 150.0, 150.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-41",
 					"maxclass" : "newobj",
@@ -44,7 +59,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 40.0, 150.0, 38.0 ],
 					"text" : "CASSIEL",
-					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.5 ]
+					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.8 ]
 				}
 
 			}
@@ -61,7 +76,7 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 630.0, 15.0, 150.0, 35.0 ],
 					"text" : "PROJECT",
-					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.5 ]
+					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.8 ]
 				}
 
 			}
@@ -3272,7 +3287,7 @@
 ,
 					"patching_rect" : [ 210.0, 425.0, 62.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 615.0, 120.0, 62.0, 23.0 ],
+					"presentation_rect" : [ 180.0, 105.0, 62.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
@@ -4448,7 +4463,7 @@
 ,
 					"patching_rect" : [ 90.0, 315.0, 92.0, 23.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 615.0, 95.0, 92.0, 23.0 ],
+					"presentation_rect" : [ 75.0, 105.0, 92.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
@@ -4522,8 +4537,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -5090,6 +5103,13 @@
 				"name" : "resize_n4m_monitor_patcher.js",
 				"bootpath" : "C74:/packages/Node for Max/patchers/debug-monitor",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "the-printer-jam.jpeg",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "JPEG",
 				"implicit" : 1
 			}
  ],
