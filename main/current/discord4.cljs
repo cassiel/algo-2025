@@ -16,6 +16,8 @@
 
 (ctrl/window :Discord4 1)
 
+(ctrl/mix-paths [:IO :Enso.A :Discord4 :ODS.A :IO])
+
 (ctrl/mix-paths [:IO :Discord4 :ODS.A :Enso.A :IO]
                 [:IO :Discord4 :ODS.B :Enso.B :IO])
 (ctrl/mix-paths [:IO :IO])
@@ -48,15 +50,15 @@
 
 (let [uuid (t/uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
-         {1 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.8))
+         {1 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.4))
              (cons 0 (px/param-packet :Discord4 :R_Delay_Time :1.8D))
-             (fn [seq] (assoc seq uuid {2 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.2))
-                                           (cons 0 (px/param-packet :Discord4 :R_Delay_Time :1.2D))
+             (fn [seq] (assoc seq uuid {2 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.8))
+                                           (cons 0 (px/param-packet :Discord4 :R_Delay_Time :1.8D))
                                            (fn [seq] (dissoc seq uuid))]}))]}))
 
 
 (px/xmit-some-params-now :Discord4
-                         [:Shift_Mode :P1] ; Only do when there's downstream smoothing
+                         [:Shift_Mode :G1] ; Only do when there's downstream smoothing
                          )
 
 (px/xmit-some-params-now :Discord4

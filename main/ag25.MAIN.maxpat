@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 72.0, 103.0, 975.0, 808.0 ],
+		"rect" : [ 68.0, 108.0, 975.0, 808.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,19 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-65",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 855.0, 70.0, 50.0, 23.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"autofit" : 1,
 					"id" : "obj-46",
@@ -377,7 +390,7 @@
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 105.0, 640.0, 340.0, 200.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 150.0, 540.0, 430.0 ],
+					"presentation_rect" : [ 15.0, 180.0, 540.0, 400.0 ],
 					"saved_object_attributes" : 					{
 						"legacy" : 0,
 						"parameter_enable" : 0,
@@ -396,7 +409,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 60.0, 95.0, 197.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 315.0, 50.0, 30.0, 30.0 ],
+					"presentation_rect" : [ 360.0, 40.0, 30.0, 30.0 ],
 					"text" : ":"
 				}
 
@@ -500,6 +513,7 @@
 					"incolormap" : "none",
 					"inlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
 					"labelwidth" : 95.0,
+					"linecolor" : [ 0.952941176470588, 0.941176470588235, 0.619607843137255, 1.0 ],
 					"maxclass" : "crosspatch",
 					"maxgain" : 2.0,
 					"numinlets" : 1,
@@ -827,7 +841,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 105.0, 85.0, 43.0, 30.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 285.0, 15.0, 43.0, 30.0 ],
+					"presentation_rect" : [ 75.0, 130.0, 43.0, 30.0 ],
 					"text" : "RWD"
 				}
 
@@ -858,7 +872,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 495.0, 540.0, 34.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 330.0, 50.0, 34.0, 32.0 ],
+					"presentation_rect" : [ 375.0, 40.0, 45.0, 32.0 ],
 					"triangle" : 0
 				}
 
@@ -876,7 +890,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 465.0, 540.0, 34.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 285.0, 50.0, 34.0, 32.0 ],
+					"presentation_rect" : [ 315.0, 40.0, 49.0, 32.0 ],
 					"triangle" : 0
 				}
 
@@ -889,7 +903,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 660.0, 510.0, 31.0, 23.0 ],
+					"patching_rect" : [ 645.0, 515.0, 31.0, 23.0 ],
 					"text" : "- 1"
 				}
 
@@ -910,9 +924,9 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "float" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 660.0, 540.0, 105.0, 25.0 ],
+					"patching_rect" : [ 645.0, 545.0, 105.0, 25.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 345.0, 85.0, 105.0, 25.0 ],
+					"presentation_rect" : [ 315.0, 115.0, 105.0, 25.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : ""
@@ -1128,7 +1142,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 525.0, 540.0, 87.0, 32.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 375.0, 50.0, 75.0, 32.0 ],
+					"presentation_rect" : [ 315.0, 80.0, 105.0, 32.0 ],
 					"textcolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 1.0 ],
 					"triangle" : 0
 				}
@@ -1142,7 +1156,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 285.0, 25.0, 85.0, 23.0 ],
+					"patching_rect" : [ 510.0, 420.0, 85.0, 23.0 ],
 					"text" : "unpack 0 0"
 				}
 
@@ -3319,8 +3333,8 @@
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "float" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -3332,14 +3346,38 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 294.0, 580.0, 781.0, 787.0 ],
-						"default_fontname" : "Anonymous Pro",
+						"rect" : [ 307.0, 112.0, 781.0, 787.0 ],
+						"default_fontname" : "Input Mono",
 						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 5.0 ],
 						"gridsnaponopen" : 2,
 						"style" : "cassiel",
 						"subpatcher_template" : "cassiel",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-34",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "float" ],
+									"patching_rect" : [ 660.0, 635.0, 100.0, 23.0 ],
+									"text" : "snapshot~ 20"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "",
+									"id" : "obj-26",
+									"index" : 5,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 660.0, 715.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-28",
 									"maxclass" : "toggle",
@@ -3436,7 +3474,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 11 37 500"
+									"text" : "0 38 3 0"
 								}
 
 							}
@@ -4070,7 +4108,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-34", 0 ],
+									"order" : 0,
+									"source" : [ "obj-12", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-49", 0 ],
+									"order" : 1,
 									"source" : [ "obj-12", 0 ]
 								}
 
@@ -4202,6 +4249,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-53", 0 ],
 									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 0 ],
+									"source" : [ "obj-34", 0 ]
 								}
 
 							}
@@ -4467,7 +4521,7 @@
 					"saved_object_attributes" : 					{
 						"bgcolor" : [ 0.163647, 0.174699, 0.17409, 1.0 ],
 						"editing_bgcolor" : [ 0.32549, 0.345098, 0.372549, 1.0 ],
-						"fontname" : "Anonymous Pro",
+						"fontname" : "Input Mono",
 						"locked_bgcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 						"style" : "cassiel"
 					}
@@ -4537,6 +4591,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -4560,6 +4616,29 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 30.0, 450.0, 47.0, 23.0 ],
 					"text" : "clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "ag25.SpinDial.js",
+					"id" : "obj-58",
+					"maxclass" : "v8ui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 195.0, 70.0, 165.0, 165.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 285.0, 5.0, 165.0, 165.0 ],
+					"textfile" : 					{
+						"filename" : "ag25.SpinDial.js",
+						"flags" : 0,
+						"embed" : 0,
+						"autowatch" : 1
+					}
+
 				}
 
 			}
@@ -4848,6 +4927,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-65", 0 ],
+					"source" : [ "obj-4", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-40", 0 ]
 				}
@@ -4936,6 +5022,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-56", 0 ],
 					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-65", 0 ]
 				}
 
 			}
@@ -5043,6 +5136,13 @@
 				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "ag25.SpinDial.js",
+				"bootpath" : "~/GITHUB/cassiel/algo-2025/main",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{

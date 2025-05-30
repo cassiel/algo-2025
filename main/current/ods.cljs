@@ -44,6 +44,7 @@
 (-> dev/param-enums :ODS.A :Algo04.._#_Taps_1)
 (-> dev/param-enums :ODS.A :Algo05.._Speed)
 (-> dev/param-enums :ODS.A :Algo05.._Heads)
+
 (dev/get-dev-enums-to-dict :ODS.A)
 
 ;; DESERT SHORES (1) - delay line
@@ -55,6 +56,12 @@
                          [:_Time_2 :1.8D]
                          [:Mix 0.5]
                          [:Regen 0.5]
+                         )
+
+(px/xmit-some-params-now :ODS.A
+                         [:Loop :Off]
+                         [:Regen 0.25]
+                         [:Mix 1.0]
                          )
 
 (px/xmit-some-params-now :ODS.A
@@ -108,7 +115,10 @@
 
 ;; MIRAGE (5) - tumble dry
 
-(px/xmit-some-params-now :ODS.B
+(ctrl/mix-paths [:IO :Enso.A :ODS.A :IO]
+                [:IO :Enso.A :ODS.B :IO])
+
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algo05.._Speed :+1.0]
                          [:Algorithm :Mirage]
@@ -120,7 +130,7 @@
                          [:Algo05.._Speed :+0.5]
                          [:Algo05.._Heads :4])
 
-(px/xmit-some-params-now :ODS.A
+(px/xmit-some-params-now :ODS.B
                          [:Loop :Off]
                          [:Algo05.._Speed :+1.0]
                          [:Algo05.._Heads :4])
@@ -140,10 +150,26 @@
                 #_ [:IO :Enso.A :Discord4 :ODS.B :IO]
                 #_ [:IO :ODS.B :IO]
                 )
+
+;; REVS
 (doseq [ods [:ODS.A :ODS.B]]
   (px/xmit-some-params-now ods
-                           [:Algo05.._Speed :0]
+                           [:Algo05.._Speed :+2.0]
                            ))
+
+;; HANDBRAKE
+(doseq [ods [:ODS.A :ODS.B]]
+  (go
+    (px/xmit-some-params-now ods
+                             [:Algo05.._Speed :+1.0])
+    (<! (async/timeout 250))
+    (px/xmit-some-params-now ods
+                             [:Algo05.._Speed :+0.5])
+    (<! (async/timeout 250))
+    (px/xmit-some-params-now ods
+                             [:Algo05.._Speed :0])))
+
+
 
 
 (ctrl/mix :IO :ODS.B -40 5)

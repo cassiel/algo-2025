@@ -63,6 +63,8 @@
 (ctrl/mix-paths [])
 (go (<! (c/xmit :toggle :transport 0))
     (<! (async/timeout 250))
+    (<! (c/xmit :toggle :rewind 1))
+    (<! (async/timeout 250))
     (<! (c/xmit :toggle :dsp 0)))
 
 ;; >>> MIX ZERO.
