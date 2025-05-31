@@ -43,7 +43,17 @@
                 #_ [:IO :Enso.B :IO]
                 )
 
-(ctrl/mix-path :IO :Enso.A :Discord4 :IO)
+(ctrl/mix-paths #_ [:IO :Enso.A :ODS.A :IO]
+                [:IO :Enso.B :ODS.B :IO]
+                )
+
+
+
+(ctrl/mix-paths #_ [:IO :Enso.A :IO]
+                [:IO :Discord4 :Enso.A :IO]
+                #_ [:IO :Enso.B :IO])
+
+
 (ctrl/mix-path :IO :IO)
 
 ;; TODO: make this return a channel.
@@ -60,8 +70,16 @@
 
 (px/xmit-some-params-now :Enso.A
                          [:Play_Speed :+1.0]
-                         [:Rec_Speed :-1.0]
-                         [:Saturation 1]
+                         [:Rec_Speed :+2.0]
+                         [:Feedback 0.55]
+                         [:Saturation 0.25]
+                         )
+
+(px/xmit-some-params-now :Enso.B
+                         [:Play_Speed :+1.0]
+                         [:Rec_Speed :+2.0]
+                         [:Feedback 0.5]
+                         [:Saturation 0.25]
                          )
 
 (px/xmit-some-params-now :Enso.B
@@ -81,7 +99,7 @@
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
 (let [uuid (t/uuid)
-      enso :Enso.A]
+      enso :Enso.B]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {4 [[0.1 enso :note CLEAR-LOOP 64 100]
              [0.5 enso :note RECORD 64 100]
@@ -108,7 +126,7 @@
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Level|Dub")
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Quant|Unit")
 (px/get-matching-to-dict state/PARAMS :Enso.A #"Satur|Chor")
-(px/xmit-some-params-now :Enso.A [:Saturation 0.5])
+(px/xmit-some-params-now :Enso.B [:Saturation 0])
 
 (dev/get-dev-enums-to-dict :Enso.A)
 
@@ -137,7 +155,7 @@
 ;; TODO should mix return a channel?
 
 (let [uuid (t/uuid)
-      enso :Enso.A
+      enso :Enso.B
       mode OVERDUB]
   (swap! state/SEQ assoc-in [:sequences uuid] {1 [[0.1 enso :note mode 64 100]
                                                   (fn [seq] (dissoc seq uuid))]}))

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 68.0, 108.0, 975.0, 808.0 ],
+		"rect" : [ 51.0, 107.0, 1220.0, 1029.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -43,7 +43,7 @@
 					"patching_rect" : [ 780.0, 175.0, 100.0, 50.0 ],
 					"pic" : "the-printer-jam.jpeg",
 					"presentation" : 1,
-					"presentation_rect" : [ 630.0, 85.0, 150.0, 150.0 ]
+					"presentation_rect" : [ 600.000008940696716, 84.800001263618469, 150.0, 150.0 ]
 				}
 
 			}
@@ -70,7 +70,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 975.0, 545.0, 401.0, 38.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 630.0, 40.0, 150.0, 38.0 ],
+					"presentation_rect" : [ 615.200009167194366, 40.000000596046448, 150.0, 38.0 ],
 					"text" : "CASSIEL",
 					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.8 ]
 				}
@@ -87,7 +87,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 975.0, 505.0, 363.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 630.0, 15.0, 150.0, 35.0 ],
+					"presentation_rect" : [ 615.200009167194366, 15.20000022649765, 150.0, 35.0 ],
 					"text" : "PROJECT",
 					"textcolor" : [ 0.619607843137255, 0.745098039215686, 0.952941176470588, 0.8 ]
 				}
@@ -106,7 +106,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1155.0, 600.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 615.0, 10.0, 180.0, 70.0 ],
+					"presentation_rect" : [ 600.000008940696716, 10.400000154972076, 180.0, 70.0 ],
 					"proportion" : 0.39,
 					"rounded" : 0
 				}
@@ -815,7 +815,7 @@
 ,
 					"patching_rect" : [ 465.0, 700.0, 75.0, 135.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 525.0, 15.0, 75.0, 125.0 ],
+					"presentation_rect" : [ 524.800007820129395, 15.20000022649765, 60.199992179870605, 124.800001859664917 ],
 					"viewvisibility" : 1
 				}
 
@@ -3474,7 +3474,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 38 3 0"
+									"text" : "0 38 57 0"
 								}
 
 							}
@@ -4591,8 +4591,6 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
-						"node_bin_path" : "",
-						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

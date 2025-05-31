@@ -88,5 +88,7 @@
                          [:L_Filter_Frequency 0.5]
                          [:R_Filter_Frequency 0.5])
 
-(ctrl/mix-path :IO :Enso.A :ODS.A :Discord4 :IO)
+(ctrl/mix-path [:IO :Enso.A :ODS.A :IO]
+               [:IO :Enso.B :ODS.B :IO]
+               )
 (ctrl/mix-path :IO :IO)
