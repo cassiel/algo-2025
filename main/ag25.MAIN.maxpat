@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 51.0, 107.0, 1220.0, 1029.0 ],
+		"rect" : [ 75.0, 194.0, 984.0, 819.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "InputMono",
 		"gridonopen" : 2,
@@ -20,6 +20,39 @@
 		"style" : "cassiel",
 		"subpatcher_template" : "cassiel",
 		"boxes" : [ 			{
+				"box" : 				{
+					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
+					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
+					"dividers" : [ "in", 0 ],
+					"fontface" : 0,
+					"fontname" : "Input Mono Compressed",
+					"fontsize" : 12.0,
+					"gaincaption" : 1,
+					"gainstyle" : 1,
+					"id" : "obj-36",
+					"ignoreclick" : 1,
+					"incolormap" : "none",
+					"inlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
+					"labelwidth" : 95.0,
+					"linecolor" : [ 0.952941176470588, 0.941176470588235, 0.619607843137255, 1.0 ],
+					"maxclass" : "crosspatch",
+					"maxgain" : 2.0,
+					"numinlets" : 1,
+					"numins" : 8,
+					"numoutlets" : 2,
+					"numouts" : 8,
+					"outcolormap" : "none",
+					"outlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
+					"outlettype" : [ "", "dictionary" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 900.0, 260.0, 330.0, 220.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 15.0, 430.0, 540.0, 220.0 ],
+					"showgain" : 2
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"format" : 6,
 					"id" : "obj-65",
@@ -390,7 +423,7 @@
 					"outlettype" : [ "dictionary", "", "", "", "" ],
 					"patching_rect" : [ 105.0, 640.0, 340.0, 200.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 180.0, 540.0, 400.0 ],
+					"presentation_rect" : [ 105.0, 180.0, 450.0, 400.0 ],
 					"saved_object_attributes" : 					{
 						"legacy" : 0,
 						"parameter_enable" : 0,
@@ -495,39 +528,6 @@
 					"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal", "" ],
 					"patching_rect" : [ 1005.0, 645.0, 115.0, 23.0 ],
 					"text" : "matrix~ 8 8 1."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.164705882352941, 0.176470588235294, 0.172549019607843, 1.0 ],
-					"dividercolor" : [ 0.545098039215686, 0.545098039215686, 0.545098039215686, 1.0 ],
-					"dividers" : [ "in", 0 ],
-					"fontface" : 0,
-					"fontname" : "Input Mono Compressed",
-					"fontsize" : 12.0,
-					"gaincaption" : 1,
-					"gainstyle" : 1,
-					"id" : "obj-36",
-					"ignoreclick" : 1,
-					"incolormap" : "none",
-					"inlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
-					"labelwidth" : 95.0,
-					"linecolor" : [ 0.952941176470588, 0.941176470588235, 0.619607843137255, 1.0 ],
-					"maxclass" : "crosspatch",
-					"maxgain" : 2.0,
-					"numinlets" : 1,
-					"numins" : 8,
-					"numoutlets" : 2,
-					"numouts" : 8,
-					"outcolormap" : "none",
-					"outlabels" : [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4" ],
-					"outlettype" : [ "", "dictionary" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 900.0, 260.0, 330.0, 220.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 15.0, 580.0, 540.0, 220.0 ],
-					"showgain" : 2
 				}
 
 			}
@@ -3474,7 +3474,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 450.0, 530.0, 113.0, 23.0 ],
-									"text" : "0 38 57 0"
+									"text" : "0 11 27 0"
 								}
 
 							}
@@ -4591,6 +4591,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

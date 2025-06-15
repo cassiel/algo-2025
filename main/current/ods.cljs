@@ -20,10 +20,20 @@
                 #_ [:Microtonic :ODS.A :IO]
                 #_ [:Microtonic :Enso.A :ODS.A :IO]
                 #_ [:IO :IO]
-                [:IO :Enso.A :ODS.A :IO]
-                [:IO :Enso.B :ODS.A :IO]
+                [:Microtonic :Enso.A :ODS.B :IO]
+                #_ [:Microtonic :ODS.B :IO]
+                #_ [:IO :Enso.A :Discord4 :ODS.B :IO]
+                #_ [:IO :ODS.B :IO]
+                )
+
+(ctrl/mix-paths #_ [:Microtonic :Enso.A :ODS.A :IO]
+                #_ [:Microtonic :ODS.A :IO]
+                #_ [:Microtonic :Enso.A :ODS.A :IO]
+                #_ [:IO :IO]
                 [:IO :Enso.A :ODS.B :IO]
                 [:IO :Enso.B :ODS.B :IO]
+                #_ [:IO :Enso.A :ODS.B :IO]
+                #_ [:IO :Enso.B :ODS.B :IO]
                 #_ [:IO :Enso.A :Discord4 :ODS.B :IO]
                 #_ [:IO :ODS.B :IO]
                 )
@@ -49,7 +59,7 @@
 
 ;; DESERT SHORES (1) - delay line
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Desert_Shores]
                          [:_Time_1 :1.2]
@@ -59,25 +69,25 @@
                          )
 
 (doseq [ods [:ODS.A :ODS.B]]
-  (px/xmit-some-params-now :ods
+  (px/xmit-some-params-now ods
                            [:Loop :Off]
                            [:Regen 0.7]
                            [:Mix 0.5]
                            ))
 
 (px/xmit-some-params-now :ODS.A
-                         [:_Time_1 :1.4]
-                         [:_Time_2 :1.4D]
-                         [:Mix 0.75]
-                         [:Regen 0.5]
+                         [:_Time_1 :1.8]
+                         [:_Time_2 :1.8D]
+                         [:Mix 0.25]
+                         [:Regen 0.3]
                          )
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Mix 0.5]
                          [:Regen 0]
                          [:_Time_1 :1.4]
                          [:_Time_2 :1.4D]
-                         [:Algo01.._Saturation 1])
+                         [:Algo01.._Saturation 0.5])
 
 (px/xmit-some-params-now :ODS.A
                          [:Regen 0.25]
@@ -86,21 +96,21 @@
 
 ;; THERMAL (4) - multitap 16
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Thermal]
                          [:Regen 0.2]
                          [:Algo04.._#_Taps_1 :1] ;; :1..:16
                          [:Algo04.._#_Taps_2 :2]
-                         [:Mix 0.5])
+                         [:Mix 0.75])
+(px/xmit-some-params-now :ODS.A
+                         [:_Time_1 :1.8]
+                         [:_Time_2 :1.8D])
+(px/xmit-some-params-now :ODS.A
+                         [:Regen 0])
 (px/xmit-some-params-now :ODS.B
-                         [:_Time_1 :1.4]
-                         [:_Time_2 :1.4D])
-(px/xmit-some-params-now :ODS.B
-                         [:Regen 0.5])
-(px/xmit-some-params-now :ODS.B
-                         [:Algo04.._Crossfeed 0.8]
-                         [:Algo04.._#_Taps_2 :2])
+                         [:Algo04.._Crossfeed 0.6]
+                         [:Algo04.._#_Taps_2 :10])
 
 ;; Note: fire in/out atomically on beat 1.
 
@@ -116,24 +126,25 @@
 
 ;; MIRAGE (5) - tumble dry
 
-(ctrl/mix-paths [:IO :Discord4 :Enso.A :ODS.A :IO]
-                #_ [:IO :Enso.A :ODS.B :IO])
+(ctrl/mix-paths #_ [:IO :Discord4 :Enso.A :ODS.A :IO]
+                [:Microtonic :Enso.A :ODS.A :IO])
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
-                         [:Algo05.._Speed :-2.0]
+                         [:Algo05.._Speed :+1.0]
                          [:Algorithm :Mirage]
-                         [:Algo05.._Heads :4]
+                         [:Algo05.._Heads :1]
                          [:Mix 1.0])
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
-                         [:Algo05.._Speed :+2.0]
+                         [:Algo05.._Speed :-1.0]
                          [:Regen 0]
                          [:Mix 1.0]
                          [:Algo05.._Heads :4])
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
+                         [:Algo05.._Speed :-1.0]
                          [:Regen 0.5]
                          [:Mix 1.0]
                          [:Algo05.._Heads :4])
@@ -149,13 +160,13 @@
       uuid (t/uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet ods :Algo05.._Speed :-2.0))
-             (fn [seq] (assoc seq uuid {3 [(cons 0 (px/param-packet ods :Algo05.._Speed :+0.5))
+             (fn [seq] (assoc seq uuid {3 [(cons 0 (px/param-packet ods :Algo05.._Speed :+1.0))
                                            (fn [seq] (dissoc seq uuid))]}))]}))
 (let [ods :ODS.B
       uuid (t/uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
-         {1 [(cons 0 (px/param-packet ods :Algo05.._Speed :+2.0))
-             (fn [seq] (assoc seq uuid {3 [(cons 0 (px/param-packet ods :Algo05.._Speed :+0.5))
+         {1 [(cons 0 (px/param-packet ods :Algo05.._Speed :-2.0))
+             (fn [seq] (assoc seq uuid {3 [(cons 0 (px/param-packet ods :Algo05.._Speed :-1.0))
                                            (fn [seq] (dissoc seq uuid))]}))]}))
 
 ;; ENDGAME:
@@ -169,7 +180,7 @@
 ;; REVS
 (doseq [ods [:ODS.A :ODS.B]]
   (px/xmit-some-params-now ods
-                           [:Algo05.._Heads :1]
+                           [:Algo05.._Heads :4]
                            ))
 (doseq [ods [:ODS.A :ODS.B]]
   (px/xmit-some-params-now ods

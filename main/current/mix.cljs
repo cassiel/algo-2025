@@ -14,6 +14,8 @@
 (ctrl/mix-path :IO :IO)
 (ctrl/mix-paths [])
 
+(ctrl/mix-path :Microtonic :IO)
+
 (do (ctrl/mix :* :* -40 20)
     (ctrl/mix :Microtonic :Enso.A 0 2)
     (ctrl/mix :Enso.A :IO 0 2))
@@ -34,6 +36,8 @@
 (ctrl/mix :IO :IO -10 5)
 
 ;; TODO write pipe with final attenuation parameter
+
+(ctrl/master -6)
 
 (do
   (ctrl/mix :IO :ODS.A 0 5)
