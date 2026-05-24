@@ -30,7 +30,7 @@
 
 
 
-(ctrl/window :Enso.A 1)
+(ctrl/window :Enso.A)
 
 (ctrl/mix-paths [:Microtonic :Enso.A :IO]
                 [:Microtonic :IO])
@@ -99,7 +99,7 @@
 ;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
 
 (let [uuid (t/uuid)
-      enso :Enso.B]
+      enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {4 [[0.1 enso :note CLEAR-LOOP 64 100]
              [0.5 enso :note RECORD 64 100]

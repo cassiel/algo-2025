@@ -1,4 +1,4 @@
-x(ns user
+(ns user
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [net.cassiel.farm-2019.core :as c]
             [net.cassiel.farm-2019.params :as px]
