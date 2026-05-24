@@ -16,7 +16,7 @@
 
 (ctrl/window :Discord4 1)
 
-(ctrl/mix-paths [:IO :Enso.A :Discord4 :ODS.A :IO])
+(ctrl/mix-paths [])
 
 (ctrl/mix-paths [:IO :Discord4 :ODS.A :Enso.A :IO]
                 [:IO :Discord4 :ODS.B :Enso.B :IO])
@@ -42,7 +42,7 @@
                          [:Shift_Mode :P1]
                          [:L_Delay_Time :1.4] ; TODO sequence these!
                          [:R_Delay_Time :1.4D]
-                         [:L_Shift_Amount :-12]
+                         [:L_Shift_Amount :+12]
                          [:R_Shift_Amount :-12]
                          [:L_Feedback 0.75]
                          [:R_Feedback 0.75]
@@ -62,10 +62,10 @@
                          )
 
 (px/xmit-some-params-now :Discord4
-                         [:L_Shift_Amount :+12]
-                         [:R_Shift_Amount :+12]
-                         [:L_Delay_Time :1.8]
-                         [:R_Delay_Time :1.8D]
+                         [:L_Shift_Amount :-12]
+                         [:R_Shift_Amount :-12]
+                         [:L_Delay_Time :1.4]
+                         [:R_Delay_Time :1.4D]
                          )
 
 (px/xmit-some-params-now :Discord4

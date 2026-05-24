@@ -39,11 +39,12 @@
                 )
 
 (ctrl/mix-paths [:IO :Enso.A :IO]
+                [:IO :Enso.B :IO]
                 [:IO :IO]
                 #_ [:IO :Enso.B :IO]
                 )
 
-(ctrl/mix-paths #_ [:IO :Enso.A :ODS.A :IO]
+(ctrl/mix-paths [:IO :Enso.A :ODS.A :IO]
                 [:IO :Enso.B :ODS.B :IO]
                 )
 
@@ -108,12 +109,12 @@
 
 (let [uuid (t/uuid)
       enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-1.0))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
 
 (let [uuid (t/uuid)
-      enso :Enso.A]
+      enso :Enso.B]
   (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :+1.0))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
@@ -135,7 +136,7 @@
                          [:Mode_Quantize :Free])
 
 (px/xmit-some-params-now :Enso.A
-                         [:Saturation 0.5]
+                         [:Saturation 0.2]
                          [:Chorus_Depth 1]
                          [:Chorus_Rate 0.1])
 
