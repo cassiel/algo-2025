@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 437.0, 152.0, 1010.0, 1029.0 ],
+        "rect": [ 252.0, 162.0, 1010.0, 1029.0 ],
         "openinpresentation": 1,
         "default_fontname": "Microgramma D",
         "gridonopen": 2,
@@ -478,9 +478,9 @@
                     "maxclass": "comment",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 60.0, 95.0, 197.0, 30.0 ],
+                    "patching_rect": [ 60.0, 95.0, 197.0, 32.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 360.0, 40.0, 30.0, 30.0 ],
+                    "presentation_rect": [ 360.0, 40.0, 33.0, 32.0 ],
                     "text": ":"
                 }
             },
@@ -3278,7 +3278,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 450.0, 530.0, 113.0, 23.0 ],
-                                    "text": "0 39 44 0"
+                                    "text": "0 0 7 500"
                                 }
                             },
                             {
@@ -4290,8 +4290,6 @@
                     "saved_object_attributes": {
                         "autostart": 0,
                         "defer": 0,
-                        "node_bin_path": "",
-                        "npm_bin_path": "",
                         "watch": 0
                     },
                     "text": "node.script main.js",
@@ -4744,6 +4742,14 @@
             "obj-13::obj-9::obj-28": [ "vst~[14]", "vst~[1]", 0 ],
             "obj-24": [ "in.level", "in.level", 0 ],
             "obj-37::obj-34": [ "master", "master", 0 ],
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+                }
+            },
             "inherited_shortname": 1
         },
         "autosave": 0,

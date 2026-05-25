@@ -20,6 +20,13 @@
   - Check the scripts: many refer to older instruments (e.g. Replika XT) - maybe that one goes back?
   - Installations on MacBook Neo
 
+**** Procedure
+
+1. =cider-jack-in-cljs= to bring up server in Emacs and plant port number in =.nrepl-port=
+2. Fire up Node.js process in Max (and check =node.script= console)
+3. =setup.cljs= for event handler and general setup
+4. Teardown (=ctrl/unload-all=) prior to patcher save
+
 ** Device Change
 *** Max
 
