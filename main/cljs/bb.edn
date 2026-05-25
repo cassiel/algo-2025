@@ -1,0 +1,21 @@
+{:tasks {watch-app
+         {:task (shell "npx shadow-cljs watch :app")}
+
+         compile-app
+         {:task (shell "npx shadow-cljs compile :app")}
+
+         ancient
+         {:doc "Check for outdated dependencies"
+          :task (do
+                  (println "Checking for outdated dependencies...")
+                  (let [result (shell {:continue true :err :string} "clojure"
+                                      "-J-Dorg.slf4j.simpleLogger.defaultLogLevel=off"
+                                      "-Sdeps"
+                                      "{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}"
+                                      "-M"
+                                      "-m"
+                                      "antq.core")]
+                    (when (zero? (:exit result))
+                      (println "All dependencies are up to date!"))
+                    (when (= 1 (:exit result))
+                      (println "Some dependencies can be updated (see above)"))))}}}

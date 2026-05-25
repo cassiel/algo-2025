@@ -1,1 +1,1 @@
-../cljs/target/node/dev/dev-main.js
+../cljs/target/app.js
