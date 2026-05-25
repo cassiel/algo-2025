@@ -4,26 +4,31 @@
 * algo-2025
 ** Journal
 *** 2026-05-24
+**** Review
 
-- Reviewing devices - currently we have 8x8:
-  - (External IO)
-  - Microtonic (test source?)
-  - Enso (* 2)
-  - ODS (* 2)
-  - Axon (V2!)
-  - Discord4
-- TOOO:
-  - Check the Microtonic can be swapped in/out (looks like it's separate in the matrix)
-  - Consider taking out an ODS and swapping in a ShaperBox3 (but that's a hard-wired rhythm)
-  - Consider taking out Axon, or at least going for V3
-  - No reason why we can't expand past 8x8 for maximum options
-  - Check the scripts: many refer to older instruments (e.g. Replika XT) - maybe that one goes back?
-  - Installations on MacBook Neo
+Reviewing devices - currently we have 8x8:
 
-**** Procedure
+- (External IO)
+- Microtonic (test source?)
+- Enso (* 2)
+- ODS (* 2)
+- Axon (V2!)
+- Discord4
+
+**** TODO
+
+- [X] Check the Microtonic can be swapped in/out (looks like it's separate in the matrix)
+- [ ] Consider taking out an ODS and swapping in a ShaperBox3 (but that's a hard-wired rhythm)
+- [ ] Consider taking out Axon, or at least going for V3
+- [ ] No reason why we can't expand past 8x8 for maximum options
+- [ ] Check the scripts: many refer to older instruments (e.g. Replika XT) - maybe that one goes back?
+- [ ] Installations on MacBook Neo
+- [ ] Longer term: shift away from Figwheel (esp. if we want to use more JS-native libraries)? Look at Shadow CLJS usage in =field-zhen=
+
+**** Startup Procedure
 
 1. =cider-jack-in-cljs= to bring up server in Emacs and plant port number in =.nrepl-port=
-2. Fire up Node.js process in Max (and check =node.script= console)
+2. Fire up Node.js process in Max (and check =node.script= console) - =figwheel-main.edn= disables any attempt to launch Node
 3. =setup.cljs= for event handler and general setup
 4. Teardown (=ctrl/unload-all=) prior to patcher save
 
