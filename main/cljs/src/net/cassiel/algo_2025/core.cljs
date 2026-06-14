@@ -2,7 +2,7 @@
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :as async :refer [<! >!]]
             [cljs.core.async.interop :refer [<p!]]
-            [clojure.string]))
+            [clojure.string :as str]))
 
 (def max-api (js/require "max-api"))
 
@@ -38,4 +38,6 @@
   (apply xmit :alert args))
 
 (defn error [& args]
-  (.post max-api (clojure.string/join " " (map de-keyword args)) "error"))
+  (.post max-api (str/join " " (map de-keyword args)) "error"))
+
+(defn main [])
