@@ -115,7 +115,7 @@
 ;; Note: fire in/out atomically on beat 1.
 
 (let [ods :ODS.B
-      uuid (t/uuid)]
+      uuid (t/kw-uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet ods :Algo04.._#_Taps_1 :16))
              (cons 0 (px/param-packet ods :Algo04.._#_Taps_2 :15))
@@ -157,13 +157,13 @@
 
 ;; MOTORIK SECTION
 (let [ods :ODS.A
-      uuid (t/uuid)]
+      uuid (t/kw-uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet ods :Algo05.._Speed :-2.0))
              (fn [seq] (assoc seq uuid {3 [(cons 0 (px/param-packet ods :Algo05.._Speed :+1.0))
                                            (fn [seq] (dissoc seq uuid))]}))]}))
 (let [ods :ODS.B
-      uuid (t/uuid)]
+      uuid (t/kw-uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet ods :Algo05.._Speed :-2.0))
              (fn [seq] (assoc seq uuid {3 [(cons 0 (px/param-packet ods :Algo05.._Speed :-1.0))

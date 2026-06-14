@@ -48,7 +48,7 @@
                          [:R_Feedback 0.75]
                          )
 
-(let [uuid (t/uuid)]
+(let [uuid (t/kw-uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.4))
              (cons 0 (px/param-packet :Discord4 :R_Delay_Time :1.8D))

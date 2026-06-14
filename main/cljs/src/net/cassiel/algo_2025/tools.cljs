@@ -1,6 +1,6 @@
-(ns net.cassiel.algo-2025.tools
-  (:refer-clojure :exclude [uuid]))
+(ns net.cassiel.algo-2025.tools)
 
-(def crypto (js/require "crypto"))
-
-(defn uuid [] (-> (.randomUUID crypto) keyword))
+(defn kw-uuid
+  "Fresh random UUID as a keyword (usable as a map key)."
+  []
+  (keyword (str (random-uuid))))
