@@ -7,7 +7,8 @@
             [cljs.core.async :as async :refer [<! >!]]
             [cljs.core.async.interop :refer [<p!]]
             [goog.string :as gstring]
-            [goog.string.format]))
+            [goog.string.format]
+            [clojure.string]))
 
 ;; Map each parameter name to [ID value value-str] - value[-str] may be nil to start.
 (s/def ::params (s/map-of keyword? (s/tuple integer?

@@ -1,7 +1,8 @@
 (ns net.cassiel.algo-2025.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs.core.async :as async :refer [<! >!]]
-            [cljs.core.async.interop :refer [<p!]]))
+            [cljs.core.async.interop :refer [<p!]]
+            [clojure.string]))
 
 (def max-api (js/require "max-api"))
 
