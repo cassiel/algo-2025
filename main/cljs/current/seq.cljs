@@ -47,12 +47,12 @@
 
                                           }
                                          #_ (dissoc :b0)
-                                         (dissoc :bs)
+                                         #_ (dissoc :bs)
                                          #_ (dissoc :ds)
-                                         (dissoc :hh)
-                                         #_ (dissoc :sc)
-                                         #_ (dissoc :sd)
-                                         #_ (dissoc :h2)
+                                         #_ (dissoc :hh)
+                                         (dissoc :sc)
+                                         (dissoc :sd)
+                                         (dissoc :h2)
                                          (dissoc :ch)
                                          #_ (dissoc :rd)
                                          )

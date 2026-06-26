@@ -109,7 +109,12 @@
 
 (let [uuid (t/kw-uuid)
       enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
+  (swap! state/SEQ assoc-in [:sequences uuid]
+         {4 [[0.1 enso :note CLEAR-LOOP 64 100]]}))
+
+(let [uuid (t/kw-uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-2.0))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
 
