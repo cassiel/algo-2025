@@ -3,6 +3,11 @@
 
 * algo-2025
 ** Journal
+*** 2026-06-26
+
+- [[https://emacsredux.com/blog/2026/06/20/essential-structured-navigation-and-editing-commands/][Editing]] (Emacs Redux)
+- =sp-use-paredit-bindings=
+
 *** 2026-05-24
 **** Review
 

@@ -47,12 +47,11 @@
 
 (do
   (ctrl/mix :* :* -40 20)
-  (ctrl/mix :IO :Enso.A 0 2)
+  (ctrl/mix :Microtonic :Enso.A 0 2)
   (ctrl/mix :Enso.A :IO 0 2)
-  (ctrl/mix :IO :Enso.B 0 2)
-  (ctrl/mix :Enso.B :IO 0 2)
+  ;; (ctrl/mix :IO :Enso.B 0 2)
+  ;; (ctrl/mix :Enso.B :IO 0 2)
   )
-
 
 
 (ctrl/mix :IO :ODS.A 0 5)

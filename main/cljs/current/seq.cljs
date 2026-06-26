@@ -12,8 +12,15 @@
 
 (reset! state/SEQ {:sequences {} :messages nil})
 
+(ctrl/window :Microtonic 0)
 (ctrl/window :Microtonic 1)
 (ctrl/mix-path :Microtonic :IO)
+
+
+(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C1 40 100]]
+                                           3 [[0 :Microtonic :note :C#1 64 100]]}}
+                        :messages  nil})
+     (cx/conformer ::seq/sequencer-state))
 
 (letfn [(row [pitch positions]
           (map (fn [pos] [pos :Microtonic :note pitch 64 0]) positions))]
@@ -51,7 +58,6 @@
                                          )
                           :messages nil})
      (cx/conformer ::seq/sequencer-state))  )
-
 
 (->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C1 40 100]]
                                            3 [[0 :Microtonic :note :C#1 64 100]

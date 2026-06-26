@@ -81,6 +81,14 @@
                            :ODS.B
                            :Discord4]))
 
+(ctrl/unload-all [:Microtonic
+                  :Enso.A
+                  :Enso.B
+                  :Axon_2
+                  :ODS.A
+                  :ODS.B
+                  :Discord4])
+
 ;; ---
 
 (dev/get-dev-enums-to-dict :Discord4)

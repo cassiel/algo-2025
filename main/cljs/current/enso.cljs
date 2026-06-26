@@ -71,7 +71,7 @@
 
 (px/xmit-some-params-now :Enso.A
                          [:Play_Speed :+1.0]
-                         [:Rec_Speed :+2.0]
+                         [:Rec_Speed :+1.0]
                          [:Feedback 0.55]
                          [:Saturation 0.25]
                          )
@@ -109,12 +109,12 @@
 
 (let [uuid (t/kw-uuid)
       enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-1.0))
+  (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :-0.5))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
 
 (let [uuid (t/kw-uuid)
-      enso :Enso.B]
+      enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid] {1 [(cons 0 (px/param-packet enso :Play_Speed :+1.0))
                                                   (fn [seq] (dissoc seq uuid))]}))
 
