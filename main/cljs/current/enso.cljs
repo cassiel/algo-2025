@@ -54,6 +54,11 @@
                 [:IO :Discord4 :Enso.A :IO]
                 #_ [:IO :Enso.B :IO])
 
+(ctrl/mix-paths #_ [:IO :Enso.A :IO]
+                [:Microtonic :Discord4 :Enso.A :IO]
+                #_ [:IO :Enso.B :IO])
+
+
 
 (ctrl/mix-path :IO :IO)
 

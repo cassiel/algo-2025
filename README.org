@@ -3,10 +3,15 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-08
+
+- Need to catch up on Emacs support, in particular C-w and M-w for cut/copy/paste - looks to be a global change, probably in Prelude
+- Look into Native Instruments Replika
+
 *** 2026-06-26
 
-- [[https://emacsredux.com/blog/2026/06/20/essential-structured-navigation-and-editing-commands/][Editing]] (Emacs Redux)
-- =sp-use-paredit-bindings=
+- [[https://emacsredux.com/blog/2026/06/20/essential-structured-navigation-and-editing-commands/][Editing]] (Emacs Redux) - =C-M-d= doesn't work, seems to activate Siri - also =C-M-SPC= broken
+- =sp-use-paredit-bindings= - =C-S-(/)/{/}= - but also =C-M-left= and =C-M-right=
 
 *** 2026-05-24
 **** Review
@@ -27,15 +32,16 @@ Reviewing devices - currently we have 8x8:
 - [ ] Consider taking out Axon, or at least going for V3
 - [ ] No reason why we can't expand past 8x8 for maximum options
 - [ ] Check the scripts: many refer to older instruments (e.g. Replika XT) - maybe that one goes back?
-- [ ] Installations on MacBook Neo
-- [ ] Longer term: shift away from Figwheel (esp. if we want to use more JS-native libraries)? Look at Shadow CLJS usage in =field-zhen=
+- [X] Installations on MacBook Neo
+- [X] Longer term: shift away from Figwheel (esp. if we want to use more JS-native libraries)? Look at Shadow CLJS usage in =field-zhen=
 
 **** Startup Procedure
 
-1. =cider-jack-in-cljs= to bring up server in Emacs and plant port number in =.nrepl-port=
-2. Fire up Node.js process in Max (and check =node.script= console) - =figwheel-main.edn= disables any attempt to launch Node
-3. =setup.cljs= for event handler and general setup
-4. Teardown (=ctrl/unload-all=) prior to patcher save
+1. Start server: =bb watch-app=: plants port number in =.nrepl-port=
+1. =cider-connect-cljs= (not =jack-in=) to attach in Emacs
+1. Fire up Node.js process in Max (and check =node.script= console) - =figwheel-main.edn= disables any attempt to launch Node
+1. =setup.cljs= for event handler and general setup
+1. Teardown (=ctrl/unload-all=) prior to patcher save
 
 ** Device Change
 *** Max

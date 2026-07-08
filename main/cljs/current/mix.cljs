@@ -16,6 +16,9 @@
 
 (ctrl/mix-path :Microtonic :IO)
 
+(ctrl/mix-paths [:Microtonic :Enso.A]
+                [:Enso.A :IO])
+
 (do (ctrl/mix :* :* -40 20)
     (ctrl/mix :Microtonic :Enso.A 0 2)
     (ctrl/mix :Enso.A :IO 0 2))

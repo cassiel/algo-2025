@@ -25,10 +25,10 @@
              :pvalue
              (fn [& args] (apply px/pvalue-in state/PARAMS args)))
 
+;; Eyeball message queue:
 (-> @state/SEQ :messages)
 
-;; >>> BULK ROOT PRESET LOAD.
-
+;; >>> BULK ROOT PRESET LOAD (from /main/max/*.vstpreset):
 (go (<! (ctrl/read :Enso.A "BaseEnso"))
     (<! (ctrl/read :Enso.B "BaseEnso"))
     (<! (ctrl/read :ODS.A "BaseODS"))
@@ -37,8 +37,7 @@
     (<! (ctrl/read :Microtonic "BaseMicrotonic"))
     (<! (ctrl/read :Discord4 "BaseDiscord4")))
 
-;; >>> BULK PARAMETER REFLECTION.
-
+;; >>> BULK PARAMETER REFLECTION:
 (go (<! (px/request-params state/PARAMS :Microtonic))
     (<! (px/request-params state/PARAMS :Enso.A))
     (<! (px/request-params state/PARAMS :Enso.B))
@@ -71,15 +70,7 @@
 
 (ctrl/mute-all 5)
 
-;; Cleanup before save:
-
-(comment (ctrl/unload-all [:Microtonic
-                           :Enso.A
-                           :Enso.B
-                           :Axon_2
-                           :ODS.A
-                           :ODS.B
-                           :Discord4]))
+;; FORCE UNLOAD BEFORE SAVE:
 
 (ctrl/unload-all [:Microtonic
                   :Enso.A
