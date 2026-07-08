@@ -24,6 +24,7 @@
                     "bgcolor": [ 0.0, 0.0, 0.0, 0.0 ],
                     "elementcolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "id": "obj-75",
+                    "ignoreclick": 1,
                     "knobcolor": [ 0.9319483953950521, 0.7717444591937832, 0.5238837564054122, 1.0 ],
                     "maxclass": "slider",
                     "numinlets": 1,
@@ -4370,8 +4371,6 @@
                     "saved_object_attributes": {
                         "autostart": 0,
                         "defer": 0,
-                        "node_bin_path": "",
-                        "npm_bin_path": "",
                         "watch": 0
                     },
                     "text": "node.script main.js",
