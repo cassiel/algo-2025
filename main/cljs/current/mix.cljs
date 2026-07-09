@@ -14,10 +14,18 @@
 (ctrl/mix-path :IO :IO)
 (ctrl/mix-paths [])
 
+(ctrl/mix-path)
+
 (ctrl/mix-path :Microtonic :IO)
 
 (ctrl/mix-paths [:Microtonic :Enso.A]
-                [:Enso.A :IO])
+                [:Enso.A :IO]
+                [:Microtonic :IO])
+
+(ctrl/mix-paths [:Microtonic :Enso.A]
+                [:Enso.A :Discord4]
+                [:Discord4 :IO]
+                [:Microtonic :IO])
 
 (do (ctrl/mix :* :* -40 20)
     (ctrl/mix :Microtonic :Enso.A 0 2)

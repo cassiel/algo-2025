@@ -77,8 +77,7 @@
                       ;; Only if sync mode:
                       :L_Delay_Time ad-times
                       :R_Delay_Time ad-times})
-        ods        (let [
-                         taps   (vec (map #(keyword (str (inc %))) (range 16)))
+        ods        (let [taps   (vec (map #(keyword (str (inc %))) (range 16)))
                          speeds [:-2.0 :-1.75 :-1.5 :-1.25 :-1.0 :-0.75 :-0.5 :-0.25
                                  :0
                                  :+0.25 :+0.5 :+0.75 :+1.0 :+1.25 :+1.5 :1.75 :+2.0]]
@@ -106,3 +105,11 @@
     (go
       (<p! (.setDict c/max-api "X" json-obj))
       (.outlet c/max-api "show"))))
+
+;; Enso note-based actions:
+
+(def CLEAR-LOOP :C-2)
+(def RECORD :C#-2)
+(def OVERDUB :D-2)
+(def PLAY :D#-2)
+(def STOP :E-2)

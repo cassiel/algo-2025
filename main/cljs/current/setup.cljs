@@ -59,7 +59,7 @@
 
 ;; >>> STOP
 
-(ctrl/mix-paths [])
+(ctrl/mix-path)
 (go (<! (c/xmit :toggle :transport 0))
     (<! (async/timeout 250))
     (<! (c/xmit :toggle :rewind 1))

@@ -40,9 +40,9 @@
 
 (px/xmit-some-params-now :Discord4
                          [:Shift_Mode :P1]
-                         [:L_Delay_Time :1.4] ; TODO sequence these!
-                         [:R_Delay_Time :1.4D]
-                         [:L_Shift_Amount :+12]
+                         [:L_Delay_Time :1.8D] ; TODO sequence these!
+                         [:R_Delay_Time :1.4]
+                         [:L_Shift_Amount :0]
                          [:R_Shift_Amount :-12]
                          [:L_Feedback 0.75]
                          [:R_Feedback 0.75]

@@ -3,6 +3,11 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-09
+
+- Make sure overdrive is on (we are sequencing notes, for Microtonic and for Enso...!)
+- =narrative.cljs=: setting up a linear succession of states, testing with Microtonic
+
 *** 2026-07-08
 
 - Need to catch up on Emacs support, in particular C-w and M-w for cut/copy/paste - looks to be a global change, probably in Prelude
