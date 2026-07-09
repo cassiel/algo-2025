@@ -17,6 +17,7 @@
 (ctrl/mix-path)
 
 (ctrl/mix-path :Microtonic :IO)
+(ctrl/mix-path :Microtonic :Rift)
 
 (ctrl/mix-paths [:Microtonic :Enso.A]
                 [:Enso.A :IO]

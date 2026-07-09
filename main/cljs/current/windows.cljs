@@ -25,3 +25,5 @@
 (ctrl/window :ODS.A 0)
 (ctrl/window :ODS.B 0)
 (ctrl/window :Discord4 0)
+
+(ctrl/window :Replika_XT)

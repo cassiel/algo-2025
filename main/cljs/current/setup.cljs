@@ -11,6 +11,8 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
+dev/channel-names
+
 ;; >>> STARTUP: Generic handler.
 
 (ctrl/handle :request
@@ -44,7 +46,12 @@
     (<! (px/request-params state/PARAMS :Axon_2))
     (<! (px/request-params state/PARAMS :ODS.A))
     (<! (px/request-params state/PARAMS :ODS.B))
-    (<! (px/request-params state/PARAMS :Discord4)))
+    (<! (px/request-params state/PARAMS :Discord4))
+    (<! (px/request-params state/PARAMS :Rift))
+    (<! (px/request-params state/PARAMS :Replika_XT)))
+
+(-> @state/PARAMS :Rift :params)
+(dev/get-dev-enums-to-dict :Replika_XT)
 
 ;; >>> START
 
@@ -78,7 +85,9 @@
                   :Axon_2
                   :ODS.A
                   :ODS.B
-                  :Discord4])
+                  :Discord4
+                  :Rift
+                  :Replika_XT])
 
 ;; ---
 
