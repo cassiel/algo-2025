@@ -22,8 +22,7 @@
 (ctrl/mix-path :Microtonic :IO)
 (ctrl/mix-path)
 
-(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C1 40 100]]
-                                           3 [[0 :Microtonic :note :C#1 64 100]]}}
+(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]]}}
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
 

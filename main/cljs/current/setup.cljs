@@ -35,7 +35,8 @@
     (<! (ctrl/read :ODS.B "BaseODS"))
     (<! (ctrl/read :Axon_2 "BaseAxon2"))
     (<! (ctrl/read :Microtonic "BaseMicrotonic"))
-    (<! (ctrl/read :Discord4 "BaseDiscord4")))
+    (<! (ctrl/read :Discord4 "BaseDiscord4"))
+    (<! (ctrl/read :Replika_XT "BaseReplikaXT")))
 
 ;; >>> BULK PARAMETER REFLECTION:
 (go (<! (px/request-params state/PARAMS :Microtonic))
@@ -50,6 +51,7 @@
 
 (-> @state/PARAMS :Rift :params)
 (dev/get-dev-enums-to-dict :Replika_XT)
+(ctrl/write :Replika_XT)
 
 ;; >>> START
 

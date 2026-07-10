@@ -31,32 +31,35 @@
     (vec (map (comp keyword as-str) (range f (inc t))))))
 
 (def param-enums
-  (let [ad-times   [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
-                  :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
-                  :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]
-        enso       (let [speeds  {:-2.0 0.574349164962769
-                                  :-1.0 0.675480008125305
-                                  :-0.5 0.718441188335419
-                                  :+0.5 0.794417858123779
-                                  :+1.0 0.828613519668579
-                                  :+2.0 0.891301214694977}
-                         lengths [:Free :1.16 :1.8 :1.4 :1.2 :Measure]]
-                     {:Mode          [:Record :Overdub :Play :Stop]
-                      :Link_Speeds   [:Off :On]
-                      :Play_Speed    speeds
-                      :Rec_Speed     speeds
-                      :Mode_Quantize lengths
-                      :Length_Unit   lengths})
-        ;; Replika XT currently unused.
-        replika-xt {:Modulation_Mode [:No_FX :Phaser :Flanger
-                                      :Chorus :Freq_Shifter
-                                      :Filter :Pitch_Shifter
-                                      :Micro_Pitcher]
-                    :Delay_Mode      [:Modern :Analogue :Tape_Echo
-                                      :Vintage_Digital :Diffusion]
-                    :PS_Shift_L      (symbolic-range -12 12)
-                    :PS_Shift_R      (symbolic-range -12 12)
-                    :Time_Mode       [:Straight :Dotted :Triplets :Milliseconds]}
+  (let [ad-times [:1.32 :1.16T :1.16 :1.8T :1.16D :1.8
+                    :1.4T :1.8D :1.4 :1.2T :1.4D :1.2
+                    :1.1T :1.2D :1.1 :2.1T :1.1D :2.1]
+        enso     (let [speeds  {:-2.0 0.574349164962769
+                                :-1.0 0.675480008125305
+                                :-0.5 0.718441188335419
+                                :+0.5 0.794417858123779
+                                :+1.0 0.828613519668579
+                                :+2.0 0.891301214694977}
+                       lengths [:Free :1.16 :1.8 :1.4 :1.2 :Measure]]
+                   {:Mode          [:Record :Overdub :Play :Stop]
+                    :Link_Speeds   [:Off :On]
+                    :Play_Speed    speeds
+                    :Rec_Speed     speeds
+                    :Mode_Quantize lengths
+                    :Length_Unit   lengths})
+
+        replika-xt (let [time-mode [:Straight :Dotted :Triplets :Milliseconds]]
+                     {:Modulation_Mode [:No_FX :Phaser :Flanger
+                                        :Chorus :Freq_Shifter
+                                        :Filter :Pitch_Shifter
+                                        :Micro_Pitcher]
+                      :Delay_Mode      [:Modern :Analogue :Tape_Echo
+                                        :Vintage_Digital :Diffusion]
+                      :PS_Shift_L      (symbolic-range -12 12)
+                      :PS_Shift_R      (symbolic-range -12 12)
+                      ;;:Time_Mode       time-mode
+                      :Time_Mode_A     time-mode
+                      :Time_Mode_B     time-mode})
         ;; Basic is obsolete:
         basic      (let [shapes [:Triangle :Sawtooth :DigiGrit
                                  :20%Pulse :Square :80%Pulse]]
@@ -76,8 +79,8 @@
                       :L_Delay_Sync   off-on
                       :R_Delay_Sync   off-on
                       ;; Only if sync mode:
-                      :L_Delay_Time ad-times
-                      :R_Delay_Time ad-times})
+                      :L_Delay_Time   ad-times
+                      :R_Delay_Time   ad-times})
         ods        (let [taps   (vec (map #(keyword (str (inc %))) (range 16)))
                          speeds [:-2.0 :-1.75 :-1.5 :-1.25 :-1.0 :-0.75 :-0.5 :-0.25
                                  :0
