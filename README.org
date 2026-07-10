@@ -12,6 +12,7 @@
   - If we can make that work, then the kick-off in =setup= with device loading, parameter dictionary population etc. - and DSP and transport load - can be fired in a single action
   - In general: consideration of this method of time-chaining actions (cf. coroutines)
 - TODO: can we make =mix-paths= etc. take an optional gain/attenuation level? Right now it's all or nothing (=ctrl/mix= can do that - and also takes an obligatory time!
+- More live-code support: tempo? What about ensuring overdrive is on etc.?
 
 *** 2026-07-09
 
