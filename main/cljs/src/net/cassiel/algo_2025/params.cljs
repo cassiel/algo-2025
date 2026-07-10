@@ -118,6 +118,9 @@
   (c/xmit :now (name dev) i)
   (async/timeout 1000))
 
+;; TODO: should sequence properly with waits - and should
+;; also return a channel for completion!
+
 (defn xmit-some-params-now [dev & args]
   (doseq [[pname v] args]
     (let [v' (if (keyword? v) (map-value dev pname v) v)]

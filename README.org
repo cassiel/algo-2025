@@ -3,9 +3,15 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-10
+
+- Upsizing: adding Rift and Replika_XT to the matrix
+- Generic VST issues: Replika_XT seems to change parameter sets depending on mode (and it has several modes) - the one causing trouble right now is single vs. double delay (though we can't actually switch mode because the parameter name has a =/= in it!)
+- Think more clearly about the base state and the total set of parameters we might change (so that we can do group changes as atomic-ish actions with predicable results) - or can we reliably just do reloads from disc? Unlikely for Enso since the speed changes need to be tight in timing
+
 *** 2026-07-09
 
-- Make sure overdrive is on (we are sequencing notes, for Microtonic and for Enso...!)
+- Make sure overdrive is on (we are sequencing notes, for Microtonic and for Enso speed changes...!)
 - =narrative.cljs=: setting up a linear succession of states, testing with Microtonic
 
 *** 2026-07-08

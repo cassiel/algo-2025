@@ -24,6 +24,10 @@
                 [:Enso.A :IO]
                 [:Microtonic :IO])
 
+(ctrl/mix-paths [:Microtonic :ODS.A]
+                [:ODS.A :IO]
+                )
+
 (ctrl/mix-paths [:Microtonic :Enso.A]
                 [:Enso.A :Discord4]
                 [:Discord4 :IO]

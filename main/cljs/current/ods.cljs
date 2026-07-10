@@ -20,7 +20,7 @@
                 #_ [:Microtonic :ODS.A :IO]
                 #_ [:Microtonic :Enso.A :ODS.A :IO]
                 #_ [:IO :IO]
-                [:Microtonic :Enso.A :ODS.B :IO]
+                [:Microtonic :Enso.A :ODS.A :IO]
                 #_ [:Microtonic :ODS.B :IO]
                 #_ [:IO :Enso.A :Discord4 :ODS.B :IO]
                 #_ [:IO :ODS.B :IO]
@@ -62,10 +62,10 @@
 (px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algorithm :Desert_Shores]
-                         [:_Time_1 :1.2]
+                         [:_Time_1 :1.4]
                          [:_Time_2 :1.8D]
                          [:Mix 0.5]
-                         [:Regen 0.5]
+                         [:Regen 0.2]
                          )
 
 (doseq [ods [:ODS.A :ODS.B]]
@@ -84,13 +84,13 @@
 
 (px/xmit-some-params-now :ODS.A
                          [:Mix 0.5]
-                         [:Regen 0]
+                         [:Regen 0.25]
                          [:_Time_1 :1.4]
-                         [:_Time_2 :1.4D]
+                         [:_Time_2 :1.8D]
                          [:Algo01.._Saturation 0.5])
 
 (px/xmit-some-params-now :ODS.A
-                         [:Regen 0.25]
+                         [:Regen 0]
                          )
 
 
@@ -114,7 +114,7 @@
 
 ;; Note: fire in/out atomically on beat 1.
 
-(let [ods :ODS.B
+(let [ods :ODS.A
       uuid (t/kw-uuid)]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet ods :Algo04.._#_Taps_1 :16))
@@ -150,7 +150,7 @@
                          [:Algo05.._Heads :4])
 
 
-(px/xmit-some-params-now :ODS.B
+(px/xmit-some-params-now :ODS.A
                          [:Loop :Off]
                          [:Algo05.._Speed :+1.0]
                          [:Algo05.._Heads :4])
