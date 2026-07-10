@@ -1444,16 +1444,6 @@
                         "boxes": [
                             {
                                 "box": {
-                                    "id": "obj-12",
-                                    "maxclass": "newobj",
-                                    "numinlets": 1,
-                                    "numoutlets": 0,
-                                    "patching_rect": [ 1125.0, 40.0, 67.0, 20.0 ],
-                                    "text": "print MIX"
-                                }
-                            },
-                            {
-                                "box": {
                                     "fontname": "Input Mono",
                                     "id": "obj-11",
                                     "maxclass": "newobj",
@@ -3158,7 +3148,6 @@
                                 "patchline": {
                                     "destination": [ "obj-1", 0 ],
                                     "midpoints": [ 399.5, 98.74609375, 1749.5, 98.74609375 ],
-                                    "order": 0,
                                     "source": [ "obj-5", 0 ]
                                 }
                             },
@@ -3174,13 +3163,6 @@
                                     "color": [ 0.0, 0.9810667634, 0.5736914277, 1.0 ],
                                     "destination": [ "obj-11", 1 ],
                                     "source": [ "obj-5", 9 ]
-                                }
-                            },
-                            {
-                                "patchline": {
-                                    "destination": [ "obj-12", 0 ],
-                                    "order": 1,
-                                    "source": [ "obj-5", 0 ]
                                 }
                             },
                             {
@@ -3547,7 +3529,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 521.0, 399.0, 781.0, 787.0 ],
+                        "rect": [ 375.0, 412.0, 781.0, 787.0 ],
                         "default_fontname": "Input Mono",
                         "gridonopen": 2,
                         "gridsize": [ 15.0, 5.0 ],
@@ -3667,7 +3649,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 450.0, 530.0, 113.0, 23.0 ],
-                                    "text": "0 12 37 500"
+                                    "text": "0 26 34 500"
                                 }
                             },
                             {
@@ -4468,15 +4450,7 @@
                             },
                             {
                                 "patchline": {
-                                    "destination": [ "obj-5", 0 ],
-                                    "order": 1,
-                                    "source": [ "obj-47", 0 ]
-                                }
-                            },
-                            {
-                                "patchline": {
                                     "destination": [ "obj-51", 0 ],
-                                    "order": 0,
                                     "source": [ "obj-47", 0 ]
                                 }
                             },
@@ -4679,8 +4653,6 @@
                     "saved_object_attributes": {
                         "autostart": 0,
                         "defer": 0,
-                        "node_bin_path": "",
-                        "npm_bin_path": "",
                         "watch": 0
                     },
                     "text": "node.script main.js",

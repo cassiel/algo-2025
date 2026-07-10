@@ -150,8 +150,6 @@
                          [:Chorus_Depth 1]
                          [:Chorus_Rate 0.1])
 
-
-
 ;; ---
 
 (ctrl/master -3 10)

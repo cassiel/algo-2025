@@ -11,6 +11,8 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
+(c/alert "XXX")
+
 ;; >>> STARTUP: Generic handler.
 
 (ctrl/handle :request

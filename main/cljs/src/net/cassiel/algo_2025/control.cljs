@@ -68,7 +68,7 @@
       (go (<! c)
           (unload-all ds)))))
 
-;; TODO: confusion with mix over when it returns a channel for chaining.
+;; TODO: confusion with mix over when it returns a channel for chaining. Kill the =doseq=!
 
 (defn mix
   ([f t level secs]

@@ -8,6 +8,10 @@
 - Upsizing: adding Rift and Replika_XT to the matrix
 - Generic VST issues: Replika_XT seems to change parameter sets depending on mode (and it has several modes) - the one causing trouble right now is single vs. double delay (though we can't actually switch mode because the parameter name has a =/= in it!)
 - Think more clearly about the base state and the total set of parameters we might change (so that we can do group changes as atomic-ish actions with predicable results) - or can we reliably just do reloads from disc? Unlikely for Enso since the speed changes need to be tight in timing
+- Need to do reliable timing-spaced actions for device setup etc. (aside from the ones which we sequence on the beat - don't alter those!) - how much stuff can reliably sequence itself and return a channel? Can we really fix =xmit-some-params-now=?
+  - If we can make that work, then the kick-off in =setup= with device loading, parameter dictionary population etc. - and DSP and transport load - can be fired in a single action
+  - In general: consideration of this method of time-chaining actions (cf. coroutines)
+- TODO: can we make =mix-paths= etc. take an optional gain/attenuation level? Right now it's all or nothing (=ctrl/mix= can do that - and also takes an obligatory time!
 
 *** 2026-07-09
 
