@@ -11,8 +11,6 @@
             [goog.string :as gstring]
             [goog.string.format]))
 
-dev/channel-names
-
 ;; >>> STARTUP: Generic handler.
 
 (ctrl/handle :request
