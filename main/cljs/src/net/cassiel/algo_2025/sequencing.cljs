@@ -70,6 +70,8 @@
 
         ;; Apply all function cues (order not defined). Skip on empty list of functions, since
         ;; the validation seems expensive to do on each beat.
+        ;; TODO: why isn't this code live?
+
         #_ sequences' #_ (if (seq fn-cues)
                      (cx/conformer ::sequences (reduce (fn [s f] (f s)) sequences fn-cues))
                      sequences)

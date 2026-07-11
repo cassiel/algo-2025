@@ -3,6 +3,11 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-11
+
+- For feedback: would be nice to have a text box in the patcher for async messages - but Max console is fine for now (check we have support for that)
+- =seq.cljs=: the conformer is outside the =reset!= - does it reliably throw an exception?
+
 *** 2026-07-10
 
 - Upsizing: adding Rift and Replika_XT to the matrix

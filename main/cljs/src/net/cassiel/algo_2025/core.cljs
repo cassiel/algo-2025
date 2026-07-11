@@ -37,7 +37,12 @@
 (defn alert [& args]
   (apply xmit :alert args))
 
+(defn post [& args]
+  (go
+    (<p! (.post max-api (str/join " " (map de-keyword args))))))
+
 (defn error [& args]
-  (.post max-api (str/join " " (map de-keyword args)) "error"))
+  (go
+    (<p! (.post max-api (str/join " " (map de-keyword args)) "error"))))
 
 (defn main [])
