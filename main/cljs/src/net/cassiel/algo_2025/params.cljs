@@ -90,6 +90,8 @@
                  P)
                P)))))
 
+;; TODO shouldn't this be a go-block to sequence the outlet?
+
 (defn request-params [PARAMS device]
   (swap! PARAMS dissoc device)
   (.outlet c/max-api "now" (name device) "params")
@@ -113,6 +115,10 @@
     (go
       (<p! (.setDict c/max-api "X" json-obj))
       (.outlet c/max-api "show"))))
+
+;; TODO not sure whether we're ever attempting to
+;; send programs to VSTs, or which ones respond
+;; - or even what programs are set up.
 
 (defn xmit-program [dev i]
   (c/xmit :now (name dev) i)
