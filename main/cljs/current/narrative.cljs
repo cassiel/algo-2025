@@ -16,12 +16,10 @@
 ;; - Load VSTs, enable reflection
 ;; - Start DSP and transport
 
-;; SCENE 1: RAW DRUMS
+;; ----- SCENE 1: PULSE
 
 (reset! state/SEQ {:sequences {} :messages nil})
-
-(ctrl/mix-path :Microtonic :IO)
-(ctrl/mix-path)
+(ctrl/mix-paths)
 
 (->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]]}}
                         :messages  nil})
@@ -30,7 +28,36 @@
 (ctrl/mix-paths [:IO :IO]
                 [:Microtonic :IO])
 
-;; SCENE 2: more beats:
+;; ----- SCENE 2: SITAR -> ENSO
+;; Microtonic dry
+;; - Incorporate Enso.A (idle, 100% wet, so no passthrough)
+
+;; Enso base state:
+
+(go (<! (ctrl/read :Enso.A "BaseEnso")))
+
+;; Punch in Enso.A, one bar:
+;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
+
+(defn enso-prime [enso]
+  (let [uuid (t/kw-uuid)]
+    (swap! state/SEQ assoc-in [:sequences uuid]
+           {4 [[0.1 enso :note dev/CLEAR-LOOP 64 100]
+               [0.5 enso :note dev/RECORD 64 100]
+               (fn [seq] (assoc seq uuid {4 [[0.5 enso :note dev/OVERDUB 64 100]
+                                             (fn [seq] (dissoc seq uuid))]}))]})))
+
+(enso-prime :Enso.A)
+
+(ctrl/mix-paths [:IO :IO]
+                [:IO :Enso.A :IO]
+                [:Microtonic :IO])
+
+(ctrl/window :Microtonic 1)
+(ctrl/window :Enso.A 1)
+(ctrl/window :Enso.B 1)
+
+;; ----- SCENE 3: more beats (gradual):
 
 (->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]
                                               [0.5 :Microtonic :note :F1 64 100]]
@@ -42,43 +69,11 @@
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
 
-(ctrl/write :Microtonic)
+;; (ctrl/write :Microtonic)
 
 
 
-;; SCENE 2:
-;; - Incorporate Enso.A (idle, 100% wet, so no passthrough)
-
-(ctrl/mix-paths [:Microtonic :IO]
-                [:Microtonic :Enso.A :IO])
-
-(ctrl/window :Microtonic 1)
-
-;; Enso base state:
-
-(go (<! (ctrl/read :Enso.A "BaseEnso")))
-
-;; Punch in Enso.A, one bar:
-;; 4.1 Reset and 4.5 prime record; next 4.5 prime overdub.
-
-(let [uuid (t/kw-uuid)
-      enso :Enso.A]
-  (swap! state/SEQ assoc-in [:sequences uuid]
-         {4 [[0.1 enso :note dev/CLEAR-LOOP 64 100]
-             [0.5 enso :note dev/RECORD 64 100]
-             (fn [seq] (assoc seq uuid {4 [[0.5 enso :note dev/OVERDUB 64 100]
-                                           (fn [seq] (dissoc seq uuid))]}))]}))
-
-(ctrl/mix-paths [:IO :IO]
-                [:IO :Enso.A]
-                #_ [:Microtonic :Enso.A]
-                [:Enso.A :IO]
-                [:Microtonic :IO])
-
-(ctrl/window :Enso.A 1)
-(ctrl/window :Enso.B 1)
-
-;; Don't use whilst Enso is live - not quantized.
+;; DANGER WILL ROBINSON - Don't use whilst Enso is live - not quantized.
 
 (comment (doseq [enso [:Enso.A]]
            (px/xmit-some-params-now enso
@@ -92,11 +87,20 @@
 
 ;; Quantised (speed) change - but little error chacking.
 
+;; SCRATCH: Microtonic into Enso.A for testing:
+
+(ctrl/mix-paths [:Microtonic :IO]
+                [:Microtonic :Enso.A :IO])
+
+;; ----- SCENE 4: Looper speed (etc.):
+
+(px/get-matching-to-dict state/PARAMS :Enso.A #"Sat")
+
 (let [uuid (t/kw-uuid)
       enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet enso :Rec_Speed :+1.0))
-             (cons 0 (px/param-packet enso :Play_Speed :+1.0))
+             (cons 0 (px/param-packet enso :Play_Speed :+0.5))
              (fn [seq] (assoc seq uuid {1 [(fn [seq] (dissoc seq uuid))]}))]}))
 
 ;; FREEZE:
@@ -104,57 +108,41 @@
 (let [uuid (t/kw-uuid)
       enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
-         {4 [[0.1 enso :note dev/PLAY 64 100]
-             (fn [seq] (dissoc seq uuid))]}))
+         {1 [[0 enso :note dev/PLAY 64 100]
+             (cons 0 (px/param-packet enso :Saturation 0.5))
+             (fn [seq] (dissoc seq uuid))]
+          }))
 
 ;; OVERDUB!
 
 (let [uuid (t/kw-uuid)
       enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
-         {4 [[0.1 enso :note dev/OVERDUB 64 100]
+         {1 [[0 enso :note dev/OVERDUB 64 100]
              (fn [seq] (dissoc seq uuid))]}))
 
-
-
-
-;; SECOND LOOPER
+;; ----- SCENE 5: SECOND LOOPER
 
 (ctrl/mix-paths [:IO :IO]
-                [:IO :Enso.A]
-                [:IO :Enso.B]
-                #_ [:Microtonic :Enso.B] ;; -6dB !!!!!!!
-                [:Enso.A :IO]
-                [:Enso.B :IO]
+                [:IO :Enso.A :IO]
+                [:IO :Enso.B :IO]
+                [:Microtonic :Enso.B] ;; -6dB !!!!!!!
                 [:Microtonic :IO])
+
+(enso-prime :Enso.B)
 
 (let [uuid (t/kw-uuid)
       enso :Enso.B]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet enso :Rec_Speed :+1.0))
-             (cons 0 (px/param-packet enso :Play_Speed :+0.5))
+             (cons 0 (px/param-packet enso :Play_Speed :+2.0))
              (fn [seq] (assoc seq uuid {1 [(fn [seq] (dissoc seq uuid))]}))]}))
 
+;; ----- SCENE 6: REPLIKA
 
-(let [uuid (t/kw-uuid)
-      enso :Enso.B]
-  (swap! state/SEQ assoc-in [:sequences uuid]
-         {4 [[0.1 enso :note dev/CLEAR-LOOP 64 100]
-             [0.5 enso :note dev/RECORD 64 100]
-             (fn [seq] (assoc seq uuid {4 [[0.5 enso :note dev/OVERDUB 64 100]
-                                           (fn [seq] (dissoc seq uuid))]}))]}))
+(ctrl/window :Replika_XT)
+(ctrl/mix-path :Microtonic :Replika_XT :IO)
 
-;; END
-
-
-(ctrl/mix-paths [:IO :IO]
-                [:IO :Enso.A]
-                [:IO :Enso.B]
-                [:Microtonic :Enso.B] ;; -6dB !!!!!!!
-                [:Enso.A :IO]
-                [:Enso.B :IO]
-
-                #_ [:Microtonic :IO])
-
+;; ----- END
 
 (ctrl/mix-paths)

@@ -3,6 +3,13 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-12
+
+- Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos
+- Still TODO:
+  - [ ] Channels/decoupling for parameter transmission
+  - [ ] Optional dB argument for mix paths
+
 *** 2026-07-11
 
 - For feedback: would be nice to have a text box in the patcher for async messages - but Max console is fine for now (check we have support for that)

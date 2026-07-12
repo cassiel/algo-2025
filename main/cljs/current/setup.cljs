@@ -25,9 +25,6 @@
              :pvalue
              (fn [& args] (apply px/pvalue-in state/PARAMS args)))
 
-;; Eyeball message queue:
-(-> @state/SEQ :messages)
-
 ;; >>> BULK ROOT PRESET LOAD (from /main/max/*.vstpreset):
 (go (<! (ctrl/read :Enso.A "BaseEnso"))
     (<! (ctrl/read :Enso.B "BaseEnso"))
