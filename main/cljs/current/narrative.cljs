@@ -6,6 +6,7 @@
             [net.cassiel.algo-2025.params :as px]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
+            [net.cassiel.algo-2025.tools :as t]
             [cljs.core.async :as async :refer [put! chan <! >!]]
             [goog.string :as gstring]
             [goog.string.format]))
@@ -26,15 +27,34 @@
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
 
+(ctrl/mix-paths [:IO :IO]
+                [:Microtonic :IO])
+
+;; SCENE 2: more beats:
+
+(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]
+                                              [0.5 :Microtonic :note :F1 64 100]]
+                                           2 [[0.25 :Microtonic :note :F1 64 100]
+                                              [0.75 :Microtonic :note :F1 64 100]]
+                                           3  [[0 :Microtonic :note :C1 64 100]
+                                               [0.5 :Microtonic :note :F1 64 100]]
+                                           4 [[0.5 :Microtonic :note :F1 64 100]] }}
+                        :messages  nil})
+     (cx/conformer ::seq/sequencer-state))
+
+(ctrl/write :Microtonic)
+
+
+
 ;; SCENE 2:
 ;; - Incorporate Enso.A (idle, 100% wet, so no passthrough)
 
 (ctrl/mix-paths [:Microtonic :IO]
                 [:Microtonic :Enso.A :IO])
 
-;; Enso base state:
+(ctrl/window :Microtonic 1)
 
-(ctrl/window :Enso.A 1)
+;; Enso base state:
 
 (go (<! (ctrl/read :Enso.A "BaseEnso")))
 
@@ -49,6 +69,15 @@
              (fn [seq] (assoc seq uuid {4 [[0.5 enso :note dev/OVERDUB 64 100]
                                            (fn [seq] (dissoc seq uuid))]}))]}))
 
+(ctrl/mix-paths [:IO :IO]
+                [:IO :Enso.A]
+                #_ [:Microtonic :Enso.A]
+                [:Enso.A :IO]
+                [:Microtonic :IO])
+
+(ctrl/window :Enso.A 1)
+(ctrl/window :Enso.B 1)
+
 ;; Don't use whilst Enso is live - not quantized.
 
 (comment (doseq [enso [:Enso.A]]
@@ -61,28 +90,71 @@
                                     [:Dub_In_Place 1]
                                     [:Feedback 0.5])))
 
-;; Quantised change - but little error chacking.
+;; Quantised (speed) change - but little error chacking.
 
 (let [uuid (t/kw-uuid)
       enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
-         {1 [(cons 0 (px/param-packet :Enso.A :Rec_Speed :+1.0))
-             (cons 0 (px/param-packet :Enso.A :Play_Speed :-2.0))
+         {1 [(cons 0 (px/param-packet enso :Rec_Speed :+1.0))
+             (cons 0 (px/param-packet enso :Play_Speed :+1.0))
+             (fn [seq] (assoc seq uuid {1 [(fn [seq] (dissoc seq uuid))]}))]}))
+
+;; FREEZE:
+
+(let [uuid (t/kw-uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid]
+         {4 [[0.1 enso :note dev/PLAY 64 100]
+             (fn [seq] (dissoc seq uuid))]}))
+
+;; OVERDUB!
+
+(let [uuid (t/kw-uuid)
+      enso :Enso.A]
+  (swap! state/SEQ assoc-in [:sequences uuid]
+         {4 [[0.1 enso :note dev/OVERDUB 64 100]
+             (fn [seq] (dissoc seq uuid))]}))
+
+
+
+
+;; SECOND LOOPER
+
+(ctrl/mix-paths [:IO :IO]
+                [:IO :Enso.A]
+                [:IO :Enso.B]
+                #_ [:Microtonic :Enso.B] ;; -6dB !!!!!!!
+                [:Enso.A :IO]
+                [:Enso.B :IO]
+                [:Microtonic :IO])
+
+(let [uuid (t/kw-uuid)
+      enso :Enso.B]
+  (swap! state/SEQ assoc-in [:sequences uuid]
+         {1 [(cons 0 (px/param-packet enso :Rec_Speed :+1.0))
+             (cons 0 (px/param-packet enso :Play_Speed :+0.5))
              (fn [seq] (assoc seq uuid {1 [(fn [seq] (dissoc seq uuid))]}))]}))
 
 
-;; SCENE 3
-;; Raw: Discord, base state
-
-(go (<! (ctrl/read :Discord4 "BaseDiscord4")))
-
-(ctrl/mix-paths [:Microtonic :IO]
-                [:Microtonic :Discord4 :IO])
-
-(let [uuid (t/kw-uuid)]
+(let [uuid (t/kw-uuid)
+      enso :Enso.B]
   (swap! state/SEQ assoc-in [:sequences uuid]
-         {1 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.4))
-             (cons 0 (px/param-packet :Discord4 :R_Delay_Time :1.8D))
-             (fn [seq] (assoc seq uuid {2 [(cons 0 (px/param-packet :Discord4 :L_Delay_Time :1.8))
-                                           (cons 0 (px/param-packet :Discord4 :R_Delay_Time :1.8D))
+         {4 [[0.1 enso :note dev/CLEAR-LOOP 64 100]
+             [0.5 enso :note dev/RECORD 64 100]
+             (fn [seq] (assoc seq uuid {4 [[0.5 enso :note dev/OVERDUB 64 100]
                                            (fn [seq] (dissoc seq uuid))]}))]}))
+
+;; END
+
+
+(ctrl/mix-paths [:IO :IO]
+                [:IO :Enso.A]
+                [:IO :Enso.B]
+                [:Microtonic :Enso.B] ;; -6dB !!!!!!!
+                [:Enso.A :IO]
+                [:Enso.B :IO]
+
+                #_ [:Microtonic :IO])
+
+
+(ctrl/mix-paths)
