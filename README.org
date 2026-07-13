@@ -8,6 +8,10 @@
 - Bulk paramater reflection temporarily kills everything: why?
 - Also (cosmetic): better contrast and VU visuals from the matrix grid?
 - At some point: swap out Axon 2 for Axon 3 (and refresh base file)
+- Also: not sure Replika gives us anything that Replika_XT doesn't do more comprehensively - maybe just have two of the latter?
+- Look at the progression in =channel-games=: attempt a =doseq=-ish iteration over a time-speced seqeuence of actions, return a channel that completes when they're all done
+- Can we fix the crash/reboot on things like =(go (<! nil))=?
+
 
 *** 2026-07-12
 
