@@ -54,5 +54,5 @@
 (go
   (<! (t/async-run #(go (<! (c/post %)))
                    ["A" "B" "C" "D" "E"]
-                   :interval 100))
+                   :interval 1000))
   (<! (c/post "DONE")))

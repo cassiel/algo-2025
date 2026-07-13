@@ -39,7 +39,8 @@
   "Read a preset file into a VST instance. Returns a channel which pauses on read."
   [device filename]
   (go
-    (c/xmit :now device :read filename)
+    (<! (c/post "READ" device filename))
+    (<! (c/xmit :now device :read filename))
     (<! (async/timeout 500))))
 
 (defn write

@@ -6,6 +6,7 @@
             [net.cassiel.algo-2025.params :as px]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
+            [net.cassiel.algo-2025.tools :as t]
             [net.cassiel.algo-2025.conformer :as cx]
             [cljs.core.async :as async :refer [put! chan <! >!]]
             [goog.string :as gstring]
@@ -33,6 +34,7 @@
     (<! (ctrl/read :Axon_2 "BaseAxon2"))
     (<! (ctrl/read :Microtonic "BaseMicrotonic"))
     (<! (ctrl/read :Discord4 "BaseDiscord4"))
+    ;; TODO Replika
     (<! (ctrl/read :Replika_XT "BaseReplikaXT")))
 
 ;; >>> BULK PARAMETER REFLECTION:

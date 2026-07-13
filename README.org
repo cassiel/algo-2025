@@ -32,6 +32,7 @@
 - =net.cassiel.algo-2025.devices=: list in =channel-names= (used for numeric routing)
 - =net.cassiel.algo-2025.devices=: =param-enums= (if any)
 - =setup=: establish base load file, parameter reflection fetch, =unload-all= (is that vestigial?)
+- =params=: =param-tracking= (though not sure how much this is used, if at all - forgetting the changes didn't seem to break anything)
 
 *** 2026-07-11
 

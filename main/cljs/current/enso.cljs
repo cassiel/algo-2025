@@ -77,7 +77,7 @@
 (px/xmit-some-params-now :Enso.A
                          [:Play_Speed :+1.0]
                          [:Rec_Speed :+1.0]
-                         [:Feedback 0.55]
+                         [:Feedback 0]
                          [:Saturation 0.25]
                          )
 

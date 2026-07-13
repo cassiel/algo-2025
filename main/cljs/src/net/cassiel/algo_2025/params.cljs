@@ -3,6 +3,7 @@
   (:require [net.cassiel.algo-2025.core :as c]
             [net.cassiel.algo-2025.conformer :as cx]
             [net.cassiel.algo-2025.devices :as dev]
+            [net.cassiel.algo-2025.tools :as t]
             [clojure.spec.alpha :as s]
             [cljs.core.async :as async :refer [<! >!]]
             [cljs.core.async.interop :refer [<p!]]
@@ -23,8 +24,11 @@
 (s/def ::Enso.A ::device)
 (s/def ::Enso.B ::device)
 (s/def ::Discord4 ::device)
+(s/def ::Replika ::device)
+(s/def ::Replika_XT ::device)
 (s/def ::param-tracking (s/keys :opt-un [::Microtonic ::Axon_2 ::ODS.A ::ODS.B
-                                         ::Enso.A ::Enso.B ::Discord4]))
+                                         ::Enso.A ::Enso.B ::Discord4
+                                         ::Replika ::Replika_XT]))
 
 (defn positions
   [pred coll]
@@ -93,9 +97,11 @@
 ;; TODO shouldn't this be a go-block to sequence the outlet?
 
 (defn request-params [PARAMS device]
-  (swap! PARAMS dissoc device)
-  (.outlet c/max-api "now" (name device) "params")
-  (async/timeout 500))
+  (go
+    (swap! PARAMS dissoc device)
+    (<! (c/post "PARAMS" device))
+    (<p! (.outlet c/max-api "now" (name device) "params"))
+    (<! (async/timeout 500))))
 
 (defn get-matching
   "All parameter names matching a regexp."
@@ -127,13 +133,24 @@
 ;; TODO: should sequence properly with waits - and should
 ;; also return a channel for completion!
 
-(defn xmit-some-params-now [dev & args]
+(defn xmit-some-params-now_OLD [dev & args]
   (doseq [[pname v] args]
     (let [v' (if (keyword? v) (map-value dev pname v) v)]
       (if v' (do (c/xmit :now dev :param pname v')
                  (async/timeout 50))
           (do (c/error "Cannot map" dev pname ":" v)
               (async/timeout 0))))))
+
+(defn xmit-some-params-now [dev & args]
+  (t/async-run (fn [[pname v]]
+                 (let [v' (if (keyword? v) (map-value dev pname v) v)]
+                   (go
+                     (if v'
+                       #_ (js/console.log (str dev) (str pname) (str v'))
+                       (<! (c/xmit :now dev :param pname v'))
+                       (<! (c/error "Cannot map" dev pname ":" v))))))
+               args
+               :interval 50))
 
 ;; TODO: intolerant of incorrect parameter values.
 
