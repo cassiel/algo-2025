@@ -56,8 +56,10 @@
 (ctrl/window :Microtonic 1)
 (ctrl/window :Enso.A 1)
 (ctrl/window :Enso.B 1)
+(ctrl/window :Replika 1)
 
 ;; ----- SCENE 3: more beats (gradual):
+;; TODO: use named sequence channels for these?
 
 (->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]
                                               [0.5 :Microtonic :note :F1 64 100]]

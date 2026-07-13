@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 149.0, 156.0, 999.0, 834.0 ],
+        "rect": [ 247.0, 151.0, 970.0, 817.0 ],
         "openinpresentation": 1,
         "default_fontname": "JetBrainsMono Nerd Font",
         "gridonopen": 2,
@@ -660,7 +660,7 @@
                     "id": "obj-36",
                     "ignoreclick": 1,
                     "incolormap": "none",
-                    "inlabels": [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4", "Rift", "Replika_XT" ],
+                    "inlabels": [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4", "Replika", "Replika_XT" ],
                     "labelwidth": 95.0,
                     "linecolor": [ 0.952941176470588, 0.941176470588235, 0.619607843137255, 1.0 ],
                     "maxclass": "crosspatch",
@@ -670,7 +670,7 @@
                     "numoutlets": 2,
                     "numouts": 10,
                     "outcolormap": "none",
-                    "outlabels": [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4", "Rift", "Replika_XT" ],
+                    "outlabels": [ "IO", "Microtonic", "Axon_2", "ODS.A", "ODS.B", "Enso.A", "Enso.B", "Discord4", "Replika", "Replika_XT" ],
                     "outlettype": [ "", "dictionary" ],
                     "parameter_enable": 0,
                     "patching_rect": [ 900.0, 215.0, 330.0, 264.56991362571716 ],
@@ -1101,7 +1101,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 1287.0, 567.0, 1095.0, 621.0 ],
+                        "rect": [ 1133.0, 557.0, 1155.0, 403.0 ],
                         "default_fontname": "Anonymous Pro",
                         "gridonopen": 2,
                         "gridsize": [ 15.0, 5.0 ],
@@ -1142,8 +1142,9 @@
                                     "numinlets": 2,
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
-                                    "patching_rect": [ 50.0, 100.0, 994.0, 37.0 ],
-                                    "text": "setdirection down, setalignment right, setsize 10, clear, append Replika_XT, append Rift, append Discord4, append Enso.B, append Enso.A, append ODS.B, append ODS.A, append Axon_2, append Microtonic, append IO"
+                                    "patching_rect": [ 50.0, 100.0, 1016.0, 37.0 ],
+                                    "presentation_linecount": 2,
+                                    "text": "setdirection down, setalignment right, setsize 10, clear, append Replika_XT, append Replika, append Discord4, append Enso.B, append Enso.A, append ODS.B, append ODS.A, append Axon_2, append Microtonic, append IO"
                                 }
                             },
                             {
@@ -1462,8 +1463,8 @@
                                     "numinlets": 3,
                                     "numoutlets": 2,
                                     "outlettype": [ "multichannelsignal", "" ],
-                                    "patching_rect": [ 1260.0, 280.0, 115.0, 23.0 ],
-                                    "text": "ag25.VST3 Rift"
+                                    "patching_rect": [ 1245.0, 280.0, 138.0, 23.0 ],
+                                    "text": "ag25.VST3 Replika"
                                 }
                             },
                             {
@@ -2799,8 +2800,8 @@
                                     "numinlets": 11,
                                     "numoutlets": 11,
                                     "outlettype": [ "", "", "", "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 15.0, 130.0, 619.0, 23.0 ],
-                                    "text": "route audio Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Discord4 Rift Replika_XT"
+                                    "patching_rect": [ 15.0, 130.0, 642.0, 23.0 ],
+                                    "text": "route audio Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Discord4 Replika Replika_XT"
                                 }
                             },
                             {
@@ -2822,8 +2823,8 @@
                                     "numinlets": 11,
                                     "numoutlets": 11,
                                     "outlettype": [ "", "", "", "", "", "", "", "", "", "", "" ],
-                                    "patching_rect": [ 390.0, 50.0, 604.0, 23.0 ],
-                                    "text": "route mix Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Discord4 Rift Replika_XT"
+                                    "patching_rect": [ 390.0, 50.0, 627.0, 23.0 ],
+                                    "text": "route mix Microtonic Axon_2 ODS.A ODS.B Enso.A Enso.B Discord4 Replika Replika_XT"
                                 }
                             },
                             {
@@ -4653,6 +4654,8 @@
                     "saved_object_attributes": {
                         "autostart": 0,
                         "defer": 0,
+                        "node_bin_path": "",
+                        "npm_bin_path": "",
                         "watch": 0
                     },
                     "text": "node.script main.js",

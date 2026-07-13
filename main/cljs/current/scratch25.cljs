@@ -5,6 +5,7 @@
             [net.cassiel.algo-2025.state :as s]
             [net.cassiel.algo-2025.sequencing :as seq]
             [net.cassiel.algo-2025.control :as ctrl]
+            [net.cassiel.algo-2025.devices :as dev]
             [net.cassiel.algo-2025.conformer :as cx]
             [net.cassiel.algo-2025.tools :as t]
             [cljs.core.async :as async :refer [put! chan <! >!]]
@@ -15,13 +16,21 @@
 (deref PARAMS)
 (-> PARAMS deref :Microtonic)
 
+(px/get-matching state/PARAMS :Replika #"Mode")
+
+(px/xmit-some-params-now :Replika
+                         [:Mode :Vintage_Digital]
+                         [:Modulation :Off])
+
 (c/xmit :FOO :BAR)
+
+dev/channel-names
 
 (name :A#_B)
 
 (keyword (str 2))
 
-(ctrl/mix-path :Microtonic :IO)
+(ctrl/mix-path :Microtonic :Replika_XT :IO)
 
 
 

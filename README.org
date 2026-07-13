@@ -3,12 +3,31 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-13
+
+- Bulk paramater reflection temporarily kills everything: why?
+- Also (cosmetic): better contrast and VU visuals from the matrix grid?
+- At some point: swap out Axon 2 for Axon 3 (and refresh base file)
+
 *** 2026-07-12
 
-- Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos (or plain Replika)
+- Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos (or plain Replika) - having said which, Replika_XT seems to do diffusion as well (!) - but we've pretty much set up Replika as well now
 - Still TODO:
   - [ ] Channels/decoupling for parameter transmission
   - [ ] Optional dB argument for mix paths
+
+**** Instrument Change
+***** Max
+
+- Argument setup in =Labels= (for Krell display - reverse order)
+- Arguments to =crosspatch= (inputs and/or outputs)
+- =Audio= subpatcher: two =route= instances, =ag25.VST3=
+
+***** ClojureScript
+
+- =net.cassiel.algo-2025.devices=: list in =channel-names= (used for numeric routing)
+- =net.cassiel.algo-2025.devices=: =param-enums= (if any)
+- =setup=: establish base load file, parameter reflection fetch, =unload-all= (is that vestigial?)
 
 *** 2026-07-11
 

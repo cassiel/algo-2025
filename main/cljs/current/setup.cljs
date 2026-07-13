@@ -43,12 +43,14 @@
     (<! (px/request-params state/PARAMS :ODS.A))
     (<! (px/request-params state/PARAMS :ODS.B))
     (<! (px/request-params state/PARAMS :Discord4))
-    (<! (px/request-params state/PARAMS :Rift))
+    (<! (px/request-params state/PARAMS :Replika))
     (<! (px/request-params state/PARAMS :Replika_XT)))
 
-(-> @state/PARAMS :Rift :params)
+(-> @state/PARAMS :Replika :params)
 (dev/get-dev-enums-to-dict :Replika_XT)
 (ctrl/write :Replika_XT)
+
+(ctrl/window :Replika 1)
 
 ;; >>> START
 
