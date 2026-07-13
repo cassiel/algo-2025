@@ -21,6 +21,8 @@
 (reset! state/SEQ {:sequences {} :messages nil})
 (ctrl/mix-paths)
 
+;; TODO: conformer is on wrong side of mutator.
+
 (->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]]}}
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
@@ -59,21 +61,21 @@
 (ctrl/window :Replika 1)
 
 ;; ----- SCENE 3: more beats (gradual):
-;; TODO: use named sequence channels for these?
 
-(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]
-                                              [0.5 :Microtonic :note :F1 64 100]]
-                                           2 [[0.25 :Microtonic :note :F1 64 100]
-                                              [0.75 :Microtonic :note :F1 64 100]]
-                                           3  [[0 :Microtonic :note :C1 64 100]
-                                               [0.5 :Microtonic :note :F1 64 100]]
-                                           4 [[0.5 :Microtonic :note :F1 64 100]] }}
+(->> (reset! state/SEQ {:sequences (-> {:A {1 [[0 :Microtonic :note :C#1 64 100]]}
+                                        :B {1 [ [0.5 :Microtonic :note :F1 64 100]]
+                                            2 [[0.25 :Microtonic :note :F1 64 100]]
+                                            3  [[0 :Microtonic :note :C1 64 100]]
+                                            4 [[0.5 :Microtonic :note :F1 64 100]]}
+                                        :C {2 [[0.75 :Microtonic :note :F1 64 100]]
+                                            3 [[0.5 :Microtonic :note :F1 64 100]]
+                                            4 [[0.5 :Microtonic :note :F1 64 100]]}}
+                                       (dissoc :B)
+                                       (dissoc :C))
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
 
 ;; (ctrl/write :Microtonic)
-
-
 
 ;; DANGER WILL ROBINSON - Don't use whilst Enso is live - not quantized.
 

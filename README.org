@@ -11,13 +11,13 @@
 - Also: not sure Replika gives us anything that Replika_XT doesn't do more comprehensively - maybe just have two of the latter?
 - Look at the progression in =channel-games=: attempt a =doseq=-ish iteration over a time-speced seqeuence of actions, return a channel that completes when they're all done
 - Can we fix the crash/reboot on things like =(go (<! nil))=?
-
+- [X] Conversion of drum patterns to use =dissoc= muting method
 
 *** 2026-07-12
 
 - Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos (or plain Replika) - having said which, Replika_XT seems to do diffusion as well (!) - but we've pretty much set up Replika as well now
 - Still TODO:
-  - [ ] Channels/decoupling for parameter transmission
+  - [X] Channels/decoupling for parameter transmission
   - [ ] Optional dB argument for mix paths
 
 **** Instrument Change

@@ -27,6 +27,8 @@
              (fn [& args] (apply px/pvalue-in state/PARAMS args)))
 
 ;; >>> BULK ROOT PRESET LOAD (from /main/max/*.vstpreset):
+;; TODO `async-run` for this?
+
 (go (<! (ctrl/read :Enso.A "BaseEnso"))
     (<! (ctrl/read :Enso.B "BaseEnso"))
     (<! (ctrl/read :ODS.A "BaseODS"))
@@ -34,7 +36,7 @@
     (<! (ctrl/read :Axon_2 "BaseAxon2"))
     (<! (ctrl/read :Microtonic "BaseMicrotonic"))
     (<! (ctrl/read :Discord4 "BaseDiscord4"))
-    ;; TODO Replika
+    (<! (ctrl/read :Replika "BaseReplika"))
     (<! (ctrl/read :Replika_XT "BaseReplikaXT")))
 
 ;; >>> BULK PARAMETER REFLECTION:
@@ -50,6 +52,7 @@
 
 (-> @state/PARAMS :Replika :params)
 (dev/get-dev-enums-to-dict :Replika_XT)
+(ctrl/write :Replika)
 (ctrl/write :Replika_XT)
 
 (ctrl/window :Replika 1)

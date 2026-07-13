@@ -9,7 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 247.0, 151.0, 970.0, 817.0 ],
+        "rect": [ 498.0, 311.0, 970.0, 817.0 ],
         "openinpresentation": 1,
         "default_fontname": "JetBrainsMono Nerd Font",
         "gridonopen": 2,
@@ -1434,7 +1434,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 394.0, 190.0, 1894.0, 725.0 ],
+                        "rect": [ 539.0, 335.0, 1894.0, 725.0 ],
                         "default_fontname": "Anonymous Pro",
                         "gridonopen": 2,
                         "gridsize": [ 15.0, 5.0 ],
@@ -3650,7 +3650,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 450.0, 530.0, 113.0, 23.0 ],
-                                    "text": "0 26 34 500"
+                                    "text": "0 19 23 0"
                                 }
                             },
                             {
