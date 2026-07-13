@@ -5,7 +5,7 @@
 ** Journal
 *** 2026-07-12
 
-- Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos
+- Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos (or plain Replika)
 - Still TODO:
   - [ ] Channels/decoupling for parameter transmission
   - [ ] Optional dB argument for mix paths
