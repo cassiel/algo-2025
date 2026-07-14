@@ -3,6 +3,12 @@
 
 * algo-2025
 ** Journal
+*** 2026-07-14
+
+- Still outstanding:
+  - [X] dB in =mix-path(s)=
+  - [ ] Single boot-up (with mapped actions etc.) in =setup=
+
 *** 2026-07-13
 
 - Bulk paramater reflection temporarily kills everything: why?

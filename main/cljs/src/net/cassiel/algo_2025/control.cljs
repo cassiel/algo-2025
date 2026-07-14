@@ -96,17 +96,23 @@
 (def FO 30)
 (def FI 2)
 
-(defn- mix-path0 [& nodes]
+(defn- mix-path0 [dB nodes]
   (let [pairs (partition 2 1 nodes)]
-    (doseq [[n1 n2] pairs] (mix n1 n2 0 FI))))
+    (doseq [[n1 n2] pairs] (mix n1 n2 dB FI))))
+
+(defn mix-path-no-mute [& nodes]
+  (let [[n & ns] nodes]
+    (if (number? n)                     ; (mix-path -6 :A :B :C)
+      (mix-path0 n ns)
+      (mix-path0 0 nodes))))            ; (mix-path :A :B :C)
 
 (defn mix-path [& nodes]
   (mute-all FO)
-  (apply mix-path0 nodes))
+  (apply mix-path-no-mute nodes))
 
 (defn mix-paths [& paths]
   (mute-all FO)
-  (doseq [p paths] (apply mix-path0 p)))
+  (doseq [p paths] (apply mix-path-no-mute p)))
 
 (defn master
   ([level secs]

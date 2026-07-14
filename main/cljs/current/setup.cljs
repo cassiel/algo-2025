@@ -66,7 +66,14 @@
   (<! (async/timeout 100))
   (<! (c/xmit :toggle :transport 1)))
 
-(ctrl/mix-path :IO :IO)
+(ctrl/mix-path -10 :IO :IO)
+
+(ctrl/mix-paths [-10 :IO :IO]
+                [:IO :Enso.A :IO]
+                )
+
+(let [[a & b] nil] {:a a :b b})
+(number? nil)
 
 ;; >>> STOP
 
