@@ -70,6 +70,7 @@
                                         :C {2 [[0.75 :Microtonic :note :F1 64 100]]
                                             3 [[0.5 :Microtonic :note :F1 64 100]]
                                             4 [[0.5 :Microtonic :note :F1 64 100]]}}
+                                       #_ (dissoc :A)
                                        (dissoc :B)
                                        (dissoc :C))
                         :messages  nil})
@@ -146,6 +147,18 @@
 
 (ctrl/window :Replika_XT)
 (ctrl/mix-path :Microtonic :Replika_XT :IO)
+
+(px/get-matching-to-dict state/PARAMS :Replika #"Mode")
+(dev/get-dev-enums-to-dict :Replika)
+
+(px/xmit-some-params-now :Replika
+                         [:Time_Mode :Dotted]
+                         [:Delay_Time :1.8]
+                         [:Feedback 0.5]
+                         [:Mode :Diffusion]
+                         [:Mix 1]
+                         [:Stereo_Mode :Ping_Pong]
+                         )
 
 ;; ----- END
 

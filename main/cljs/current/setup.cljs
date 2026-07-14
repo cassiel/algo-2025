@@ -69,8 +69,9 @@
 (ctrl/mix-path -10 :IO :IO)
 
 (ctrl/mix-paths [-10 :IO :IO]
-                [:IO :Enso.A :IO]
+                [:Microtonic :Replika :IO]
                 )
+(ctrl/window :Replika)
 
 (let [[a & b] nil] {:a a :b b})
 (number? nil)
@@ -97,7 +98,7 @@
                   :ODS.A
                   :ODS.B
                   :Discord4
-                  :Rift
+                  :Replika
                   :Replika_XT])
 
 ;; ---

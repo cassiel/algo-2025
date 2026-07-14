@@ -53,6 +53,7 @@
         replika {:Time_Mode  replika-time-mode
                  :Modulation [:Off :Phaser :Filter]
                  :Mode       [:Modern :Vintage_Digital :Diffusion]
+                 :Stereo_Mode [:Normal :Wide :Ping_Pong]
                  :Delay_Time replika-times}
 
         replika-xt {:Modulation_Mode [:No_FX :Phaser :Flanger
