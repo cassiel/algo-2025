@@ -24,7 +24,7 @@
 - Rehearsal: going for predominantly a two-looper configuration (but looking to end the set with some reverb - we either get something out of Replika XT, or swap out Rift for Eos (or plain Replika) - having said which, Replika_XT seems to do diffusion as well (!) - but we've pretty much set up Replika as well now
 - Still TODO:
   - [X] Channels/decoupling for parameter transmission
-  - [ ] Optional dB argument for mix paths
+  - [X] Optional dB argument for mix paths
 
 **** Instrument Change
 ***** Max

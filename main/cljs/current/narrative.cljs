@@ -23,12 +23,13 @@
 
 ;; TODO: conformer is on wrong side of mutator.
 
-(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]]}}
+(->> (reset! state/SEQ {:sequences {:main {1 [[0 :Microtonic :note :C#1 64 100]]
+                                           2 [[0.5 :Microtonic :note :C#1 64 100]]}}
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
 
 (ctrl/mix-paths [:IO :IO]
-                [:Microtonic :IO])
+                [-15 :Microtonic :IO])
 
 ;; ----- SCENE 2: SITAR -> ENSO
 ;; Microtonic dry
@@ -49,11 +50,12 @@
                (fn [seq] (assoc seq uuid {4 [[0.5 enso :note dev/OVERDUB 64 100]
                                              (fn [seq] (dissoc seq uuid))]}))]})))
 
+;; ACTION:
 (enso-prime :Enso.A)
 
 (ctrl/mix-paths [:IO :IO]
-                [:IO :Enso.A :IO]
-                [:Microtonic :IO])
+                [-5 :IO :Enso.A :IO]
+                [-15 :Microtonic :IO])
 
 (ctrl/window :Microtonic 1)
 (ctrl/window :Enso.A 1)
@@ -62,17 +64,20 @@
 
 ;; ----- SCENE 3: more beats (gradual):
 
-(->> (reset! state/SEQ {:sequences (-> {:A {1 [[0 :Microtonic :note :C#1 64 100]]}
+(->> (reset! state/SEQ {:sequences (-> {:A {1 [[0 :Microtonic :note :C#1 64 100]
+                                               [0.5 :Microtonic :note :C#1 64 100]]
+                                            }
                                         :B {1 [ [0.5 :Microtonic :note :F1 64 100]]
                                             2 [[0.25 :Microtonic :note :F1 64 100]]
-                                            3  [[0 :Microtonic :note :C1 64 100]]
-                                            4 [[0.5 :Microtonic :note :F1 64 100]]}
+                                            3 [[0 :Microtonic :note :C1 64 100]]
+                                            4 [[0.5 :Microtonic :note :F1 64 100]
+                                               [0.5 :Microtonic :note :C1 64 100]]}
                                         :C {2 [[0.75 :Microtonic :note :F1 64 100]]
                                             3 [[0.5 :Microtonic :note :F1 64 100]]
                                             4 [[0.5 :Microtonic :note :F1 64 100]]}}
                                        #_ (dissoc :A)
-                                       (dissoc :B)
-                                       (dissoc :C))
+                                       #_ (dissoc :B)
+                                       #_ (dissoc :C))
                         :messages  nil})
      (cx/conformer ::seq/sequencer-state))
 
@@ -105,7 +110,7 @@
       enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet enso :Rec_Speed :+1.0))
-             (cons 0 (px/param-packet enso :Play_Speed :+0.5))
+             (cons 0 (px/param-packet enso :Play_Speed :-0.5))
              (fn [seq] (assoc seq uuid {1 [(fn [seq] (dissoc seq uuid))]}))]}))
 
 ;; FREEZE:
@@ -114,7 +119,7 @@
       enso :Enso.A]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [[0 enso :note dev/PLAY 64 100]
-             (cons 0 (px/param-packet enso :Saturation 0.5))
+             (cons 0 (px/param-packet enso :Saturation 1.0))
              (fn [seq] (dissoc seq uuid))]
           }))
 
@@ -129,10 +134,10 @@
 ;; ----- SCENE 5: SECOND LOOPER
 
 (ctrl/mix-paths [:IO :IO]
-                [:IO :Enso.A :IO]
+                [-6 :IO :Enso.A :IO]
                 [:IO :Enso.B :IO]
                 [:Microtonic :Enso.B] ;; -6dB !!!!!!!
-                [:Microtonic :IO])
+                [-20 :Microtonic :IO])
 
 (enso-prime :Enso.B)
 
@@ -140,26 +145,34 @@
       enso :Enso.B]
   (swap! state/SEQ assoc-in [:sequences uuid]
          {1 [(cons 0 (px/param-packet enso :Rec_Speed :+1.0))
-             (cons 0 (px/param-packet enso :Play_Speed :+2.0))
+             (cons 0 (px/param-packet enso :Play_Speed :+0.5))
              (fn [seq] (assoc seq uuid {1 [(fn [seq] (dissoc seq uuid))]}))]}))
 
 ;; ----- SCENE 6: REPLIKA
 
 (ctrl/window :Replika_XT)
-(ctrl/mix-path :Microtonic :Replika_XT :IO)
+(ctrl/mix-path -6 :Microtonic :Replika :IO)
 
 (px/get-matching-to-dict state/PARAMS :Replika #"Mode")
 (dev/get-dev-enums-to-dict :Replika)
 
 (px/xmit-some-params-now :Replika
-                         [:Time_Mode :Dotted]
-                         [:Delay_Time :1.8]
-                         [:Feedback 0.5]
+                         [:Time_Mode :Milliseconds]
+                         [:Delay_Time 0.01]
+                         [:Feedback 0.25] ; -> 0.75
                          [:Mode :Diffusion]
-                         [:Mix 1]
+                         [:Modulation :Phaser] ; :Phaser
+                         [:Mix 0.75]
                          [:Stereo_Mode :Ping_Pong]
                          )
 
-;; ----- END
+(ctrl/mix-paths [-40 :Enso.A :IO]
+                [:IO :IO]
+                #_ [-10 :Microtonic :Replika :IO]
+                [:IO :Replika :IO]
+                #_ [:IO :Replika :IO]
+                #_ [-6 :Enso.A :Replika :IO])
+
+;; ----- FIN
 
 (ctrl/mix-paths)

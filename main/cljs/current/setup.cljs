@@ -73,9 +73,6 @@
                 )
 (ctrl/window :Replika)
 
-(let [[a & b] nil] {:a a :b b})
-(number? nil)
-
 ;; >>> STOP
 
 (ctrl/mix-path)
